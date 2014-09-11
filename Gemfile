@@ -6,7 +6,10 @@ gem 'rails_12factor'
 
 group :test, :development do
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.0.0.beta'
 end
+
+gem 'bcrypt-ruby', '3.1.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
