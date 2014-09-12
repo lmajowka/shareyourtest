@@ -1,4 +1,21 @@
 .login-box{
   width:300px;
   background: #FFFFFF;
+  padding: 13px;
+  border-radius: 6px;
+}
+
+.login-box input{
+  height:30px;
+}
+
+.login-box input[type=text]{
+  width:274px;
+  padding-left: 4px;
+}
+
+.login-box input[type=password]{
+  margin-top:12px;
+  margin-right: 10px;
+  padding-left: 4px;
 }
