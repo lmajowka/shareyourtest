@@ -33,7 +33,14 @@
   background:#FFF;
 }
 
+#footer{
+  background: #FFF;
+  height:60px;
+  width:100%;
+  bottom:0;
+  position:absolute;
+}
 
 body{
-  background:#8FB1D1 !important;
+  background:#7AB8F1 !important;
 }

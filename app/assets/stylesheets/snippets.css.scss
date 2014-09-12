@@ -3,19 +3,19 @@
   background: #FFFFFF;
   padding: 13px;
   border-radius: 6px;
+  box-shadow: 0px 0px 5px;
 }
 
 .login-box input{
   height:30px;
+  padding-left: 4px;
 }
 
-.login-box input[type=text]{
+.log_in_box_larger{
   width:274px;
-  padding-left: 4px;
 }
 
 .login-box input[type=password]{
   margin-top:12px;
   margin-right: 10px;
-  padding-left: 4px;
 }
