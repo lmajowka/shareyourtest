@@ -6,20 +6,25 @@
   box-shadow: 0px 0px 5px;
 }
 
-.login-box input{
-  height:30px;
-  padding-left: 4px;
+.login-box {
+  input[type=text],input[type=password]{
+    height:30px;
+    padding-left: 4px;
+  }
+  input[type=password]{
+    margin-top:12px;
+    margin-right: 10px;
+  }
 }
 
-.log_in_box_larger{
-  width:274px;
-}
+  .log_in_box_larger{
+    width:274px;
+  }
 
-.login-box input[type=password]{
-  margin-top:12px;
-  margin-right: 10px;
-}
+  .signup-button{
+    text-shadow: 1px 1px 1px #000;
+  }
 
-.signup-button{
-  text-shadow: 1px 1px 1px #000;
-}
+  .field_with_errors input{
+    border: 2px solid #F00;
+  }

@@ -1,0 +1,18 @@
+h1[class='ml40']
+  = 'Join Share Questions now!'
+
+= form_for @user do |f|
+
+    = f.text_field :email, class: "log_in_box_larger fl mt10 ml40", placeholder: "Email"
+    - @user.errors.messages[:email].each do |message|
+      div[class='fl ml20 mt10 red'] = message
+
+    div[class='cb']
+
+    = f.password_field :password, class: "log_in_box_larger fl mt10 ml40", placeholder: "Password"
+    - @user.errors.messages[:password].each do |message|
+      div[class='fl ml20 mt10 red'] = message
+
+    div[class='cb']
+
+    .actions = f.submit 'Sign up now!', class: 'btn btn-warning mt10 ml40 signup-button'

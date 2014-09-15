@@ -44,3 +44,8 @@
 body{
   background:#7AB8F1 !important;
 }
+
+h1{
+  color: #FFF !important;
+  text-shadow: 1px 1px 1px #000;
+}
