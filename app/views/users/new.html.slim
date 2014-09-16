@@ -3,7 +3,7 @@ h1[class='ml40']
 
 = form_for @user do |f|
 
-    = f.text_field :email, class: "log_in_box_larger fl mt10 ml40", placeholder: "Email"
+    = f.text_field :email, class: "log_in_box_larger fl mt1 0 ml40", placeholder: "Email"
     - @user.errors.messages[:email].each do |message|
       div[class='fl ml20 mt10 red'] = message
 
