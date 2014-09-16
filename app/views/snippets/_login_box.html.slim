@@ -1,5 +1,6 @@
 div[class='login-box']
-  input class='log_in_box_larger' type="text" placeholder="Email"
-  input type="password" placeholder="Password"
-  div[class='btn btn-success']
-    = 'Sign In'
+
+  = form_for :session, url: sessions_path do |f|
+    = f.text_field :email, class: 'log_in_box_larger', placeholder: "Email"
+    = f.password_field :password , placeholder: "Password"
+    = f.submit 'Sign In' ,class: 'btn btn-success'

@@ -49,3 +49,9 @@ h1{
   color: #FFF !important;
   text-shadow: 1px 1px 1px #000;
 }
+
+.alert{
+  color: #CA1B1B;
+  background: #F0B5B5;
+  display:inline;
+}

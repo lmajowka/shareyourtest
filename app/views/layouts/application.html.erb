@@ -13,9 +13,11 @@
   <div id="logo"><%= link_to 'Share Questions', root_path  %></div>
 </div>
 
+  <div class="mt40 ml20">
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
+  </div>
 
 <%= yield %>
 
