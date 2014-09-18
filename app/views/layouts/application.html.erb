@@ -9,34 +9,7 @@
 </head>
 <body>
 
-<div id="header">
-  <div id="logo"><%= link_to 'Share your Test', root_path  %></div>
-
-  <div class="fl mt20 ml40"><%= link_to 'Answer Tests', tests_path()%></div>
-  <div class="fl mt20 ml40"><%= link_to 'Share your Test', new_test_path() %></div>
-
-  <div class="fr mr95 mt20">
-  <% if signed_in? %>
-    <li id="fat-menu" class="dropdown lsnone" >
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        Account <b class="caret"></b>
-      </a>
-      <ul class="dropdown-menu">
-        <!--<li><%= link_to "Profile", current_user %></li>-->
-        <!--<li><%= link_to "Settings", '#' %></li>-->
-        <li class="divider"></li>
-        <li>
-          <%= link_to "Sign out", signout_path, method: "delete" %>
-        </li>
-      </ul>
-    </li>
-  <% else %>
-    <li class="lsnone"><%= link_to "Sign in", signin_path %></li>
-  <% end %>
-  </div>
-
-</div>
-
+<%= render 'application/header'%>
 <div class="mt40 fl"></div>
 <div class="cb"></div>
 
