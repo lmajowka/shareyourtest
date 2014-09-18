@@ -17,6 +17,10 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def belongs_to_me?(user_id)
+    current_user.id === user_id
+  end
+
   def current_user=(user)
     @current_user = user
   end
