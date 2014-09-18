@@ -1,0 +1,13 @@
+h1[class='ml40'] Create a new Test
+div[class='ml40']
+  = form_for @test do |f|
+
+    = f.text_field :title, class: "log_in_box_larger fl mt10 ml40", placeholder: "Title"
+    - @test.errors.messages[:title].each do |message|
+      div[class='fl ml20 mt10 red'] = message
+
+    = f.text_field :description, class: "log_in_box_larger fl mt10 ml40", placeholder: "Description"
+    - @test.errors.messages[:description].each do |message|
+      div[class='fl ml20 mt10 red'] = message
+
+    .actions = f.submit 'Create', class: 'btn btn-warning mt10 ml40 signup-button'
