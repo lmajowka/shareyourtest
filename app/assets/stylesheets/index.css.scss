@@ -4,8 +4,8 @@
 
 #hp_text{
   float:left;
-  margin-left:100px;
-  margin-top: 40px;
+  margin-left:150px;
+  margin-top: 140px;
   width: 600px;
 }
 
@@ -17,6 +17,15 @@
 
 #hp_singin{
   float:left;
-  margin-top: 70px;
-  margin-left: 70px;
+  margin-top: 130px;
+  margin-left: 0px;
+}
+
+.hp_frame{
+  min-height: 800px;
+  width:100%
+}
+
+.green_frame{
+  background:#336666;
 }
