@@ -16,13 +16,13 @@ RSpec.describe "Signups", :type => :request do
 
     let(:submit) { "Join now!" }
 
-    describe "with invalid information" do
+    context "with invalid information" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
       end
     end
 
-    describe "with valid information" do
+    context "with valid information" do
       before do
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
