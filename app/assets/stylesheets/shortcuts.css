@@ -6,10 +6,18 @@
 .ml20{margin-left:20px;}
 .ml40{margin-left:40px;}
 
+.mr20{margin-right:20px;}
+.mr40{margin-right:40px;}
+.mr95{margin-right:95px;}
+
+
 .mid-gray{color:#999}
 .black{color:#000000}
 
+.lsnone{list-style-type: none;}
+
 .fl{float:left;}
+.fr{float:right;}
 .cb{clear:both;}
 
 .red{color:#c32212;}

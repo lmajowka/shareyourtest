@@ -10,7 +10,28 @@
 <body>
 
 <div id="header">
-  <div id="logo"><%= link_to 'Share Questions', root_path  %></div>
+  <div id="logo"><%= link_to 'Share your Test', root_path  %></div>
+
+  <div class="fr mr95 mt20">
+  <% if signed_in? %>
+    <li id="fat-menu" class="dropdown lsnone" >
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        Account <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <!--<li><%= link_to "Profile", current_user %></li>-->
+        <!--<li><%= link_to "Settings", '#' %></li>-->
+        <li class="divider"></li>
+        <li>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
+        </li>
+      </ul>
+    </li>
+  <% else %>
+    <li class="lsnone"><%= link_to "Sign in", signin_path %></li>
+  <% end %>
+  </div>
+
 </div>
 
   <div class="mt40 ml20">
@@ -22,7 +43,7 @@
 <%= yield %>
 
 <div id="footer">
-  <div class="mt10 ml20">ShareQuestions - 2014</div>
+  <div class="mt10 ml20">Shareyourtest.com - 2014</div>
 </div>
 
 </body>
