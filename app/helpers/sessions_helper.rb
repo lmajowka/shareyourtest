@@ -18,6 +18,7 @@ module SessionsHelper
   end
 
   def belongs_to_me?(user_id)
+    return false if not current_user
     current_user.id === user_id
   end
 
