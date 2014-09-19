@@ -31,6 +31,12 @@ RSpec.describe "Signups", :type => :request do
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
       end
+
+      it "should login this user" do
+        visit signup_path
+        expect { click_button submit }.not_to change(User, :count)
+      end
+
     end
   end
 
