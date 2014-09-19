@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'jasmine-rails'
 end
 
 group :test do
