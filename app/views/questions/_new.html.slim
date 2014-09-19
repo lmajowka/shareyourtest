@@ -1,0 +1,20 @@
+table
+  tr
+    td valign='top'
+
+      h2 Create Question
+
+      = form_for @question do |f|
+        = f.text_area :content, class: "question-text-area fl mt10 ml40", onkeyup: "Questions.generatePreview(this.value)"
+          - @question.errors.messages[:title].each do |message|
+            div[class='fl ml20 mt10 red'] = message
+
+        div class='cb'
+
+        = f.submit :Create, class: "btn btn-success mt20 ml40"
+
+    td valign='top' class='pl40'
+
+      h2 Preview
+
+      div id='preview-question-content'
