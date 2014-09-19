@@ -10,8 +10,8 @@ class Questions
 
     previewAnswers = ""
     index = 1
-    while @getAlternative(content,index).length > 0
-      previewAnswers += @radialize @getAlternative(content,index)
+    while alternative = @getAlternative(content,index)
+      previewAnswers += @radialize alternative
       index++
 
     $('#preview-answers').html previewAnswers
@@ -22,9 +22,9 @@ class Questions
     content.match(_getContentRegex)?[1] || content
 
   @getAlternative = (content, index) ->
-     content.match(@alternativeRegEx(index))?[2] || content.match(@alternativeRegEx(index,true))?[2] || ""
+     content.match(@alternativeRegEx(index))?[2].trim() || content.match(@alternativeRegEx(index,true))?[2].trim() || null
 
-  @alternativeRegEx: (index,full) ->
+  @alternativeRegEx = (index,full) ->
     lowerCaseLetter = String.fromCharCode(96 + index)
     upperCaseLetter = String.fromCharCode(64 + index)
     nextLower = String.fromCharCode(97 + index)
