@@ -6,6 +6,7 @@ Shareyourtest::Application.routes.draw do
 
   resources :users
   resources :tests
+  resources :questions
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup', to: 'users#new', via: 'get'
