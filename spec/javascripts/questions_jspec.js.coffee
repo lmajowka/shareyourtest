@@ -20,3 +20,19 @@ describe 'Questions', ->
   it 'Get null trying to get third answer', ->
     parsedAnswer = Questions.getAlternative example_content_1, 3
     expect(parsedAnswer).toBeNull()
+
+  example_content_2 = "How much is 1 + 1? A)7"
+
+  describe 'Uppercase letters', ->
+
+    it 'Get content', ->
+      parsedContent = Questions.getContent example_content_2
+      expect(parsedContent).toEqual "How much is 1 + 1?"
+
+    it 'Get first answer', ->
+      parsedAnswer = Questions.getAlternative example_content_2, 1
+      expect(parsedAnswer).toEqual "7"
+
+    it 'Get null trying to get third answer', ->
+      parsedAnswer = Questions.getAlternative example_content_2, 2
+      expect(parsedAnswer).toBeNull()
