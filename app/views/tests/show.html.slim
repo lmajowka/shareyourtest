@@ -1,6 +1,10 @@
-h1[class='ml40'] = @test.title
-
 - if belongs_to_me?(@test.user_id)
+  == render 'tests/menu'
 
-  div[class='ml40']
-    == render 'questions/new'
+div class='fl'
+  h1[class='ml40'] = @test.title
+
+  - if belongs_to_me?(@test.user_id)
+
+    div[class='ml40']
+      == render 'questions/new'
