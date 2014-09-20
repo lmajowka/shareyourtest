@@ -22,6 +22,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'backbone-on-rails'
 
 gem 'rails', '4.0.4'
 gem 'rails_12factor'
