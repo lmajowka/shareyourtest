@@ -1,16 +1,18 @@
 - if belongs_to_me?(@test.user_id)
   == render 'tests/menu'
 
-div class='fl'
+div class='fl ml100'
   h1[class='ml40'] = @test.title
 
   - if belongs_to_me?(@test.user_id)
 
-    div[class='ml40']
+    div[class='ml40 mt40']
       == render 'questions/index'
 
-    div[class='ml40']
+    div[class='ml40 mt40']
       == render 'questions/new'
+
+    div[class='empty-space']
 
 script
   = 'Shareyourtest.TestPage.initialize();'

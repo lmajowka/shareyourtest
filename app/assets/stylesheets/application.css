@@ -57,3 +57,7 @@ h1, h2{
   background: #F0B5B5;
   display:inline;
 }
+
+.empty-space{
+  height:400px;
+}

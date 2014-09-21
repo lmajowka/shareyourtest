@@ -10,7 +10,6 @@ class TestPage
       }
     )
     question.save()
-#    question.render()
 
   @testId: ->
     location.href.match(/tests\/([0-9]+)/)?[1] || null
@@ -21,8 +20,10 @@ class TestPage
     events = ['sync','change']
     for event in events
       @questions.on event, Shareyourtest.TestPage.renderNumberQuestions
+      @questions.on event, Shareyourtest.TestPage.questions.render
 
     Shareyourtest.TestPage.questions.fetch()
+    $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
 
   @renderNumberQuestions: ->
     units = ['#number-questions','#menu-questions-number']
