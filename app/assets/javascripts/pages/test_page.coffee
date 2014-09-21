@@ -10,6 +10,7 @@ class TestPage
       }
     )
     question.save()
+    @questions.add question
 
   @testId: ->
     location.href.match(/tests\/([0-9]+)/)?[1] || null
@@ -24,6 +25,20 @@ class TestPage
 
     Shareyourtest.TestPage.questions.fetch()
     $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
+
+    $("#menu-new-question").click =>
+      @animate 'new-question-view', 60
+
+    $("#menu-questions").click =>
+      @animate 'questions-view', 120
+
+  @animate: (viewId,offset) ->
+    $('html, body').animate(
+      {
+        scrollTop: $("#"+viewId).offset().top - offset
+      }
+      800
+    )
 
   @renderNumberQuestions: ->
     units = ['#number-questions','#menu-questions-number']

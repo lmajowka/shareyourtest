@@ -3,6 +3,7 @@ class Shareyourtest.Collections.Questions extends Backbone.Collection
     "#{Shareyourtest.TestPage.testId()}/questions"
 
   render: ->
+    $('#questions-view').html ""
     @models.forEach @addOne, @
 
   addOne: (question) ->
