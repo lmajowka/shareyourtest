@@ -11,6 +11,9 @@ class TestPage
     )
     question.save()
     @questions.add question
+    $("#menu-questions").click()
+    $("#question-content").val ""
+    Questions.generatePreview ""
 
   @testId: ->
     location.href.match(/tests\/([0-9]+)/)?[1] || null

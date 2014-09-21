@@ -6,3 +6,9 @@
   min-height: 600px;
   position:fixed;
 }
+
+#questions-view div{
+  padding:10px;
+  background: #FFF;
+  border-bottom: 1px solid #AAA;
+}
