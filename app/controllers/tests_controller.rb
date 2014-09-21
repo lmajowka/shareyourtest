@@ -22,7 +22,7 @@ class TestsController < ApplicationController
 
   def show
     @test = Test.find params[:id]
-    @question = Question.new()
+    @question = Question.new
   end
 
   private

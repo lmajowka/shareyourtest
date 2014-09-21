@@ -1,14 +1,15 @@
 class QuestionsController < ApplicationController
 
   def create
-    @question = Question.create!(questions_params)
+    debugger
+    @question = Question.create!(question_params)
     render json: @question.to_json
   end
 
   private
 
-  def questions_params
-    params.require(:question).permit(:content)
+  def question_params
+    params.require(:question).permit(:content,:answer)
   end
 
 end
