@@ -1,6 +1,6 @@
 class CreateTests < ActiveRecord::Migration
   def change
-    create_table :tests do |t|
+    create_table :exams do |t|
       t.string :title
       t.string :description
       t.references :user

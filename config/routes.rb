@@ -6,7 +6,7 @@ Shareyourtest::Application.routes.draw do
   root 'index#index'
 
   resources :users
-  resources :tests do
+  resources :exams ,path: 'tests', controller: :tests do
     resources :questions
   end
 

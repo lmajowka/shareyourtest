@@ -13,17 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140919063425) do
 
-  create_table "questions", force: true do |t|
-    t.integer  "test_id"
-    t.text     "content"
-    t.integer  "answer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "questions", ["test_id"], name: "index_questions_on_test_id"
-
-  create_table "tests", force: true do |t|
+  create_table "exams", force: true do |t|
     t.string   "title"
     t.string   "description"
     t.integer  "user_id"
@@ -32,6 +22,16 @@ ActiveRecord::Schema.define(version: 20140919063425) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "questions", force: true do |t|
+    t.integer  "exam_id"
+    t.text     "content"
+    t.integer  "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["exam_id"], name: "index_questions_on_exam_id"
 
   create_table "users", force: true do |t|
     t.string   "email"

@@ -1,4 +1,4 @@
-class TestsPage
+class TestPage
 
   @createQuestion: ->
     question = new Shareyourtest.Models.Question(
@@ -10,4 +10,8 @@ class TestsPage
     question.save()
 #    question.render()
 
-window.Shareyourtest.TestsPage = TestsPage
+  @testId: ->
+    location.href.match(/tests\/([0-9]+)/)?[1] || null
+
+
+window.Shareyourtest.TestPage = TestPage

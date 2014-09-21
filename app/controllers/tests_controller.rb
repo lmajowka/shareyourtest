@@ -1,11 +1,11 @@
 class TestsController < ApplicationController
 
   def index
-    @tests = Test.all
+    @tests = Exam.all
   end
 
   def create
-    @test = current_user.tests.new(test_params)
+    @test = current_user.exams.new(test_params)
     if @test.save
       redirect_to @test
     else
@@ -17,18 +17,18 @@ class TestsController < ApplicationController
     if !signed_in?
       redirect_to :signup
     end
-    @test = Test.new()
+    @test = Exam.new()
   end
 
   def show
-    @test = Test.find params[:id]
+    @test = Exam.find params[:id]
     @question = Question.new
   end
 
   private
 
   def test_params
-    params.require(:test).permit(:title,:description)
+    params.require(:exam).permit(:title,:description)
   end
 
 end

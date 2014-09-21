@@ -1,7 +1,6 @@
 class QuestionsController < ApplicationController
 
   def create
-    debugger
     @question = Question.create!(question_params)
     render json: @question.to_json
   end
@@ -9,7 +8,14 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:content,:answer)
+
+    exam = Exam.find(params[:exam_id])
+
+    if !belongs_to_me?(exam.user_id)
+      return false
+    end
+
+    params.require(:question).permit(:content,:answer).merge(exam_id: params[:exam_id])
   end
 
 end

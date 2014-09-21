@@ -2,9 +2,9 @@ div id='header'
   div id='logo'
     = link_to 'Share your Test', root_path
   div class='fl mt20 ml40'
-    = link_to 'Answer Tests', tests_path()
+    = link_to 'Answer Tests', exams_path()
   div class='fl mt20 ml40'
-    = link_to 'Share your Test', new_test_path()
+    = link_to 'Share your Test', new_exam_path()
 
   div class='fr mr95 mt20'
     - if signed_in?
