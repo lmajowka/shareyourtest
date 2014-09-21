@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Test, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  #before { @test = Test.new(title: "Sample Test", description: "Description of sample test") }
+  #
+  #subject { @test }
+  #
+  #it { should respond_to(:title)}
+  #it { should respond_to(:descripion)}
+
+  #Conflict with the name Test
+
 end
