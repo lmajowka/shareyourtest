@@ -1,5 +1,4 @@
- require 'rails_helper'
- require 'rspec/its'
+require 'rails_helper'
 
 RSpec.describe User, :type => :model do
     before { @user = User.new(email: "user@example.com", password:"123456", password_confirmation:"123456") }
