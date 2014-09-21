@@ -5,6 +5,11 @@ class QuestionsController < ApplicationController
     render json: @question.to_json
   end
 
+  def index
+    @questions = Question.where(exam_id: params[:exam_id])
+    render json: @questions.to_json
+  end
+
   private
 
   def question_params

@@ -7,4 +7,10 @@ div class='fl'
   - if belongs_to_me?(@test.user_id)
 
     div[class='ml40']
+      == render 'questions/index'
+
+    div[class='ml40']
       == render 'questions/new'
+
+script
+  = 'Shareyourtest.TestPage.initialize();'
