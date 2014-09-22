@@ -5,7 +5,7 @@ class TestPage
   @createQuestion: ->
     question = new Shareyourtest.Models.Question(
       {
-        content:$('#question-content').val()
+        content: Questions.getContent $('#question-content').val()
         answer: 1
       }
     )
