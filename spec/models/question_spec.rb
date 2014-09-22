@@ -6,16 +6,14 @@ RSpec.describe Question, :type => :model do
 
   subject { @question }
 
-  it { should_not be_valid }
+  context 'given valid fields'
 
-  #context 'given valid fields'
+    let(:exam) { FactoryGirl.create(:exam) }
 
-    #let(:test) { FactoryGirl.create(:test) }
-    #
-    #before do
-    #  @question.test = test
-    #end
-    #
-    #it { should be_valid }
+    before do
+      @question.exam = exam
+    end
+
+    it { should be_valid }
 
 end

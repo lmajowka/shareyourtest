@@ -9,4 +9,15 @@ RSpec.describe Exam, :type => :model do
   it { should respond_to(:title)}
   it { should respond_to(:description)}
 
+  context 'given valid attributes'
+
+    let(:user) { FactoryGirl.create(:user) }
+
+    before(:each) do
+      @test.user = user
+    end
+
+    it { should be_valid }
+
+
 end

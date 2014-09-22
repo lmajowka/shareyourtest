@@ -5,8 +5,9 @@ FactoryGirl.define do
     password_confirmation "foobar"
   end
 
-  factory :test do
+  factory :exam do
     title    "Sample test title"
     description "Description of sample test"
+    association :user, factory: :user
   end
 end
