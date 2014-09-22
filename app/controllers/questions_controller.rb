@@ -17,7 +17,10 @@ class QuestionsController < ApplicationController
   def destroy
     if my_exam
       @question = Question.where(id: params[:id], exam_id: params[:exam_id])
-      @question.try(:first).delete
+      if @question.size > 0
+        Answer.where(question_id:@question.first.id).destroy_all
+        @question.first.delete
+      end
     end
     render json: @question.to_json
   end
