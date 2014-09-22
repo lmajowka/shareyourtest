@@ -5,6 +5,9 @@ class IndexController < ApplicationController
       redirect_to :exams
     end
     @user = User.new
+    @test1 = Exam.first
+    @test2 = Exam.last
+    @test3 = Exam.first
   end
 
 end

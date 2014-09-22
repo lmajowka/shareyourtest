@@ -1,4 +1,4 @@
-div class='hp_frame'
+div class='hp_frame' id="frame-index"
 
   div id='hp_text'
     h1
@@ -11,17 +11,19 @@ div class='hp_frame'
     div class='mt10'
       == render 'snippets/signup_box'
 
-div class='hp_frame green_frame'
-  div class='ml100 mt100 fl'
+div class='hp_frame green_frame' id='frame-answer'
+  div class='ml100 mt100 fl answer-tests'
     h2 Answer tests and prepare yourself
-    div test1 test2 test3
+    div = link_to @test1.title, @test1
+    div = link_to @test2.title, @test2
+    div = link_to @test3.title, @test3
 
-div class='hp_frame'
+div class='hp_frame' id='frame-share'
   div class='ml100 mt100 fl'
     h2 Share your test
     div Help others like you
 
-div class='hp_frame green_frame'
+div class='hp_frame green_frame' id='frame-money'
   div class='ml100 mt100 fl'
     h2 Make money
     div happy dude
@@ -29,4 +31,5 @@ div class='hp_frame green_frame'
 
 div class='cb'
 
-- @user.errors
+script
+  = 'Shareyourtest.IndexPage.initialize();'
