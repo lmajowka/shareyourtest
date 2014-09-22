@@ -16,6 +16,8 @@
 .pl10 {padding-left:10px;}
 .pl40 {padding-left:40px;}
 
+.pr140{padding-right:140px}
+
 .mid-gray{color:#999}
 .black{color:#000000}
 
@@ -27,3 +29,5 @@
 .cp{cursor:pointer;}
 
 .red{color:#c32212;}
+
+.w100{width:100%}

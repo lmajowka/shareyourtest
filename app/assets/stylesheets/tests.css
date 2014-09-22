@@ -11,4 +11,9 @@
   padding:10px;
   background: #FFF;
   border-bottom: 1px solid #AAA;
+  height: 64px;
+}
+
+.delete{
+  height: 54px !important;
 }

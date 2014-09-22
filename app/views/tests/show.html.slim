@@ -1,7 +1,7 @@
 - if belongs_to_me?(@test.user_id)
   == render 'tests/menu'
 
-div class='fl ml100'
+div class='fl ml100 w100 pr140'
   h1 class='ml40' = @test.title
 
   - if belongs_to_me?(@test.user_id)
