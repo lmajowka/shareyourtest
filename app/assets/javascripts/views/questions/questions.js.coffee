@@ -5,7 +5,7 @@ class Shareyourtest.Views.Questions extends Backbone.View
   events: {'click .delete':'delete'}
 
   render: ->
-    @$el.html @model.get('content') + "<div class='fr cp delete'>Delete</div>"
+    @$el.html @template(@model.toJSON())
     @
 
   initialize: ->
