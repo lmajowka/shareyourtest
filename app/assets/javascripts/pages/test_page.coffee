@@ -3,9 +3,20 @@ class TestPage
   @questions = null
 
   @createQuestion: ->
+
+    content = $('#question-content').val()
+
+    answers = []
+
+    index = 1
+    while alternative = Questions.getAlternative(content,index)
+      answers.push alternative
+      index++
+
     question = new Shareyourtest.Models.Question(
       {
-        content: Questions.getContent $('#question-content').val()
+        content: Questions.getContent content
+        answers: answers
         answer: 1
       }
     )

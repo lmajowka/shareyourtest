@@ -2,6 +2,10 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.create!(question_params)
+    answers = params[:answers]
+    answers.each do |answer|
+      @question.answers.create!(content:answer)
+    end
     render json: @question.to_json
   end
 
