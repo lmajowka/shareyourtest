@@ -21,7 +21,7 @@ class TestPage
   @initialize: ->
     @questions = new Shareyourtest.Collections.Questions()
 
-    events = ['sync','change']
+    events = ['sync','change','destroy']
     for event in events
       @questions.on event, Shareyourtest.TestPage.renderNumberQuestions
       @questions.on event, Shareyourtest.TestPage.questions.render

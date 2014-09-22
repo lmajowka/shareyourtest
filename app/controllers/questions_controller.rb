@@ -10,16 +10,29 @@ class QuestionsController < ApplicationController
     render json: @questions.to_json
   end
 
+  def destroy
+    if my_exam
+      @question = Question.where(id: params[:id], exam_id: params[:exam_id])
+      @question.try(:first).delete
+    end
+    render json: @question.to_json
+  end
+
+
   private
 
-  def question_params
-
+  def my_exam
     exam = Exam.find(params[:exam_id])
 
     if !belongs_to_me?(exam.user_id)
       return false
     end
 
+    true
+  end
+
+  def question_params
+    return false unless my_exam
     params.require(:question).permit(:content,:answer).merge(exam_id: params[:exam_id])
   end
 
