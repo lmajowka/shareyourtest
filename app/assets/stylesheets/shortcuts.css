@@ -9,13 +9,17 @@
 .ml40{margin-left:40px;}
 .ml100{margin-left:100px;}
 
+.mr10{margin-right:10px;}
 .mr20{margin-right:20px;}
 .mr40{margin-right:40px;}
 .mr95{margin-right:95px;}
 
+.p5{padding:5px}
+
 .pl10 {padding-left:10px;}
 .pl40 {padding-left:40px;}
 
+.pr105{padding-right:105px}
 .pr140{padding-right:140px}
 
 .mid-gray{color:#999}
@@ -31,3 +35,5 @@
 .red{color:#c32212;}
 
 .w100{width:100%}
+
+.tc{text-align:center}

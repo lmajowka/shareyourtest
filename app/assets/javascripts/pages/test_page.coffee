@@ -40,11 +40,16 @@ class TestPage
     Shareyourtest.TestPage.questions.fetch()
     $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
 
+    $("#menu-title").click =>
+      @animate 'title-view', 60
+
     $("#menu-new-question").click =>
       @animate 'new-question-view', 60
 
     $("#menu-questions").click =>
-      @animate 'questions-view', 120
+      @animate 'questions-view', 160
+
+    $("#menu-title").click()
 
   @animate: (viewId,offset) ->
     $('html, body').animate(

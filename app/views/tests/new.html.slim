@@ -6,8 +6,12 @@ div[class='ml40']
     - @test.errors.messages[:title].each do |message|
       div[class='fl ml20 mt10 red'] = message
 
+    div class='cb'
+
     = f.text_field :description, class: "log_in_box_larger fl mt10 ml40", placeholder: "Description"
     - @test.errors.messages[:description].each do |message|
       div[class='fl ml20 mt10 red'] = message
+
+    div class='cb'
 
     .actions = f.submit 'Create', class: 'btn btn-warning mt10 ml40 signup-button'

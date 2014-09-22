@@ -1,10 +1,12 @@
 .test-menu{
-  width:100px;
+  width:130px;
   background: #FFF;
   height: 100%;
   float:left;
   min-height: 600px;
   position:fixed;
+  top:60px;
+  box-shadow: 1px 1px 3px #000;
 }
 
 #questions-view div{
@@ -14,6 +16,11 @@
   height: 64px;
 }
 
+#questions-view div:hover{
+  background:#DDD;
+}
+
 .delete{
   height: 54px !important;
+  background: transparent !important;
 }
