@@ -4,6 +4,7 @@
 .mt40{margin-top:40px;}
 .mt100{margin-top:100px;}
 
+.ml5{margin-left:5px;}
 .ml20{margin-left:20px;}
 .ml40{margin-left:40px;}
 .ml100{margin-left:100px;}
@@ -23,5 +24,6 @@
 .fl{float:left;}
 .fr{float:right;}
 .cb{clear:both;}
+.cp{cursor:pointer;}
 
 .red{color:#c32212;}
