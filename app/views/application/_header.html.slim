@@ -2,9 +2,15 @@ div id='header'
   div id='logo'
     = link_to 'Share your Test', root_path
   div class='fl mt20 ml40'
-    = link_to 'Answer Tests', exams_path()
+    = '»'
+  div class='fl mt20 ml40'
+    = link_to 'Practice', exams_path()
+  div class='fl mt20 ml40'
+      = '»'
   div class='fl mt20 ml40'
     = link_to 'Share your Test', new_exam_path()
+  div class='fl mt20 ml40'
+      = '»'
   div class='fl mt20 ml40'
     = link_to 'Make money', 'javascript:Shareyourtest.IndexPage.slideTo("frame-money");'
 
