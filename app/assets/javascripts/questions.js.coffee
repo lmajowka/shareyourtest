@@ -7,6 +7,7 @@ class Questions
   @generatePreview: (content) ->
 
     $('#preview-question-content').html @htmlize(@getContent(content))
+    $('#question-content').val content.replace(/[^\n]a\)/,"\n\na\)")
 
     previewAnswers = ""
     index = 1
@@ -38,9 +39,11 @@ class Questions
   @htmlize = (content) ->
     content.replace(/\n/g,'<br>')
 
+  @radioTemplate: JST['answers/radio']
+
   @radialize = (content) ->
     if content.length > 0
-      "<div><input type='radio'/> #{content}</div>"
+      @radioTemplate(content)
     else
       ""
 
