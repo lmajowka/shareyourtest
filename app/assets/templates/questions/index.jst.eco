@@ -1,2 +1,3 @@
 <%= @content %>
+
 <div class='fr cp delete'>Delete</div>

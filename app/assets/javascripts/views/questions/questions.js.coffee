@@ -6,6 +6,13 @@ class Shareyourtest.Views.Questions extends Backbone.View
 
   render: ->
     @$el.html @template(@model.toJSON())
+
+    answers = @model.get 'answers'
+    for answer in answers
+      span = document.createElement 'span'
+      answerModel = new Shareyourtest.Models.Answer({content:answer.content})
+      answerView = new Shareyourtest.Views.Answers({model:answerModel, el:span})
+      @$el.append answerView.render().el
     @
 
   initialize: ->

@@ -51,6 +51,7 @@ class TestPage
 
     $("#menu-title").click()
 
+
   @animate: (viewId,offset) ->
     $('html, body').animate(
       {
@@ -59,11 +60,21 @@ class TestPage
       800
     )
 
-  @renderNumberQuestions: ->
+  @displayMenuOptions: ->
+    if Shareyourtest.TestPage.questions.length is 0
+      $("#menu-questions").hide()
+      $("#menu-publish").hide()
+    else
+      $("#menu-questions").show()
+      $("#menu-publish").show()
+
+  @renderNumberQuestions: =>
     units = ['#number-questions','#menu-questions-number']
     for unit in units
       if numberQuestions = $ unit
         numberQuestions.html Shareyourtest.TestPage.questions.length;
+
+    @displayMenuOptions()
 
 
 window.Shareyourtest.TestPage = TestPage

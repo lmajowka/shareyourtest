@@ -1,5 +1,5 @@
 div class='test-menu'
-  div class='mt10 w100 tc cp p5' id='menu-title'
+  div class='mt10 w100 tc cp p5 fwb' id='menu-title'
     = @test.title
   div class='mt40 ml5 cp p5' id='menu-questions'
     span class='glyphicon glyphicon-file mr10'
@@ -7,9 +7,15 @@ div class='test-menu'
     span id='menu-questions-number'
       = 0
     = ')'
+
   div class='mt40 ml5 cp p5' id='menu-new-question'
     span class='glyphicon glyphicon-pencil mr10'
     = 'New Question'
-  div class='mt40 ml5 cp p5'
+
+  div class='mt40 ml5 cp p5' id='menu-settings'
+      span class='glyphicon glyphicon-cog mr10'
+      = 'Settings'
+
+  div class='mt40 ml5 cp p5' id='menu-publish'
     span class='glyphicon glyphicon-globe mr10'
     = 'Publish'

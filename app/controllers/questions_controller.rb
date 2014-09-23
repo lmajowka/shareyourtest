@@ -10,8 +10,8 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.where(exam_id: params[:exam_id])
-    render json: @questions.to_json
+    @questions = Question.includes(:answers).where(exam_id: params[:exam_id])
+    render json: @questions.to_json(include: :answers)
   end
 
   def destroy

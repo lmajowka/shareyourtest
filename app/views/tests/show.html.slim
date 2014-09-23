@@ -1,18 +1,20 @@
 - if belongs_to_me?(@test.user_id)
   == render 'tests/menu'
 
-div class='fl ml100 w100 pr105' id='title-view'
-  h1 class='ml40' = @test.title
+div class='fl w100' id='title-view'
+  div class='ml100'
+    h1 class='ml40' = @test.title
+    div class='ml40' = @test.description
 
-  - if belongs_to_me?(@test.user_id)
+    - if belongs_to_me?(@test.user_id)
 
-    div class='ml40 mt40'
-      == render 'questions/index'
+      div class='ml40 mt40'
+        == render 'questions/index'
 
-    div class='ml40 mt40'
-      == render 'questions/new'
+      div class='ml40 mt40'
+        == render 'questions/new'
 
-    div class='empty-space'
+      div class='empty-space'
 
 script
   = 'Shareyourtest.TestPage.initialize();'
