@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922131205) do
+ActiveRecord::Schema.define(version: 20140923110652) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140922131205) do
     t.integer  "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   add_index "questions", ["exam_id"], name: "index_questions_on_exam_id"

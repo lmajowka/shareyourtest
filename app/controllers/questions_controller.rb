@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.includes(:answers).where(exam_id: params[:exam_id])
+    @questions = Question.includes(:answers).where(exam_id: params[:exam_id]).order(:position)
     render json: @questions.to_json(include: :answers)
   end
 

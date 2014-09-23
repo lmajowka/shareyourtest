@@ -23,6 +23,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'acts_as_list'
+
 gem 'backbone-on-rails'
 
 gem 'rails', '4.0.4'

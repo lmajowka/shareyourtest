@@ -40,3 +40,7 @@
   height: 54px !important;
   background: transparent !important;
 }
+
+.question-number{
+  font-size:30px;
+}

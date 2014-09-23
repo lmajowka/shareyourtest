@@ -2,6 +2,7 @@ class Question < ActiveRecord::Base
 
   belongs_to :exam
   has_many :answers
+  acts_as_list scope: :exam
 
   validates :content, presence:   true
   validates :answer, presence:   true, numericality: true

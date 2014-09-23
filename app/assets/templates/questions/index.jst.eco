@@ -1,3 +1,4 @@
-<%= @content %>
+<span class='question-number'><%= @position %></span>
+<span class='ml40'><%= @content %></span>
 
 <div class='fr cp delete'>Delete</div>
