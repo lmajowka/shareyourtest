@@ -11,9 +11,9 @@
 
 
 #hp_site_description{
-  width:400px;
+  width:500px;
   margin-top: 60px;
-  font-size:23px;
+  font-size:28px;
   color:#FFF;
   text-shadow: 1px 1px #000;
 }
@@ -35,16 +35,24 @@
   text-shadow: 1px 1px #000;
 }
 
+.water_frame{
+  background-image: image-url("agua.jpg");
+  border-bottom: 3px solid #000;
+}
+
 .green_frame{
-  background:#354B4B;
+  background:#2B3C36;
+  border-bottom: 3px solid #000;
 }
 
 .yellow_frame{
-  background:#F1B574;
+  background-image: image-url("green.jpg");
+  height:370px !important;
+  border-bottom: 3px solid #000;
 }
 
 .pink_frame{
-  background:#F5C6C6;
+  background:#7AB8F1;
 }
 
 .answer-tests div{

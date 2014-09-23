@@ -10,10 +10,8 @@
 <body>
 
 <%= render 'application/header'%>
-<div class="mt30 fl"></div>
 <div class="cb"></div>
 
-  <div class="mt100 ml20">
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
