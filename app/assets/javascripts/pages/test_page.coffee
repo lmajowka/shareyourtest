@@ -61,12 +61,13 @@ class TestPage
     )
 
   @displayMenuOptions: ->
+    elements = ["#menu-questions","#menu-publish"]
     if Shareyourtest.TestPage.questions.length is 0
-      $("#menu-questions").hide()
-      $("#menu-publish").hide()
+      for element in elements
+        $(element).hide()
     else
-      $("#menu-questions").show()
-      $("#menu-publish").show()
+      for element in elements
+        $(element).show()
 
   @renderNumberQuestions: =>
     units = ['#number-questions','#menu-questions-number']
