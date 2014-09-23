@@ -62,7 +62,7 @@ class TestPage
     )
 
   @displayMenuOptions: ->
-    elements = ["#menu-questions","#menu-publish"]
+    elements = ["#menu-questions","#menu-publish","#questions-view-title"]
     if Shareyourtest.TestPage.questions.length is 0
       for element in elements
         $(element).hide()
