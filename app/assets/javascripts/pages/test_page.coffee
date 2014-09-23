@@ -10,7 +10,8 @@ class TestPage
 
     index = 1
     while alternative = Questions.getAlternative(content,index)
-      answers.push alternative
+      answerObject = {content:alternative}
+      answers.push answerObject
       index++
 
     question = new Shareyourtest.Models.Question(
