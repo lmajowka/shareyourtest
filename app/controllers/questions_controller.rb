@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
     if my_exam
       @question = Question.where(id: params[:id], exam_id: params[:exam_id])
       if @question.size > 0
+        @question.first.remove_from_list
         Answer.where(question_id:@question.first.id).destroy_all
         @question.first.delete
       end
