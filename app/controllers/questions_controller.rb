@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
 
     if @question = Question.find_by(id: params[:id], exam_id: params[:exam_id])
       @question.remove
+    end
 
     render json: @question.to_json
   end
