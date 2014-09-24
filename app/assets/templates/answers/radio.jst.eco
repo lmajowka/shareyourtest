@@ -1,7 +1,7 @@
 <div class='mt20 fl'>
-  <input type='radio' class='fl'/>
+  <input type='radio' name='radioIndex' id='radio-answer-<%= @radioIndex%>' class='fl'/>
   <div class='fl ml10'>
-    <%= @ %>
+    <%= @content %>
   </div>
 </div>
 <div class='cb'></div>

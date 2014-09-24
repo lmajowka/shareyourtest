@@ -5,7 +5,7 @@ table id='new-question-view'
       h2 Create Question
 
       = form_for [@test,@question] do |f|
-        = f.text_area :content, id: 'question-content', class: 'question-text-area fl mt10 ml40', onkeyup: 'Questions.generatePreview(this.value)'
+        = f.text_area :content, id: 'question-content', class: 'question-text-area fl mt10 ml40', onkeyup: 'Shareyourtest.Models.Question.generatePreview(this.value)'
           - @question.errors.messages[:title].each do |message|
             div[class='fl ml20 mt10 red'] = message
 

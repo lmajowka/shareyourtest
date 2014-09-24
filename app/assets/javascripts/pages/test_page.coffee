@@ -2,6 +2,7 @@ class TestPage extends Page
 
   @questions = null
   @answers = null
+  @answer = false
 
   @createQuestion: ->
 
@@ -17,6 +18,11 @@ class TestPage extends Page
     if @answers.length < 2
       $('#create-question-error').html 'You need to write at least 2 answers and choose one before you submit your questions'
       return false
+
+    if not @answer
+      $('#create-question-error').html 'You need to choose the right answer'
+      return false
+
     true
 
   @updateQuestionView: ->
@@ -28,14 +34,14 @@ class TestPage extends Page
     content = $('#question-content').val()
 
     index = 1
-    while alternative = Questions.getAlternative(content,index)
+    while alternative = Shareyourtest.Models.Question.getAlternative(content,index)
       answerObject = {content:alternative}
       @answers.push answerObject
       index++
 
     question = new Shareyourtest.Models.Question(
       {
-        content: Questions.getContent content
+        content: Shareyourtest.Models.Question.getContent content
         answers: @answers
         answer: 1
       }
