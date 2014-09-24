@@ -1,23 +1,34 @@
 class Shareyourtest.Models.Question extends Backbone.Model
+
+  @answers = []
+  @answer = false
+
   url: ->
     "#{Shareyourtest.TestPage.testId()}/questions"
 
   _getContentRegex = /([\s\S]*)\W(A|a) ?\)/
   _getAlternativeRegex = /(A|a) ?\)([\s\S]*)/
-  radioIndex = 1
+  index = 1
 
   @generatePreview: (content) ->
 
     $('#preview-question-content').html @htmlize(@getContent(content))
     $('#question-content').val content.replace(/[^\n]a\)/,"\n\na\)")
 
+    @answers = []
     previewAnswers = ""
     index = 1
+
     while alternative = @getAlternative(content,index)
       previewAnswers += @radialize alternative
+      answerObject = {content:alternative}
+      @answers.push answerObject
       index++
 
     $('#preview-answers').html previewAnswers
+
+  @setAnswer: (answer)->
+    @answer = answer
 
   #Private
 
@@ -45,11 +56,10 @@ class Shareyourtest.Models.Question extends Backbone.Model
 
   @radialize = (content) ->
     if content.length > 0
-      radioIndex++
       @radioTemplate(
         {
           content: content
-          radioIndex: radioIndex
+          index: index
         }
       )
     else
