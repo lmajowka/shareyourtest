@@ -1,14 +1,23 @@
 class TestPage extends Page
 
   @questions = null
+  @answers = null
 
   @createQuestion: ->
 
+    @answers = []
     question = @question()
+    return if not @validateQuestion()
     question.save()
     @questions.add question
 
     @updateQuestionView()
+
+  @validateQuestion: ->
+    if @answers.length < 2
+      $('#create-question-error').html 'You need to write at least 2 answers and choose one before you submit your questions'
+      return false
+    true
 
   @updateQuestionView: ->
     $("#menu-questions").click()
@@ -18,18 +27,16 @@ class TestPage extends Page
   @question: ->
     content = $('#question-content').val()
 
-    answers = []
-
     index = 1
     while alternative = Questions.getAlternative(content,index)
       answerObject = {content:alternative}
-      answers.push answerObject
+      @answers.push answerObject
       index++
 
     question = new Shareyourtest.Models.Question(
       {
         content: Questions.getContent content
-        answers: answers
+        answers: @answers
         answer: 1
       }
     )
