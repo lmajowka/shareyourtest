@@ -1,9 +1,21 @@
-class TestPage
+class TestPage extends Page
 
   @questions = null
 
   @createQuestion: ->
 
+    @question.save()
+
+    @questions.add @question
+
+    @updateQuestionView()
+
+  @updateQuestionView: ->
+    $("#menu-questions").click()
+    $("#question-content").val ""
+    Questions.generatePreview ""
+
+  @question: ->
     content = $('#question-content').val()
 
     answers = []
@@ -21,11 +33,6 @@ class TestPage
         answer: 1
       }
     )
-    question.save()
-    @questions.add question
-    $("#menu-questions").click()
-    $("#question-content").val ""
-    Questions.generatePreview ""
 
   @testId: ->
     location.href.match(/tests\/([0-9]+)/)?[1] || null
@@ -51,15 +58,6 @@ class TestPage
       @animate 'questions-view', 160
 
     $("#menu-title").click()
-
-
-  @animate: (viewId,offset) ->
-    $('html, body').animate(
-      {
-        scrollTop: $("#"+viewId).offset().top - offset
-      }
-      800
-    )
 
   @displayMenuOptions: ->
     elements = ["#menu-questions","#menu-publish","#questions-view-title"]

@@ -1,4 +1,4 @@
-class IndexPage
+class IndexPage extends Page
 
   @initialize: ->
     $('a[href="/"]')[0].href = 'javascript:Shareyourtest.IndexPage.slideTo("frame-index");'
@@ -9,13 +9,5 @@ class IndexPage
 
   @slideTo: (frameId) ->
     @animate frameId , 0
-
-  @animate: (viewId,offset) ->
-    $('html, body').animate(
-      {
-        scrollTop: $("#"+viewId).offset().top - offset
-      }
-      800
-    )
 
 window.Shareyourtest.IndexPage = IndexPage
