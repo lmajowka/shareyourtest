@@ -6,7 +6,7 @@ class TestPage extends Page
 
     return if not @validateQuestion()
 
-    question = @question()
+    question = new Shareyourtest.Models.Question()
     question.save()
     @questions.add question
 
@@ -27,20 +27,7 @@ class TestPage extends Page
   @updateQuestionView: ->
     $("#menu-questions").click()
     $("#question-content").val ""
-    Questions.generatePreview ""
-
-
-  @question: ->
-    content = $('#question-content').val()
-
-
-    question = new Shareyourtest.Models.Question(
-      {
-        content: Shareyourtest.Models.Question.getContent content
-        answers: Shareyourtest.Models.Question.answers
-        answer: @answer
-      }
-    )
+    Shareyourtest.Models.Question.generatePreview ""
 
   @testId: ->
     location.href.match(/tests\/([0-9]+)/)?[1] || null

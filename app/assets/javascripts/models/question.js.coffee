@@ -3,6 +3,13 @@ class Shareyourtest.Models.Question extends Backbone.Model
   @answers = []
   @answer = false
 
+
+  initialize: ->
+    content = $('#question-content').val()
+    @set 'content', Shareyourtest.Models.Question.getContent content
+    @set 'answers', Shareyourtest.Models.Question.answers
+    @set 'answer', Shareyourtest.Models.Question.answer
+
   url: ->
     "#{Shareyourtest.TestPage.testId()}/questions"
 
