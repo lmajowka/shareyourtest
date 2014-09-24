@@ -4,9 +4,9 @@ class TestPage extends Page
 
   @createQuestion: ->
 
-    @question.save()
-
-    @questions.add @question
+    question = @question()
+    question.save()
+    @questions.add question
 
     @updateQuestionView()
 
