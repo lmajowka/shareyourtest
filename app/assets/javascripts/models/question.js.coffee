@@ -1,21 +1,25 @@
 class Shareyourtest.Models.Question extends Backbone.Model
 
+  _getContentRegex = /([\s\S]*)\W(A|a) ?\)/
+  _getAlternativeRegex = /(A|a) ?\)([\s\S]*)/
+  index = 1
+
   @answers = []
   @answer = false
 
 
   initialize: ->
-    content = $('#question-content').val()
-    @set 'content', Shareyourtest.Models.Question.getContent content
-    @set 'answers', Shareyourtest.Models.Question.answers
-    @set 'answer', Shareyourtest.Models.Question.answer
+    if @newQuestion()
+      content = $('#question-content').val()
+      @set 'content', Shareyourtest.Models.Question.getContent content
+      @set 'answers', Shareyourtest.Models.Question.answers
+      @set 'answer', Shareyourtest.Models.Question.answer
 
   url: ->
     "#{Shareyourtest.TestPage.testId()}/questions"
 
-  _getContentRegex = /([\s\S]*)\W(A|a) ?\)/
-  _getAlternativeRegex = /(A|a) ?\)([\s\S]*)/
-  index = 1
+  newQuestion: ->
+    return true if not @get('content')
 
   @generatePreview: (content) ->
 

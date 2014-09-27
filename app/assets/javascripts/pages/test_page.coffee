@@ -40,7 +40,8 @@ class TestPage extends Page
       @questions.on event, Shareyourtest.TestPage.renderNumberQuestions
       @questions.on event, Shareyourtest.TestPage.questions.render
 
-    Shareyourtest.TestPage.questions.fetch()
+    @questions.fetch()
+
     $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
 
     $("#menu-title").click =>

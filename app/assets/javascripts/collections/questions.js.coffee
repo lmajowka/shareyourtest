@@ -1,4 +1,5 @@
 class Shareyourtest.Collections.Questions extends Backbone.Collection
+  model: Shareyourtest.Models.Question
 
   url: ->
     "#{Shareyourtest.TestPage.testId()}/questions"
@@ -11,4 +12,3 @@ class Shareyourtest.Collections.Questions extends Backbone.Collection
     questionView = new Shareyourtest.Views.Questions({model: question})
     $('#questions-view').append questionView.render().el
 
-  model: Shareyourtest.Models.Question
