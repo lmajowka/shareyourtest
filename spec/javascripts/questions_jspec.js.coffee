@@ -36,3 +36,14 @@ describe 'Questions', ->
     it 'Get null trying to get third answer', ->
       parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_2, 2
       expect(parsedAnswer).toBeNull()
+
+  describe '#newQuestion', ->
+
+    it 'should return false when called from an existing question', ->
+      existingQuestion = new Shareyourtest.Models.Question({content:'Why I am an old question?'})
+      expect(existingQuestion.newQuestion()).toBe false
+
+    it 'should return true when called from a new question', ->
+      setFixtures '<div id="question-content"></div>'
+      newQuestion = new Shareyourtest.Models.Question()
+      expect(newQuestion.newQuestion()).toBe true

@@ -19,7 +19,7 @@ class Shareyourtest.Models.Question extends Backbone.Model
     "#{Shareyourtest.TestPage.testId()}/questions"
 
   newQuestion: ->
-    return true if not @get('content')
+    if @get('content') then false else true
 
   @generatePreview: (content) ->
 
