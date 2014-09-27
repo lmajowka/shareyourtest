@@ -15,27 +15,18 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-
     render json:[].to_json unless my_exam
-
     if @question = Question.find_by(id: params[:id], exam_id: params[:exam_id])
       @question.remove
     end
-
     render json: @question.to_json
   end
-
 
   private
 
   def my_exam
     exam = Exam.find(params[:exam_id])
-
-    if !belongs_to_me?(exam.user_id)
-      return false
-    end
-
-    true
+    belongs_to_me?(exam.user_id) ? true : false
   end
 
   def question_params
