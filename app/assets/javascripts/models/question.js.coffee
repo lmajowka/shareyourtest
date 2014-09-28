@@ -9,9 +9,10 @@ class Shareyourtest.Models.Question extends Backbone.Model
       @set 'content', Shareyourtest.Models.Question.getContent content
       @set 'answers', Shareyourtest.Views.Questions.answers
       @set 'answer', Shareyourtest.Views.Questions.answer
+      @set 'exam_id', Shareyourtest.TestPage.testId()
 
   url: ->
-    "#{Shareyourtest.TestPage.testId()}/questions"
+    "#{@get('exam_id')}/questions"
 
   newQuestion: ->
     if @get('content') then false else true
