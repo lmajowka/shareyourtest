@@ -4,30 +4,20 @@ class TestPage extends Page
 
   @createQuestion: ->
 
-    return if not @validateQuestion()
+    return if not Shareyourtest.Views.Questions.validateQuestion()
 
     question = new Shareyourtest.Models.Question()
     question.save()
+
     @questions.add question
 
     @answer = false
     @updateQuestionView()
 
-  @validateQuestion: ->
-    if Shareyourtest.Models.Question.answers.length < 2
-      $('#create-question-error').html 'You need to write at least 2 answers and choose one before you submit your questions'
-      return false
-
-    if not Shareyourtest.Models.Question.answer
-      $('#create-question-error').html 'You need to choose the right answer'
-      return false
-
-    true
-
   @updateQuestionView: ->
     $("#menu-questions").click()
     $("#question-content").val ""
-    Shareyourtest.Models.Question.generatePreview ""
+    Shareyourtest.Views.Questions.generatePreview ""
 
   @testId: ->
     location.href.match(/tests\/([0-9]+)/)?[1] || null

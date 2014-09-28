@@ -1,4 +1,4 @@
-describe 'Questions', ->
+describe 'Question Model', ->
 
   describe '#getContent', ->
     example_content_1 = "How much is 2 + 2?
@@ -9,17 +9,19 @@ describe 'Questions', ->
       parsedContent = Shareyourtest.Models.Question.getContent example_content_1
       expect(parsedContent).toEqual "How much is 2 + 2?"
 
-    it 'get first answer', ->
-      parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 1
-      expect(parsedAnswer).toEqual "1"
+    describe '#getAlternative', ->
 
-    it 'get second answer', ->
-      parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 2
-      expect(parsedAnswer).toEqual "2"
+      it 'get first answer', ->
+        parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 1
+        expect(parsedAnswer).toEqual "1"
 
-    it 'get null trying to get third answer', ->
-      parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 3
-      expect(parsedAnswer).toBeNull()
+      it 'get second answer', ->
+        parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 2
+        expect(parsedAnswer).toEqual "2"
+
+      it 'get null trying to get third answer', ->
+        parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 3
+        expect(parsedAnswer).toBeNull()
 
     describe 'Context - With uppercase letters', ->
 
@@ -29,11 +31,11 @@ describe 'Questions', ->
         parsedContent = Shareyourtest.Models.Question.getContent example_content_2
         expect(parsedContent).toEqual "How much is 1 + 1?"
 
-      it 'get first answer', ->
+      it '#getAlternative - get first answer', ->
         parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_2, 1
         expect(parsedAnswer).toEqual "7"
 
-      it 'get null trying to get third answer', ->
+      it '#getAlternative - get null trying to get third answer', ->
         parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_2, 2
         expect(parsedAnswer).toBeNull()
 

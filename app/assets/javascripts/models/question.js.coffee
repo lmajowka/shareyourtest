@@ -2,44 +2,19 @@ class Shareyourtest.Models.Question extends Backbone.Model
 
   _getContentRegex = /([\s\S]*)\W(A|a) ?\)/
   _getAlternativeRegex = /(A|a) ?\)([\s\S]*)/
-  index = 1
-
-  @answers = []
-  @answer = false
-
 
   initialize: ->
     if @newQuestion()
       content = $('#question-content').val()
       @set 'content', Shareyourtest.Models.Question.getContent content
-      @set 'answers', Shareyourtest.Models.Question.answers
-      @set 'answer', Shareyourtest.Models.Question.answer
+      @set 'answers', Shareyourtest.Views.Questions.answers
+      @set 'answer', Shareyourtest.Views.Questions.answer
 
   url: ->
     "#{Shareyourtest.TestPage.testId()}/questions"
 
   newQuestion: ->
     if @get('content') then false else true
-
-  @generatePreview: (content) ->
-
-    $('#preview-question-content').html @htmlize(@getContent(content))
-    $('#question-content').val content.replace(/[^\n]a\)/,"\n\na\)")
-
-    @answers = []
-    previewAnswers = ""
-    index = 1
-
-    while alternative = @getAlternative(content,index)
-      previewAnswers += @radialize alternative
-      answerObject = {content:alternative}
-      @answers.push answerObject
-      index++
-
-    $('#preview-answers').html previewAnswers
-
-  @setAnswer: (answer)->
-    @answer = answer
 
   #Private
 
@@ -60,19 +35,5 @@ class Shareyourtest.Models.Question extends Backbone.Model
   @optionsRegEx = (upperCaseLetter,lowerCaseLetter) ->
     '('+upperCaseLetter+'|'+lowerCaseLetter+')'+' ?\\)'
 
-  @htmlize = (content) ->
-    content.replace(/\n/g,'<br>')
 
-  @radioTemplate: JST['answers/radio']
-
-  @radialize = (content) ->
-    if content.length > 0
-      @radioTemplate(
-        {
-          content: content
-          index: index
-        }
-      )
-    else
-      ""
 

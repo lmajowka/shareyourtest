@@ -1,5 +1,5 @@
 <div class='mt20 fl'>
-  <input type='radio' name='radioIndex' id='radio-answer-<%= @index%>' data-position='<%=@index%>' onclick='Shareyourtest.Models.Question.setAnswer(<%=@index%>)' class='fl'/>
+  <input type='radio' name='radioIndex' id='radio-answer-<%= @index%>' data-position='<%=@index%>' onclick='Shareyourtest.Views.Questions.setAnswer(<%=@index%>)' class='fl'/>
   <div class='fl ml10'>
     <%= @content %>
   </div>
