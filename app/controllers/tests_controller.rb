@@ -23,6 +23,11 @@ class TestsController < ApplicationController
   def show
     @test = Exam.find params[:id]
     @question = Question.new
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @test }
+      format.json { render :json => @test }
+    end
   end
 
   private
