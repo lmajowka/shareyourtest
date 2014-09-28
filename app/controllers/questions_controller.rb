@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
 
   def my_exam
     exam = Exam.find(params[:exam_id])
-    belongs_to_me?(exam.user_id) ? true : false
+    belongs_to_me?(exam.user_id)
   end
 
   def question_params
