@@ -1,43 +1,44 @@
 describe 'Question Model', ->
 
+  example_content_1 = "How much is 2 + 2?
+      a) 1
+      b) 2"
+
   describe '#getContent', ->
-    example_content_1 = "How much is 2 + 2?
-    a) 1
-    b) 2"
 
     it 'get the right content', ->
       parsedContent = Shareyourtest.Models.Question.getContent example_content_1
       expect(parsedContent).toEqual "How much is 2 + 2?"
 
-    describe '#getAlternative', ->
+  describe '#getAlternative', ->
 
-      it 'get first answer', ->
-        parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 1
-        expect(parsedAnswer).toEqual "1"
+    it 'get first answer', ->
+      parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 1
+      expect(parsedAnswer).toEqual "1"
 
-      it 'get second answer', ->
-        parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 2
-        expect(parsedAnswer).toEqual "2"
+    it 'get second answer', ->
+      parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 2
+      expect(parsedAnswer).toEqual "2"
 
-      it 'get null trying to get third answer', ->
-        parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 3
-        expect(parsedAnswer).toBeNull()
+    it 'get null trying to get third answer', ->
+      parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_1, 3
+      expect(parsedAnswer).toBeNull()
 
-    describe 'Context - With uppercase letters', ->
+  describe 'Context - With uppercase letters', ->
 
-      example_content_2 = "How much is 1 + 1? A)7"
+    example_content_2 = "How much is 1 + 1? A)7"
 
-      it '#getContent', ->
-        parsedContent = Shareyourtest.Models.Question.getContent example_content_2
-        expect(parsedContent).toEqual "How much is 1 + 1?"
+    it '#getContent', ->
+      parsedContent = Shareyourtest.Models.Question.getContent example_content_2
+      expect(parsedContent).toEqual "How much is 1 + 1?"
 
-      it '#getAlternative - get first answer', ->
-        parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_2, 1
-        expect(parsedAnswer).toEqual "7"
+    it '#getAlternative - get first answer', ->
+      parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_2, 1
+      expect(parsedAnswer).toEqual "7"
 
-      it '#getAlternative - get null trying to get third answer', ->
-        parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_2, 2
-        expect(parsedAnswer).toBeNull()
+    it '#getAlternative - get null trying to get third answer', ->
+      parsedAnswer = Shareyourtest.Models.Question.getAlternative example_content_2, 2
+      expect(parsedAnswer).toBeNull()
 
   describe '#newQuestion', ->
 
