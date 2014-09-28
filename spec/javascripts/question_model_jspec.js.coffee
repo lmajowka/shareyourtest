@@ -48,5 +48,7 @@ describe 'Question Model', ->
 
     it 'should return true when called from a new question', ->
       setFixtures '<div id="question-content"></div>'
+      test = new Shareyourtest.Models.Test({id:1})
+      Shareyourtest.TestPage.test = test
       newQuestion = new Shareyourtest.Models.Question()
       expect(newQuestion.newQuestion()).toBe true
