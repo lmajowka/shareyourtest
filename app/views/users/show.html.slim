@@ -5,4 +5,5 @@ h1 class='mt100 ml40' Welcome to Shareyourtest. Good luck!
 
     - current_user.exams.each do |exam|
         div class='ml40 mt20'
+          = link_to  image_tag(exam.picture.url(:thumb)), exam
           = link_to exam.title, exam
