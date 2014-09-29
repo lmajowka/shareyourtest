@@ -44,3 +44,13 @@
 .question-number{
   font-size:30px;
 }
+
+.published{
+  color:#4A4;
+  margin-left:30px;
+}
+
+.draft{
+  color:#A44;
+  margin-left:30px;
+}
