@@ -8,12 +8,15 @@ div class='fl w100 mt40' id='title-view'
 
     - if belongs_to_me?(@test.user_id)
 
-      div class='ml40 mt40'
+      div class='ml40 mt100'
         == render 'questions/index'
 
       - if @test.status == "draft"
-        div class='ml40 mt40'
+        div class='ml40 mt100'
           == render 'questions/new'
+
+      div class='ml40 mt100'
+        = render 'tests/settings'
 
       div class='empty-space'
 

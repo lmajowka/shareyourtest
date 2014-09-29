@@ -44,6 +44,9 @@ class TestPage extends Page
     $("#menu-questions").click =>
       @animate 'questions-view', 160
 
+    $("#menu-settings").click =>
+      @animate 'settings-view', 70
+
     $("#menu-publish").click =>
       Shareyourtest.TestPage.test.set('status',"published")
       Shareyourtest.TestPage.test.save(null,{
