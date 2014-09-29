@@ -4,5 +4,4 @@ div class='ml40'
   = image_tag @test.picture.url(:square)
   = form_for @test, multipart: true, method: :patch do |f|
     = f.file_field :picture
-    div class='btn btn-success' onclick="$('#edit_exam_5').submit()"
-      = 'send'
+    = f.submit :send , class: 'btn btn-success'
