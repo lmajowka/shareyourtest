@@ -25,7 +25,7 @@ class TestsController < ApplicationController
 
   def update
     if belongs_to_me?(@test.user_id)
-      @test.update(status: params[:status])
+      @test.update(update_params)
     end
     render json: @test.to_json
   end
@@ -43,6 +43,10 @@ class TestsController < ApplicationController
 
   def find_exam
     @test = Exam.find params[:id]
+  end
+
+  def update_params
+    params.permit(:status,:picture)
   end
 
   def test_params

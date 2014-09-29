@@ -1,6 +1,6 @@
 h1 class='ml40' = @test.title
 div class='ml40' = @test.description
 div class='ml40'
-  = form_for @test do |f|
+  = form_for @test, method: :patch do |f|
     = f.file_field :picture
     = f.button :send, class:'btn btn-success'
