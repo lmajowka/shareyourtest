@@ -2,7 +2,7 @@ class IndexController < ApplicationController
 
   def index
     if signed_in?
-      redirect_to :exams
+      redirect_to current_user
     end
     @user = User.new
     @test1 = Exam.first

@@ -1,0 +1,8 @@
+h1 class='mt100 ml40' Welcome to Shareyourtest. Good luck!
+
+- if current_user.exams.size > 0
+    h2 class='ml40' Your tests
+
+    - current_user.exams.each do |exam|
+        div class='ml40 mt20'
+          = link_to exam.title, exam
