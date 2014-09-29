@@ -47,9 +47,11 @@ describe 'Questions View', ->
       expect(Shareyourtest.Views.Questions.validateQuestion()).toBe false
 
     it 'should return false without only 1 answer', ->
-      Shareyourtest.Views.Questions.answer = [{content:"a"}]
+      Shareyourtest.Views.Questions.answers = [{content:"a"}]
       expect(Shareyourtest.Views.Questions.validateQuestion()).toBe false
 
     it 'should return true for valid fields', ->
       Shareyourtest.Views.Questions.answer = 1
+      Shareyourtest.Views.Questions.answers.push {content:"b"}
+
       expect(Shareyourtest.Views.Questions.validateQuestion()).toBe true
