@@ -3,6 +3,5 @@ div class='ml40' = @test.description
 div class='ml40'
   = image_tag @test.picture.url(:thumb)
   - if belongs_to_me?(@test.user_id)
-    = form_for @test, multipart: true, method: :patch do |f|
-      = f.file_field :picture
-      = f.submit :send , class: 'btn btn-success'
+    = form_for @test, html: {id:'form-for-picture'},multipart: true, method: :patch do |f|
+      = f.file_field :picture, onchange:"$('#form-for-picture').submit()"

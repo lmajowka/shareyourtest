@@ -27,6 +27,7 @@ class TestsController < ApplicationController
     if belongs_to_me?(@test.user_id)
       @test.update(update_params)
       @test.save!
+      return redirect_to @test
     end
     render json: @test.to_json
   end
