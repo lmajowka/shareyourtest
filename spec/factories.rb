@@ -8,6 +8,7 @@ FactoryGirl.define do
   factory :exam do
     title    "Sample test title"
     description "Description of sample test"
+    status "draft"
     association :user, factory: :user
   end
 end

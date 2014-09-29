@@ -1,11 +1,12 @@
 class TestsController < ApplicationController
 
   def index
-    @tests = Exam.all
+    @tests = Exam.published
   end
 
   def create
     @test = current_user.exams.new(test_params)
+    @test.status = "draft"
     if @test.save
       redirect_to @test
     else
