@@ -46,7 +46,7 @@ class TestsController < ApplicationController
   end
 
   def update_params
-    params.permit(:status,:picture)
+    params.require(:exam).permit(:status,:picture)
   end
 
   def test_params
