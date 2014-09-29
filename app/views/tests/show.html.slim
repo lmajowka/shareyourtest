@@ -11,8 +11,9 @@ div class='fl w100 mt40' id='title-view'
       div class='ml40 mt40'
         == render 'questions/index'
 
-      div class='ml40 mt40'
-        == render 'questions/new'
+      - if @test.status == "draft"
+        div class='ml40 mt40'
+          == render 'questions/new'
 
       div class='empty-space'
 

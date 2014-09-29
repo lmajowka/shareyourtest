@@ -32,7 +32,8 @@ class TestPage extends Page
 
     @questions.fetch()
 
-    $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
+    if $('#question-content').length > 0
+      $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
 
     $("#menu-title").click =>
       @animate 'title-view', 60
@@ -42,6 +43,13 @@ class TestPage extends Page
 
     $("#menu-questions").click =>
       @animate 'questions-view', 160
+
+    $("#menu-publish").click =>
+      Shareyourtest.TestPage.test.set('status',"published")
+      Shareyourtest.TestPage.test.save(null,{
+        success: ->
+          location.href = location.href
+      })
 
     $("#menu-title").click()
 
@@ -53,6 +61,17 @@ class TestPage extends Page
     else
       for element in elements
         $(element).show()
+
+    statusElements =  ["#menu-new-question","#menu-publish"]
+    if Shareyourtest.TestPage.test.get('status') is "published"
+      for element in statusElements
+        $(element).hide()
+    else
+      for element in statusElements
+        $(element).show()
+
+    if Shareyourtest.TestPage.questions.length is 0
+      $('#menu-publish').hide()
 
   @renderNumberQuestions: =>
     units = ['#number-questions','#menu-questions-number']

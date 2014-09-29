@@ -1,5 +1,7 @@
 class TestsController < ApplicationController
 
+  before_action :find_exam, only: [:update,:show]
+
   def index
     @tests = Exam.published
   end
@@ -21,8 +23,14 @@ class TestsController < ApplicationController
     @test = Exam.new()
   end
 
+  def update
+    if belongs_to_me?(@test.user_id)
+      @test.update(status: params[:status])
+    end
+    render json: @test.to_json
+  end
+
   def show
-    @test = Exam.find params[:id]
     @question = Question.new
     respond_to do |format|
       format.html
@@ -32,6 +40,10 @@ class TestsController < ApplicationController
   end
 
   private
+
+  def find_exam
+    @test = Exam.find params[:id]
+  end
 
   def test_params
     params.require(:exam).permit(:title,:description)
