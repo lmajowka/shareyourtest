@@ -23,6 +23,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'paperclip'
+gem 'aws-sdk'
 gem 'acts_as_list'
 
 gem 'backbone-on-rails'
