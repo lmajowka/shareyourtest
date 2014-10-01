@@ -5,10 +5,7 @@ class IndexController < ApplicationController
       redirect_to current_user
     end
     @user = User.new
-    @tests = []
-    @tests << Exam.first
-    @tests << Exam.last
-    @tests << Exam.first
+    @tests = Exam.all.limit 3
   end
 
 end
