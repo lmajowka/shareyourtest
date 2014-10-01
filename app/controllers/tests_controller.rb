@@ -44,7 +44,7 @@ class TestsController < ApplicationController
   private
 
   def find_exam
-    @test = Exam.find params[:id]
+    @test = Exam.find_by_permalink params[:id]
   end
 
   def update_params

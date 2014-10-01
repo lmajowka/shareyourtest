@@ -4,7 +4,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'jasmine-rails'
-  gem 'debugger'
+  gem 'debugger2'
 end
 
 group :test do
@@ -23,6 +23,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'has_permalink'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'acts_as_list'

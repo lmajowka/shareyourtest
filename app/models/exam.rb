@@ -2,6 +2,7 @@ class Exam < ActiveRecord::Base
 
   belongs_to :user
   has_many :questions, -> { order("position ASC") }
+  has_permalink
   scope :published, -> {where(status: "published")}
   has_attached_file :picture, styles: {
     thumb: '100x100>',

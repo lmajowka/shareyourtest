@@ -5,6 +5,8 @@ Shareyourtest::Application.routes.draw do
 
   root 'index#index'
 
+  match '/tests/:permalink', to: 'tests#show', via: 'all'
+
   resources :users
   resources :exams ,path: 'tests', controller: :tests do
     resources :questions
@@ -15,6 +17,7 @@ Shareyourtest::Application.routes.draw do
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

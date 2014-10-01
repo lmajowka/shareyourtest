@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929154411) do
+ActiveRecord::Schema.define(version: 20141001145612) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140929154411) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "permalink"
   end
 
   create_table "questions", force: true do |t|
