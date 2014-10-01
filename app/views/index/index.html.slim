@@ -12,7 +12,7 @@ div class='hp_frame water_frame' id="frame-index"
       == render 'snippets/signup_box'
 
 div class='hp_frame green_frame' id='frame-answer'
-  div class='ml100 mt100 fl answer-tests'
+  div class='ml40 mt100 fl answer-tests'
     h2 Practice,
     h2 Chose your test and start practicing  now.
   div class='cb'
@@ -20,7 +20,7 @@ div class='hp_frame green_frame' id='frame-answer'
     - @tests.each do |exam|
         == render 'tests/snippet',  exam: exam 
   div class='cb'      
-  div = link_to 'More', exams_path(), class: 'fr mt40 mr40'
+  div = link_to 'More', exams_path(), class: 'hp-more'
 
 
 div class='yellow_frame' id='frame-share'
