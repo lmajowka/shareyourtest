@@ -101,7 +101,7 @@
   float:left;
   width:120px; 
   z-index:2;
-  -moz-opacity:0 ;
-  filter:alpha(opacity: 0);
+  -moz-opacity:0;
+  filter:alpha(opacity:0);
   opacity: 0; 
 }
