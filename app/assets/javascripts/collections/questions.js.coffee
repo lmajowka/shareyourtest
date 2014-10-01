@@ -2,7 +2,7 @@ class Shareyourtest.Collections.Questions extends Backbone.Collection
   model: Shareyourtest.Models.Question
 
   url: ->
-    "#{Shareyourtest.TestPage.testId()}/questions"
+    "#{Shareyourtest.TestPage.test.get('id')}/questions"
 
   render: ->
     $('#questions-view').html ""

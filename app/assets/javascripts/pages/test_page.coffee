@@ -20,9 +20,9 @@ class TestPage extends Page
     $("#question-content").val ""
     Shareyourtest.Views.Questions.generatePreview ""
 
-  @initialize: ->
+  @initialize: (id) ->
     @questions = new Shareyourtest.Collections.Questions()
-    @test = new Shareyourtest.Models.Test({id: @testId()})
+    @test = new Shareyourtest.Models.Test({id: id})
     @test.fetch()
 
     events = ['sync','change','destroy']
@@ -83,9 +83,5 @@ class TestPage extends Page
         numberQuestions.html Shareyourtest.TestPage.questions.length;
 
     @displayMenuOptions()
-
-  @testId = ->
-    location.href.match(/tests\/([0-9]+)/)?[1] || null
-
 
 window.Shareyourtest.TestPage = TestPage
