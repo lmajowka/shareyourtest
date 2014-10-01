@@ -4,15 +4,16 @@
 div class='fl w100 mt40' id='title-view'
   div class='ml100 p20'
     == render 'tests/title'
+    div class='cb'  
 
     - if belongs_to_me?(@test.user_id)
 
       div class='ml40 mt100'
-        == render 'questions/index'
+          == render 'questions/index'
 
-      - if @test.status == "draft"
-        div class='ml40 mt100'
-          == render 'questions/new'
+    - if @test.status == "draft"
+      div class='ml40 mt100'
+        == render 'questions/new'
 
       div class='ml40 mt100'
         = render 'tests/settings'

@@ -1,0 +1,8 @@
+div class='ml40 mt20 test-snippet-container-main'
+  div class='fl test-snippet-image'
+    = image_tag(exam.picture.url(:thumb))
+  div class='fl test-snippet-info-main'  
+    h1 class='fs20'
+      = exam.title
+    div
+      = exam.description

@@ -1,7 +1,8 @@
-h1 class='ml40' = @test.title
-div class='ml40' = @test.description
-div class='ml40'
-  = image_tag @test.picture.url(:thumb)
-  - if belongs_to_me?(@test.user_id)
-    = form_for @test, html: {id:'form-for-picture'},multipart: true, method: :patch do |f|
-      = f.file_field :picture, onchange:"$('#form-for-picture').submit()"
+== render 'tests/main_snippet', exam: @test
+div class='cb'
+- if belongs_to_me?(@test.user_id)
+  div class='ml40 mt20 pr'
+    div class='pa ml20 btn btn-small btn-warning'
+      = 'Update picture'
+    = form_for @test, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
+      = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input'

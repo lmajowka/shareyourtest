@@ -55,6 +55,13 @@
   margin-left:30px;
 }
 
+.test-snippet-container-main{
+  background: #25A1B0;
+  width: 668px;
+  padding:15px;
+  float:left;
+}
+
 .test-snippet-container{
   background: #25A1B0;
   width: 368px;
@@ -77,4 +84,24 @@
 .test-snippet-info{
   width:140px;
   margin-left:20px;
+}
+
+.test-snippet-info-main{
+  width:440px;
+  margin-left:20px;
+}
+
+.submit-picture{
+  float:left;
+  width:120px;  
+  background: #F00;
+}
+
+.submit-picture-input{
+  float:left;
+  width:120px; 
+  z-index:2;
+  -moz-opacity:0 ;
+  filter:alpha(opacity: 0);
+  opacity: 0; 
 }

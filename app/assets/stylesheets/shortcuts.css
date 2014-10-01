@@ -44,3 +44,7 @@
 
 .tc{text-align:center}
 .fwb{font-weight:bold}
+
+.pr{position:relative;}
+.pa{position:absolute;}
+.pf{position:fixed;}
