@@ -57,11 +57,24 @@
 
 .test-snippet-container{
   background: #25A1B0;
-  width:200px;
+  width: 368px;
   padding:15px;
   float:left;
 }
 
+.test-snippet-container:hover{
+  background: #AAA;
+}  
+
 .test-snippet-container a{
   color:#FFF;
+}
+
+.test-snippet-image img{
+  width:130px;
+}
+
+.test-snippet-info{
+  width:140px;
+  margin-left:20px;
 }

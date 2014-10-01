@@ -1,5 +1,8 @@
 div class='ml40 mt20 test-snippet-container'
-  div class='fl'
+  div class='fl test-snippet-image'
     = link_to  image_tag(exam.picture.url(:thumb)), exam
-  div class='fl ml10 fs20'  
-    = link_to exam.title, exam
+  div class='fl test-snippet-info'  
+    div class='fs20'
+      = link_to exam.title, exam
+    div
+      = exam.description
