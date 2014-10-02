@@ -20,8 +20,6 @@ class Shareyourtest.Views.Questions extends Backbone.View
       answerView = new Shareyourtest.Views.Answers({model:answerModel})
       elementContent += answerView.render().el.outerHTML
 
-    elementContent += "<div class='fr cp delete'>Delete</div>"  
-
     @$el.html elementContent
     @
 
