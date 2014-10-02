@@ -1,7 +1,11 @@
 h1 Welcome to Shareyourtest. Good luck!
+ 
+div class='mt40' 
 
 - if current_user.exams.size > 0
-    h2 class='mt20 fl' Your tests
+    h2 class='fl' Your tests
+    
+    div class='cb' 
 
     - current_user.exams.each do |exam|
         == render 'tests/snippet', exam: exam 
