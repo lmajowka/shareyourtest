@@ -48,6 +48,9 @@ class TestsController < ApplicationController
   end
 
   def update_params
+    if params[:exam]
+      params[:picture] = params[:exam][:picture]
+    end
     params.permit(:status,:picture)
   end
 
