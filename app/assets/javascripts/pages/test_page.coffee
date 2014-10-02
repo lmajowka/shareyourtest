@@ -22,7 +22,7 @@ class TestPage extends Page
 
   @initialize: (id) ->
     @questions = new Shareyourtest.Collections.Questions()
-    @test = new Shareyourtest.Models.Test({id: id})
+    @test = new Shareyourtest.Models.Test({id: id, permalink: @getPerma()})
     @test.fetch()
 
     events = ['sync','change','destroy']
@@ -83,5 +83,8 @@ class TestPage extends Page
         numberQuestions.html Shareyourtest.TestPage.questions.length;
 
     @displayMenuOptions()
+
+  @getPerma = ->
+    location.href.match(/\/tests\/(.*)/)?[0] || ""  
 
 window.Shareyourtest.TestPage = TestPage

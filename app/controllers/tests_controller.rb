@@ -27,7 +27,7 @@ class TestsController < ApplicationController
     if belongs_to_me?(@test.user_id)
       @test.update(update_params)
       @test.save!
-      return redirect_to @test
+      return redirect_to @test unless params[:status]
     end
     render json: @test.to_json
   end
@@ -48,7 +48,7 @@ class TestsController < ApplicationController
   end
 
   def update_params
-    params.require(:exam).permit(:status,:picture)
+    params.permit(:status,:picture)
   end
 
   def test_params
