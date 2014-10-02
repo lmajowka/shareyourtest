@@ -10,7 +10,7 @@
 }
 
 .right-answer div{
-  color:#152074 !important;
+  color:#428bca !important;
 }
 
 .question-view-div{
@@ -23,7 +23,7 @@
 }
 
 .question-view-div:hover{
-  background:#DDD;
+  background:#F5F5F5;
 }
 
 #questions-view span{
