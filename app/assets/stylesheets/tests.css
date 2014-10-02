@@ -9,15 +9,15 @@
   left:0;
 }
 
-#questions-view div{
+.question-view-div{
   padding:10px;
   margin-right:10px;
   background: #FFF;
   border-bottom: 1px solid #AAA;
-  height: 64px;
+  min-height:80px;
 }
 
-#questions-view div:hover{
+.question-view-div:hover{
   background:#DDD;
 }
 
@@ -37,7 +37,6 @@
 }
 
 .delete{
-  height: 54px !important;
   background: transparent !important;
 }
 

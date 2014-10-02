@@ -4,20 +4,25 @@ class Shareyourtest.Views.Questions extends Backbone.View
 
   events: {'click .delete':'delete'}
 
+  className: 'question-view-div'
+
   index = 1
 
   @answers = []
   @answer = false
 
   render: ->
-    @$el.html @template(@model.toJSON())
-
+    elementContent = @template(@model.toJSON())
+    
     answers = @model.get 'answers'
     for answer in answers
-      span = document.createElement 'span'
       answerModel = new Shareyourtest.Models.Answer({content:answer.content})
-      answerView = new Shareyourtest.Views.Answers({model:answerModel, el:span})
-      @$el.append answerView.render().el
+      answerView = new Shareyourtest.Views.Answers({model:answerModel})
+      elementContent += answerView.render().el.outerHTML
+
+    elementContent += "<div class='fr cp delete'>Delete</div>"  
+
+    @$el.html elementContent
     @
 
   initialize: ->

@@ -1,4 +1,9 @@
-<span class='question-number'><%= @position %></span>
-<span class='ml40'><%= @content %></span>
+<div class='fl question-number'><%= @position %></div>
+<div class='fl mt5' style="width: 95%;">
+  <span class='ml40 fl'><%= @content %></span>
+  <div class='cb'></div>
+<div class='ml10 mt10'>
 
-<div class='fr cp delete'>Delete</div>
+
+
+ 
