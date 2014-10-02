@@ -1,4 +1,4 @@
-<div class='mt20 fl'>
+<div class='mt20 fl preview-answer' onclick="$('#radio-answer-<%= @index%>')[0].checked=true;Shareyourtest.Views.Questions.setAnswer(<%=@index%>)">
   <input type='radio' name='radioIndex' id='radio-answer-<%= @index%>' data-position='<%=@index%>' onclick='Shareyourtest.Views.Questions.setAnswer(<%=@index%>)' class='fl'/>
   <div class='fl ml10'>
     <%= @content %>
