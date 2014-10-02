@@ -6,6 +6,7 @@
   min-height: 600px;
   position:fixed;
   top:60px;
+  left:0;
   box-shadow: 1px 1px 3px #000;
 }
 
@@ -56,7 +57,6 @@
 }
 
 .test-snippet-container-main{
-  background: #25A1B0;
   width: 668px;
   padding:15px;
   float:left;

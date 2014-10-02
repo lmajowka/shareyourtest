@@ -1,7 +1,7 @@
-h1 class='mt100 ml40' Welcome to Shareyourtest. Good luck!
+h1 Welcome to Shareyourtest. Good luck!
 
 - if current_user.exams.size > 0
-    h2 class='ml40' Your tests
+    h2 class='mt20 fl' Your tests
 
     - current_user.exams.each do |exam|
         == render 'tests/snippet', exam: exam 

@@ -35,7 +35,10 @@
   top:0;
   z-index: 3;
 }
-
+#underheader{
+  height:60px;
+  margin-bottom: 20px
+}
 #footer{
   border-top:2px solid #000;
   background: #FFF;
@@ -55,6 +58,7 @@ h1, h2{
   font-size:33px !important;
   font-weight: bold !important;  
   font-family: OpenSans;
+  margin: 0 !important;
 }
 
 .alert{

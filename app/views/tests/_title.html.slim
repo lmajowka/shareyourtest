@@ -1,7 +1,7 @@
 == render 'tests/main_snippet', exam: @test
 div class='cb'
 - if belongs_to_me?(@test.user_id)
-  div class='ml40 mt20 pr'
+  div class='mt10 pr'
     div class='pa ml20 btn btn-small btn-warning'
       = 'Update picture'
     = form_for @test, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|

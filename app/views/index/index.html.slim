@@ -1,42 +1,44 @@
-div class='hp_frame water_frame' id="frame-index"
+div id='hp-main-container'
 
-  div id='hp_text'
-    h1
-      = 'Welcome to Share your Test'
-    div id='hp_site_description'
-      = 'Shareyourtest is a collaborative platform where teachers and students can share tests of hundreds of subjects and certifications.'
-  div id='hp_singin'
-    div
-      == render 'snippets/login_box'
-    div class='mt10'
-      == render 'snippets/signup_box'
+  div class='hp_frame water_frame' id="frame-index"
 
-div class='hp_frame green_frame' id='frame-answer'
-  div class='ml40 mt100 fl answer-tests'
-    h2 Practice:
-    h2 Choose your test and start practicing  now.
+    div id='hp_text'
+      h1
+        = 'Welcome to Share your Test'
+      div id='hp_site_description'
+        = 'Shareyourtest is a collaborative platform where teachers and students can share tests of hundreds of subjects and certifications.'
+    div id='hp_singin'
+      div
+        == render 'snippets/login_box'
+      div class='mt10'
+        == render 'snippets/signup_box'
+
+  div class='hp_frame green_frame' id='frame-answer'
+    div class='ml40 mt100 fl answer-tests'
+      h2 Practice:
+      h2 Choose your test and start practicing  now.
+    div class='cb'
+    div class='mt40'  
+      - @tests.each do |exam|
+          == render 'tests/snippet',  exam: exam 
+    div class='cb'      
+    div = link_to 'More', exams_path(), class: 'hp-more'
+
+
+  div class='yellow_frame' id='frame-share'
+    div class='ml100 mt100 fl'
+      h2 Share your test
+      h2 Submit your practice exam in any topic.
+    div class='social'
+
+  div class='hp_frame pink_frame' id='frame-money'
+    div class='ml100 mt100 fl'
+      h2 Make money
+      h2 Share or Sell your test for hundreds of users.
+    div class='make-money'
+
+
   div class='cb'
-  div class='mt40'  
-    - @tests.each do |exam|
-        == render 'tests/snippet',  exam: exam 
-  div class='cb'      
-  div = link_to 'More', exams_path(), class: 'hp-more'
 
-
-div class='yellow_frame' id='frame-share'
-  div class='ml100 mt100 fl'
-    h2 Share your test
-    h2 Submit your practice exam in any topic.
-  div class='social'
-
-div class='hp_frame pink_frame' id='frame-money'
-  div class='ml100 mt100 fl'
-    h2 Make money
-    h2 Share or Sell your test for hundreds of users.
-  div class='make-money'
-
-
-div class='cb'
-
-script
-  = 'Shareyourtest.IndexPage.initialize();'
+  script
+    = 'Shareyourtest.IndexPage.initialize();'
