@@ -21,11 +21,11 @@ class Shareyourtest.Views.Questions extends Backbone.View
       answerModel = new Shareyourtest.Models.Answer({content:answer.content})
       answerView = new Shareyourtest.Views.Answers({model:answerModel})
       
-      elementContent += '<b>' if answersIndex == rightAnswer
+      elementContent += '<span class="right-answer">' if answersIndex == rightAnswer
       elementContent += answerView.render().el.outerHTML
-      elementContent += '</b>' if answersIndex == rightAnswer
+      elementContent += '</span>' if answersIndex == rightAnswer
       
-      answersIndex++ 
+      answersIndex++   
 
     elementContent += "<div class='cb'></div>"
 

@@ -9,6 +9,10 @@
   left:0;
 }
 
+.right-answer div{
+  color:#152074 !important;
+}
+
 .question-view-div{
   padding:30px 10px;
   margin-right:10px;
