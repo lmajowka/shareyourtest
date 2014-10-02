@@ -10,11 +10,12 @@
 }
 
 .question-view-div{
-  padding:10px;
+  padding:30px 10px;
   margin-right:10px;
   background: #FFF;
   border-bottom: 1px solid #AAA;
   min-height:80px;
+  float:left;
 }
 
 .question-view-div:hover{
@@ -92,7 +93,7 @@ h3 {
 
 .test-snippet-info-main{
   width:440px;
-  margin-left:20px;
+  margin-left:40px;
 }
 
 .submit-picture{

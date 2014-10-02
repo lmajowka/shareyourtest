@@ -4,7 +4,7 @@ class Shareyourtest.Views.Questions extends Backbone.View
 
   events: {'click .delete':'delete'}
 
-  className: 'question-view-div'
+  className: 'question-view-div w100'
 
   index = 1
 
@@ -14,11 +14,20 @@ class Shareyourtest.Views.Questions extends Backbone.View
   render: ->
     elementContent = @template(@model.toJSON())
     
+    rightAnswer = @.model.get 'answer'
     answers = @model.get 'answers'
+    answersIndex = 1
     for answer in answers
       answerModel = new Shareyourtest.Models.Answer({content:answer.content})
       answerView = new Shareyourtest.Views.Answers({model:answerModel})
+      
+      elementContent += '<b>' if answersIndex == rightAnswer
       elementContent += answerView.render().el.outerHTML
+      elementContent += '</b>' if answersIndex == rightAnswer
+      
+      answersIndex++ 
+
+    elementContent += "<div class='cb'></div>"
 
     @$el.html elementContent
     @

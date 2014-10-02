@@ -3,7 +3,7 @@
   <span class='ml40 fl'><%= @content %></span>
   <div class='fr cp delete'>Delete</div>
   <div class='cb'></div>
-<div class='ml10 mt10'>
+<div class='ml10 mt5'>
 
 
 

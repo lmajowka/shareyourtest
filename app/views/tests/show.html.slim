@@ -9,6 +9,8 @@ div class='fl w100' id='title-view'
     -if belongs_to_me?(@test.user_id)
       div class='mt100'
           == render 'questions/index'
+       
+      div class='cb'
 
       -if @test.status == "draft"
         div class='mt100'
