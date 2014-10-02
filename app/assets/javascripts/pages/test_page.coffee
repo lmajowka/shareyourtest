@@ -41,13 +41,13 @@ class TestPage extends Page
       @animate 'title-view', 60
 
     $("#menu-new-question").click =>
-      @animate 'new-question-view', 60
+      @animate 'new-question-view', 90
 
     $("#menu-questions").click =>
       @animate 'questions-view', 160
 
     $("#menu-settings").click =>
-      @animate 'settings-view', 70
+      @animate 'settings-view', 90
 
     $("#menu-publish").click =>
       Shareyourtest.TestPage.test.set('status',"published")

@@ -7,7 +7,6 @@
   position:fixed;
   top:60px;
   left:0;
-  box-shadow: 1px 1px 3px #000;
 }
 
 #questions-view div{
@@ -83,6 +82,7 @@ h3 {
 .test-snippet-image img{
   width:130px;
   height:130px;
+  border:1px solid #EBEBEB;
 }
 
 .test-snippet-info{
