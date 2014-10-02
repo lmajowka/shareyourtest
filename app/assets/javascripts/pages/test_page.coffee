@@ -23,14 +23,16 @@ class TestPage extends Page
   @initialize: (id) ->
     @questions = new Shareyourtest.Collections.Questions()
     @test = new Shareyourtest.Models.Test({id: id, permalink: @getPerma()})
-    @test.fetch()
-
+    
     events = ['sync','change','destroy']
     for event in events
       @questions.on event, Shareyourtest.TestPage.renderNumberQuestions
       @questions.on event, Shareyourtest.TestPage.questions.render
 
+    @test.on 'sync', @displayMenuOptions
+
     @questions.fetch()
+    @test.fetch()
 
     if $('#question-content').length > 0
       $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
@@ -54,7 +56,7 @@ class TestPage extends Page
           location.href = location.href
       })
 
-    $("#menu-title").click()
+    
 
   @displayMenuOptions: ->
     elements = ["#menu-questions","#menu-publish","#questions-view-title"]
