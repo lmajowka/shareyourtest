@@ -4,16 +4,21 @@ class TestPage extends Page
   @test = null
 
   @createQuestion: ->
-
     return if not Shareyourtest.Views.Questions.validateQuestion()
 
     question = new Shareyourtest.Models.Question()
     question.save()
-
     @questions.add question
+    @resetQuestionContext()
 
-    @answer = false
+  @saveEditedQuestion: ->
+    return if not Shareyourtest.Views.Questions.validateQuestion() 
+
+    @resetQuestionContext()    
+
+  @resetQuestionContext: ->
     @updateQuestionView()
+    Shareyourtest.Views.Questions.setAnswer false
 
   @updateQuestionView: ->
     $("#menu-questions").click()
