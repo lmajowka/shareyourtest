@@ -50,33 +50,53 @@ class TestPage extends Page
       @animate 'settings-view', 90
 
     $("#menu-publish").click =>
-      Shareyourtest.TestPage.test.set('status',"published")
-      Shareyourtest.TestPage.test.save(null,{
-        success: ->
-          location.href = location.href
-      })
+      @toggleStatus "published"
 
+    $("#menu-unpublish").click =>
+      @toggleStatus "draft"
     
 
-  @displayMenuOptions: ->
-    elements = ["#menu-questions","#menu-publish","#questions-view-title"]
-    if Shareyourtest.TestPage.questions.length is 0
-      for element in elements
-        $(element).hide()
-    else
-      for element in elements
-        $(element).show()
+  @toggleStatus: (status) ->
+    Shareyourtest.TestPage.test.set('status',status)
+    Shareyourtest.TestPage.test.save(null,{
+      success: ->
+        location.href = location.href
+    })
 
-    statusElements =  ["#menu-new-question","#menu-publish"]
-    if Shareyourtest.TestPage.test.get('status') is "published"
-      for element in statusElements
-        $(element).hide()
-    else
-      for element in statusElements
-        $(element).show()
+  @displayMenuOptions: =>
+    
+    @moreThanOneQuestionFilter()      
+    @publishedFilter()
+    @unpublishedFilter()
 
     if Shareyourtest.TestPage.questions.length is 0
       $('#menu-publish').hide()
+
+  @hideElements: (elements) ->
+    for element in elements
+        $(element).hide()    
+      
+  @showElements: (elements) ->
+    for element in elements
+        $(element).show()
+
+  @publishedFilter: ->
+    elements = ["#menu-new-question","#menu-publish"]
+    @showOrHide(Shareyourtest.TestPage.test.get('status') is "published", elements)
+      
+  @unpublishedFilter: ->
+    elements = ["#menu-unpublish"]
+    @showOrHide(Shareyourtest.TestPage.test.get('status') is "draft", elements)
+
+  @moreThanOneQuestionFilter: ->
+    elements = ["#menu-questions","#menu-publish","#questions-view-title"]
+    @showOrHide(Shareyourtest.TestPage.questions.length is 0, elements)    
+
+  @showOrHide: (condition,elements) ->
+    if condition  
+      @hideElements elements 
+    else 
+      @showElements elements   
 
   @renderNumberQuestions: =>
     units = ['#number-questions','#menu-questions-number']
