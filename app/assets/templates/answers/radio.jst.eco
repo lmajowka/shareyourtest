@@ -1,7 +1,10 @@
 <div class='mt20 fl preview-answer' onclick="$('#radio-answer-<%= @index%>')[0].checked=true;Shareyourtest.Views.Questions.setAnswer(<%=@index%>)">
+  <table><tr><td valign='top'>
   <input type='radio' name='radioIndex' id='radio-answer-<%= @index%>' data-position='<%=@index%>' onclick='Shareyourtest.Views.Questions.setAnswer(<%=@index%>)' class='fl'/>
-  <div class='fl ml10'>
+  </td><td>
+  <div class='fl ml10 w100'>
     <%= @content %>
   </div>
+  </td></tr></table>	
 </div>
 <div class='cb'></div>

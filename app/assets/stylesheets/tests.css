@@ -114,7 +114,10 @@ h3 {
   opacity: 0; 
 }
 
-#create-question-error{width:60%;margin-top: 10px}
+#create-question-error{
+  width:330px;
+  margin-top: 10px;
+}
 
 .preview-answer:hover{
   background: #74B7FF;

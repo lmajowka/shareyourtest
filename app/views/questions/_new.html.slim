@@ -6,7 +6,7 @@ table id='new-question-view'
       div id='create-question-error' class='red'
 
       = form_for [@test,@question] do |f|
-        = f.text_area :content, id: 'question-content', class: 'question-text-area fl mt20', onkeyup: 'Shareyourtest.Views.Questions.generatePreview(this.value)'
+        = f.text_area :content, id: 'question-content', class: 'question-text-area fl mt20', onkeyup: 'Shareyourtest.Views.Questions.generatePreview(this.value)', onfocus: '$("#menu-new-question").click()'
           - @question.errors.messages[:title].each do |message|
             div[class='fl ml20 mt10 red'] = message
 
