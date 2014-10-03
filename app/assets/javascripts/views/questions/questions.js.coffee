@@ -2,7 +2,11 @@ class Shareyourtest.Views.Questions extends Backbone.View
 
   template: JST['questions/index']
 
-  events: {'click .delete':'delete'}
+  events: {
+    'click .delete':'delete'
+    'click .edit':'edit'
+  }
+  
 
   className: 'question-view-div w100'
 
@@ -39,6 +43,24 @@ class Shareyourtest.Views.Questions extends Backbone.View
   delete: ->
     url_param = "#{@model.url()}/#{@model.get('id')}"
     @model.destroy(url: url_param)
+
+  edit: ->
+    $('#new-question-view').show()
+    $('#new-question-title').html "Edit question"
+    $("#menu-new-question").click()
+    $("#question-content").val @renderContent()  
+    Shareyourtest.Views.Questions.generatePreview $("#question-content").val()
+    $('#create-question-button').html "Save"  
+
+  renderContent: ->
+    content = @model.get 'content' 
+    answers = @model.get 'answers'
+    answersIndex = 1
+    for answer in answers
+      content += "\n" + String.fromCharCode(96 + answersIndex) + ")"
+      content += answer.content
+      answersIndex++
+    content
 
   remove: ->
     @$el.remove()
