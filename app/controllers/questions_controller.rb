@@ -31,6 +31,7 @@ class QuestionsController < ApplicationController
 
   def question_params
     return false unless my_exam
+    return false if params[:answers].size < 2
     params.require(:question).permit(:content,:answer).merge(exam_id: params[:exam_id])
   end
 
