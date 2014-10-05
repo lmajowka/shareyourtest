@@ -26,6 +26,8 @@
 .pl10 {padding-left:10px;}
 .pl40 {padding-left:40px;}
 
+.pb40 {padding-bottom:40px;}
+
 .pr105{padding-right:105px}
 .pr140{padding-right:140px}
 
@@ -51,3 +53,4 @@
 .pr{position:relative;}
 .pa{position:absolute;}
 .pf{position:fixed;}
+.ps{position:static;}

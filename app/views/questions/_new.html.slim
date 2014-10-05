@@ -1,24 +1,25 @@
-table id='new-question-view'
-  tr
-    td valign='top'
+div class='card'
+  table id='new-question-view'
+    tr
+      td valign='top'
 
-      h2 id='new-question-title' Create Question
-      div id='create-question-error' class='red'
+        h2 id='new-question-title' Create Question
+        div id='create-question-error' class='red'
 
-      = form_for [@test,@question] do |f|
-        = f.text_area :content, id: 'question-content', class: 'question-text-area fl mt20', onkeyup: 'Shareyourtest.Views.Questions.generatePreview(this.value)', onfocus: '$("#menu-new-question").click()'
-          - @question.errors.messages[:title].each do |message|
-            div[class='fl ml20 mt10 red'] = message
+        = form_for [@test,@question] do |f|
+          = f.text_area :content, id: 'question-content', class: 'question-text-area fl mt20', onkeyup: 'Shareyourtest.Views.Questions.generatePreview(this.value)', onfocus: '$("#menu-new-question").click()'
+            - @question.errors.messages[:title].each do |message|
+              div[class='fl ml20 mt10 red'] = message
 
-        div class='cb'
+          div class='cb'
 
-    td valign='top'
-      div id='create-question-button' class='btn btn-info mt20 ml40' onclick = 'Shareyourtest.Controllers.Questions.createQuestion();'
-          = 'Create'
+      td valign='top'
+        div id='create-question-button' class='btn btn-info mt20 ml40' onclick = 'Shareyourtest.Controllers.Questions.createQuestion();'
+            = 'Create'
 
-    td valign='top' class='pl40'
+      td valign='top' class='pl40'
 
-      h2 Preview
+        h2 Preview
 
-      div id='preview-question-content'
-      div id='preview-answers'
+        div id='preview-question-content'
+        div id='preview-answers'

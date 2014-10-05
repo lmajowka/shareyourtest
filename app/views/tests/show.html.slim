@@ -7,16 +7,15 @@ div class='fl w100' id='title-view'
     div class='cb'  
 
     -if belongs_to_me?(@test.user_id)
-      div class='mt100'
+      div class='mt40'
           == render 'questions/index'
        
       div class='cb'
-
-      
-      div class='mt100'
+      div class='mt40'
         == render 'questions/new'
-
-      div class='mt100'
+      
+      div class='cb'
+      div class='mt40'
         = render 'tests/settings'     
 
 script

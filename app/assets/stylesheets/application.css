@@ -29,23 +29,38 @@
 #header{
   height:60px;
   width:100%;
-  background:#F9F9F9;
+  color:#FFF;
+  background:#444444;
   position:fixed;
   border-bottom: 1px solid #EBEBEB;
   top:0;
   z-index: 3;
 }
+
+#header a{
+  color:#FFF;
+}
+
+.dropdown-menu a{
+  color:#000 !important;
+}
+
+#footer a{
+  color:#FFD303  
+}
+
 #underheader{
   height:60px;
   margin-bottom: 20px
 }
 #footer{
   border-top:1px solid #EBEBEB;
-  background: #F9F9F9;
+  background: #444;
   height:60px;
   width:100%;
   bottom:0;
   position:fixed;
+  color:#FFF;
 }
 
 body{

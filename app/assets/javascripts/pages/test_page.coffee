@@ -35,23 +35,35 @@ class TestPage extends Page
       $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
 
     $("#menu-title").click =>
+      @selectMenu($("#menu-title"))
       @animate 'title-view', 60
 
+    $("#menu-questions").click =>
+      @selectMenu($("#menu-questions"))
+      @animate 'questions-view', 180
+
     $("#menu-new-question").click =>
+      @selectMenu($("#menu-new-question"))
       @animate 'new-question-view', 90
 
-    $("#menu-questions").click =>
-      @animate 'questions-view', 160
-
     $("#menu-settings").click =>
+      @selectMenu($("#menu-settings"))
       @animate 'settings-view', 90
 
     $("#menu-publish").click =>
+      @selectMenu($("#menu-publish"))
       @toggleStatus "published"
 
     $("#menu-unpublish").click =>
       @toggleStatus "draft"
     
+    $("#menu-title").click()
+
+  @selectMenu: (option) ->
+    options =["menu-title","menu-questions","menu-new-question","menu-settings"]
+    for opt in options
+      $("##{opt}").removeClass 'menu-selected'
+    option.addClass 'menu-selected'
 
   @toggleStatus: (status) ->
     Shareyourtest.TestPage.test.set('status',status)

@@ -1,5 +1,18 @@
+body{
+  background:#E5E5E5 !important;
+}
+
+.card{
+  background:#FFFFFF;
+  box-shadow: 0 0 5px #A6A6A6;
+  float:left;
+  padding:20px;
+  padding-bottom:40px;
+  width:100%;
+}
+
 .test-menu{
-  width:130px;
+  width:145px;
   background: #FFF;
   height: 100%;
   float:left;
@@ -7,6 +20,10 @@
   position:fixed;
   top:60px;
   left:0;
+}
+
+.menu-selected{
+  color:#428bca;
 }
 
 .right-answer div{
