@@ -4,7 +4,6 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'jasmine-rails'
-  gem 'debugger2'
 end
 
 group :test do

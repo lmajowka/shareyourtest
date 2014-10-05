@@ -69,11 +69,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    columnize (0.8.9)
-    debugger-linecache (1.2.0)
-    debugger2 (1.0.0.beta2)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
     diff-lcs (1.2.5)
     eco (1.0.0)
       coffee-script
@@ -228,7 +223,6 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   capybara (= 2.2.0)
   coffee-rails (~> 4.0.0)
-  debugger2
   factory_girl_rails (= 4.2.0)
   has_permalink
   jasmine-rails
