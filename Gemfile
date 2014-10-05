@@ -1,27 +1,5 @@
 source 'https://rubygems.org'
 
-group :test, :development do
-  gem 'sqlite3'
-  gem 'rspec-rails', '~> 3.0.0.beta'
-  gem 'jasmine-rails'
-end
-
-group :test do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.2.0'
-  gem 'rspec-its'
-  gem 'factory_girl_rails', '4.2.0'
-end
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-group :production do
-  gem 'pg'
-end
-
 gem 'has_permalink'
 gem 'paperclip'
 gem 'aws-sdk'
@@ -44,3 +22,24 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+group :test, :development do
+  gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'jasmine-rails'
+end
+
+group :test do
+  gem 'selenium-webdriver', '2.35.1'
+  gem 'capybara', '2.2.0'
+  gem 'rspec-its'
+  gem 'factory_girl_rails', '4.2.0'
+end
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
+
+group :production do
+  gem 'pg'
+end

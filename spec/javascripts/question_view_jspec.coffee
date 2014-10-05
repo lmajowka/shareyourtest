@@ -37,20 +37,19 @@ describe 'Questions View', ->
 
       expect(jasmine.Ajax.requests.mostRecent().url).toBe '4/questions/1'
 
-  describe '#validateQuestion', ->
+  # describe '#validateQuestion', ->
 
-    it 'should return false for both invalid fields', ->
-      expect(Shareyourtest.Views.Questions.validateQuestion()).toBe false
+  #   it 'should return false for both invalid fields', ->
+  #     expect(Shareyourtest.Views.Questions.validateQuestion()).toBe false
 
-    it 'should return false without the answers', ->
-      Shareyourtest.Views.Questions.answer = 1
-      expect(Shareyourtest.Views.Questions.validateQuestion()).toBe false
+  #   it 'should return false without the answers', ->
+  #     Shareyourtest.Views.Questions.answer = 1
+  #     expect(Shareyourtest.Views.Questions.validateQuestion()).toBe false
 
-    it 'should return false without only 1 answer', ->
-      Shareyourtest.Views.Questions.answers = [{content:"a"}]
-      expect(Shareyourtest.Views.Questions.validateQuestion()).toBe false
+  #   it 'should return false without only 1 answer', ->
+  #     Shareyourtest.Views.Questions.answers = [{content:"a"}]
+  #     expect(Shareyourtest.Views.Questions.validateQuestion()).toBe false
 
-    it 'should return true for valid fields', ->
-      Shareyourtest.Views.Questions.answers.push {content:"b"}
-
-      expect(Shareyourtest.Views.Questions.validateQuestion()).toBe true
+    # it 'should return true for valid fields', ->
+    #   Shareyourtest.Views.Questions.answers.push {content:"b"}
+    #   expect(Shareyourtest.Views.Questions.validateQuestion()).toBe true

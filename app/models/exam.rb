@@ -1,5 +1,7 @@
 class Exam < ActiveRecord::Base
 
+  STATUSES = ['draft', 'published']
+
   belongs_to :user
   has_many :questions, -> { order("position ASC") }
   has_permalink
@@ -16,6 +18,6 @@ class Exam < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 6 }
   validates :description, presence: true,length: { minimum: 6 }
   validates_presence_of :user
-  validates_inclusion_of :status, :in => %w( draft published )
+  validates_inclusion_of :status, in: STATUSES
 
 end

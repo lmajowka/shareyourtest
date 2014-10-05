@@ -2,20 +2,31 @@ class Shareyourtest.Models.Question extends Backbone.Model
 
   _getContentRegex = /([\s\S]*)\W(A|a) ?\)/
   _getAlternativeRegex = /(A|a) ?\)([\s\S]*)/
+  @validationError = ''
 
   initialize: ->
-    if @newQuestion()
-      content = $('#question-content').val()
-      @set 'content', Shareyourtest.Models.Question.getContent content
-      @set 'answers', Shareyourtest.Views.Questions.answers
-      @set 'answer', Shareyourtest.Views.Questions.answer
-      @set 'exam_id', Shareyourtest.TestPage.test.get('id')
 
   url: ->
     "#{@get('exam_id')}/questions"
 
   newQuestion: ->
     if @get('content') then false else true
+
+  valid: ->
+    if not @get('content')
+      @validationError = 'You need to write your question inside the box'
+      return false
+
+    if @get('answers').length < 2
+      @validationError = 'You need to write at least 2 answers and choose one before you submit your questions'
+      return false
+
+    if not @get('answer')
+      @validationError = 'You need to choose the right answer'
+      return false
+
+    @validationError = ""
+    true
 
   #Private
 

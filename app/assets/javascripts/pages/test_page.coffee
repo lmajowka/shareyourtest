@@ -3,14 +3,6 @@ class TestPage extends Page
   @questions = null
   @test = null
 
-  @createQuestion: ->
-    return if not Shareyourtest.Views.Questions.validateQuestion()
-
-    question = new Shareyourtest.Models.Question()
-    question.save()
-    @questions.add question
-    @resetQuestionContext()
-
   @saveEditedQuestion: ->
     return if not Shareyourtest.Views.Questions.validateQuestion() 
 

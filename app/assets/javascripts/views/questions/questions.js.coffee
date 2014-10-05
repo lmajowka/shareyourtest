@@ -72,22 +72,6 @@ class Shareyourtest.Views.Questions extends Backbone.View
   @setAnswer: (answer)->
     @answer = answer
 
-  @validateQuestion: ->
-    if not $('#question-content').val()
-      $('#create-question-error').html 'You need to write your question inside the box'
-      return false
-
-    if @answers.length < 2
-      $('#create-question-error').html 'You need to write at least 2 answers and choose one before you submit your questions'
-      return false
-
-    if not @answer
-      $('#create-question-error').html 'You need to choose the right answer'
-      return false
-
-    $('#create-question-error').html ""
-    true
-
   @generatePreview: (content) ->
 
     $('#preview-question-content').html @htmlize(Shareyourtest.Models.Question.getContent(content))
