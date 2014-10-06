@@ -40,11 +40,11 @@ class TestPage extends Page
 
     $("#menu-questions").click =>
       @selectMenu($("#menu-questions"))
-      @animate 'questions-view', 180
+      @animate 'questions-view', 175
 
     $("#menu-new-question").click =>
       @selectMenu($("#menu-new-question"))
-      @animate 'new-question-view', 90
+      @animate 'new-question-view', 98
 
     $("#menu-settings").click =>
       @selectMenu($("#menu-settings"))

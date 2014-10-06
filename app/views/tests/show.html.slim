@@ -2,20 +2,20 @@
   == render 'tests/menu'
 
 div class='fl w100' id='title-view'
-  div class='ml100 p20'
+  div class='ml108 p20'
     == render 'tests/title'
     div class='cb'  
 
     -if belongs_to_me?(@test.user_id)
-      div class='mt40'
+      div class='mt20'
           == render 'questions/index'
        
       div class='cb'
-      div class='mt40'
+      div class='mt20'
         == render 'questions/new'
       
       div class='cb'
-      div class='mt40'
+      div class='mt20'
         = render 'tests/settings'     
 
 script
