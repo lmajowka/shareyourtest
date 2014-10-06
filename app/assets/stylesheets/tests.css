@@ -18,6 +18,7 @@ body{
   float:left;
   min-height: 600px;
   position:fixed;
+  border-right:1px solid #DDD;
   top:60px;
   left:0;
 }
