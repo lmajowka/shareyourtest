@@ -52,3 +52,24 @@ describe 'Question Model', ->
       Shareyourtest.TestPage.test = test
       newQuestion = new Shareyourtest.Models.Question()
       expect(newQuestion.newQuestion()).toBe true
+
+
+  describe '#valid', ->
+
+    question = new Shareyourtest.Models.Question()
+
+    it 'should return false for both invalid fields', ->
+      expect(question.valid()).toBe false
+
+     it 'should return false without the answers', ->
+       question.set 'answer',1
+       expect(question.valid()).toBe false
+
+     it 'should return false without only 1 answer', ->
+       question.set 'answers' , [{content:"a"}]
+       expect(question.valid()).toBe false
+
+     it 'should return true for valid fields', ->
+       question.set 'answers' , [{content:"a"},{content:"b"}]
+       question.set 'content', 'am I a valid question?'
+       expect(question.valid()).toBe true    
