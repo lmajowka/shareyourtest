@@ -98,6 +98,7 @@ class Shareyourtest.Views.Questions extends Backbone.View
 
     $('#preview-answers').html previewAnswers
     @setAnswer false
+    $('#create-question-error').html ""
 
   @htmlize = (content) ->
     content.replace(/\n/g,'<br>')
