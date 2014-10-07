@@ -1,6 +1,6 @@
 class Questions
 
-  @createQuestion: ->
+  @create: ->
 
     content = $('#question-content').val()
 
@@ -20,5 +20,10 @@ class Questions
     question.save()
     Shareyourtest.TestPage.questions.add question
     Shareyourtest.TestPage.resetQuestionContext()	
+
+  @update: ->
+    return if not Shareyourtest.Views.Questions.validateQuestion() 
+
+    @resetQuestionContext() 
 
 window.Shareyourtest.Controllers.Questions = Questions

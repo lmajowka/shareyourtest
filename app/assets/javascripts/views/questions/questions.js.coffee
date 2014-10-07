@@ -51,7 +51,7 @@ class Shareyourtest.Views.Questions extends Backbone.View
     $("#question-content").val @renderContent()  
     Shareyourtest.Views.Questions.generatePreview $("#question-content").val()
     $('#create-question-button').html "Save" 
-    $('#create-question-button')[0].onclick = Shareyourtest.TestPage.saveEditedQuestion
+    $('#create-question-button')[0].onclick = Shareyourtest.Controllers.Questions.update
 
   finishEditing: ->   
     $('#new-question-title').html "Create question"

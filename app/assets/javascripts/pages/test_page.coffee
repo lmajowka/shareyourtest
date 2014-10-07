@@ -1,12 +1,7 @@
 class TestPage extends Page
 
   @questions = null
-  @test = null
-
-  @saveEditedQuestion: ->
-    return if not Shareyourtest.Views.Questions.validateQuestion() 
-
-    @resetQuestionContext()    
+  @test = null   
 
   @resetQuestionContext: ->
     @updateQuestionView()
