@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    render json:[].to_json unless my_exam
+    render json:[].to_json unless my_exam?
     if @question = Question.find_by(id: params[:id], exam_id: params[:exam_id])
       @question.remove
     end

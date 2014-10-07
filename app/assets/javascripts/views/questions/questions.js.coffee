@@ -42,8 +42,7 @@ class Shareyourtest.Views.Questions extends Backbone.View
     @model.on 'destroy', @remove, @
 
   delete: ->
-    url_param = "#{@model.url()}/#{@model.get('id')}"
-    @model.destroy(url: url_param)
+    @model.destroy()
 
   edit: ->
     $('#new-question-view').show()
