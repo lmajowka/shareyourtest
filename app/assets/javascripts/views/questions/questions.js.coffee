@@ -49,11 +49,13 @@ class Shareyourtest.Views.Questions extends Backbone.View
     $('#new-question-title').html "Edit question"
     $("#menu-new-question").click()
     $("#question-content").val @renderContent()  
+    $('#create-question-error').html ""
     Shareyourtest.Views.Questions.generatePreview $("#question-content").val()
     $('#create-question-button').html "Save" 
     $('#create-question-button')[0].onclick =  Shareyourtest.Controllers.Questions.update
     Shareyourtest.Controllers.Questions.updatingQuestion = @model
     @checkAnswer @model.get('answer')
+    Shareyourtest.Views.Questions.setAnswer @model.get('answer')
 
   checkAnswer: (answer) ->
     for radio in $('#preview-answers input')
@@ -95,6 +97,7 @@ class Shareyourtest.Views.Questions extends Backbone.View
       index++
 
     $('#preview-answers').html previewAnswers
+    @setAnswer false
 
   @htmlize = (content) ->
     content.replace(/\n/g,'<br>')

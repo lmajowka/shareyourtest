@@ -12,11 +12,7 @@ class Questions
       exam_id: Shareyourtest.TestPage.test.get('id')
     )
 
-    if question.valid()
-      $('#create-question-error').html ""
-    else
-      $('#create-question-error').html question.validationError
-      return false  
+    return if not @handleValidationErrors(question)
 
     question.save()
     Shareyourtest.TestPage.questions.add question
@@ -29,9 +25,19 @@ class Questions
     @updatingQuestion.set 'answers', Shareyourtest.Views.Questions.answers
     @updatingQuestion.set 'answer', Shareyourtest.Views.Questions.answer 
 
-    return if not @updatingQuestion.valid() 
+    return if not @handleValidationErrors(@updatingQuestion)    
 
     @updatingQuestion.save()
     Shareyourtest.TestPage.resetQuestionContext()
+
+  @handleValidationErrors: (question) ->
+    if question.valid()
+      $('#create-question-error').html ""
+      return true
+    else
+      $('#create-question-error').html question.validationError
+      return false  
+  
+    
 
 window.Shareyourtest.Controllers.Questions = Questions

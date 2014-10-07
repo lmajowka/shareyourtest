@@ -30,7 +30,7 @@ class TestPage extends Page
     @test.fetch()
 
     if $('#question-content').length > 0
-      $('#question-content')[0].style.height = $(window).height() - 300 + 'px'
+      $('#question-content')[0].style.height = $(window).height() - 284 + 'px'
 
     $("#menu-title").click =>
       @selectMenu($("#menu-title"))
