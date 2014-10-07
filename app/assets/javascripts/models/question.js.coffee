@@ -7,7 +7,7 @@ class Shareyourtest.Models.Question extends Backbone.Model
   initialize: ->
 
   url: ->
-    "#{@get('exam_id')}/questions"
+    "#{@get('exam_id')}/questions/#{@get('id')}"
 
   newQuestion: ->
     if @get('content') then false else true
