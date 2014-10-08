@@ -2,9 +2,13 @@ div class='card'
   == render 'tests/main_snippet', exam: @test
   div class='cb'
   - if belongs_to_me?(@test.user_id)
-    div class='	pr'
+    div class='pr mb20'
       div class='pa ml20 btn btn-small btn-warning'
         = 'Update picture'
       = form_for @test, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
         = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input'
-    div class='cb'    
+      div class='cb'  
+  - if @test.status == 'published'
+    div class='ml20	btn btn-success'
+      = 'Answer' 
+      div class='cb'    
