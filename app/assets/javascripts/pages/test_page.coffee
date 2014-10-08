@@ -96,7 +96,7 @@ class TestPage extends Page
     @showOrHide(Shareyourtest.TestPage.test.get('status') is "draft", elements)
 
   @moreThanOneQuestionFilter: ->
-    elements = ["#menu-questions","#menu-publish","#questions-view-title"]
+    elements = ["#menu-questions","#menu-publish","#questions-view-card"]
     @showOrHide(Shareyourtest.TestPage.questions.length is 0, elements)    
 
   @showOrHide: (condition,elements) ->
