@@ -6,4 +6,4 @@
       h3 class='fs20'
         = exam.title
       div
-        = exam.description
+        = truncate(exam.description, length:105)
