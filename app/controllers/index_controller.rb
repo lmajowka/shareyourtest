@@ -5,7 +5,7 @@ class IndexController < ApplicationController
       redirect_to current_user
     end
     @user = User.new
-    @tests = Exam.all.limit 3
+    @tests = Exam.published.limit 3
   end
 
 end

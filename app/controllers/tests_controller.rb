@@ -24,7 +24,7 @@ class TestsController < ApplicationController
   end
 
   def update
-    if belongs_to_me?(@test.user_id)
+    if my_exam?
       @test.update(update_params)
       @test.save!
       return redirect_to @test unless params[:status]
@@ -34,6 +34,7 @@ class TestsController < ApplicationController
 
   def show
     @question = Question.new
+    @my_exam = my_exam?
     respond_to do |format|
       format.html
       format.xml  { render :xml => @test }
@@ -42,6 +43,10 @@ class TestsController < ApplicationController
   end
 
   private
+
+  def my_exam?
+    belongs_to_me?(@test.user_id)
+  end  
 
   def find_exam
     @test = Exam.find_by_permalink params[:id]

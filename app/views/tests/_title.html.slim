@@ -1,7 +1,7 @@
 div class='card'
   == render 'tests/main_snippet', exam: @test
   div class='cb'
-  - if belongs_to_me?(@test.user_id)
+  - if @my_exam
     div class='pr mb20'
       div class='pa ml20 btn btn-small btn-warning'
         = 'Update picture'

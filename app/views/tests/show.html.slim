@@ -1,12 +1,12 @@
-- if belongs_to_me?(@test.user_id)
-  == render 'tests/menu'
+  
+== render 'tests/menu'
 
 div class='fl w100' id='title-view'
   div class='ml108 p20'
     == render 'tests/title'
     div class='cb'  
 
-    -if belongs_to_me?(@test.user_id)
+    -if @my_exam
       div class='mt20'
           == render 'questions/index'
        
