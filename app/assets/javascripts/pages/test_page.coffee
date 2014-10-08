@@ -88,7 +88,7 @@ class TestPage extends Page
         $(element).show()
 
   @publishedFilter: ->
-    elements = ["#menu-new-question","#menu-publish","#new-question-view"]
+    elements = ["#menu-new-question","#menu-publish","#new-question-card"]
     @showOrHide(Shareyourtest.TestPage.test.get('status') is "published", elements)
       
   @unpublishedFilter: ->
