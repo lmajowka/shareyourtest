@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.create!(question_params)
-    create_answers
+    create_answers if @question
     render json: @question.to_json
   end
 
