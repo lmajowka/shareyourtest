@@ -2,10 +2,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.create!(question_params)
-    answers = params[:answers]
-    answers.each do |answer|
-      @question.answers.create!(content:answer[:content])
-    end
+    create_answers
     render json: @question.to_json
   end
 
@@ -26,8 +23,18 @@ class QuestionsController < ApplicationController
     return unless my_exam?
     @question = Question.find_by(id: params[:id], exam_id: params[:exam_id])
     @question.update question_params
-    @question.save!
+    if @question.save!
+      @question.remove_answers
+      create_answers
+    end  
     render json: @question.to_json
+  end  
+
+  def create_answers
+    answers = params[:answers]
+    answers.each do |answer|
+      @question.answers.create!(content:answer[:content])
+    end
   end  
 
   private

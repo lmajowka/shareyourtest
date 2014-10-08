@@ -10,8 +10,12 @@ class Question < ActiveRecord::Base
 
   def remove
     remove_from_list
-    Answer.where(question_id:id).destroy_all
+    remove_answers    
     delete
   end
+
+  def remove_answers
+    Answer.where(question_id:id).destroy_all
+  end  
 
 end
