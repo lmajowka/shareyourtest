@@ -7,4 +7,5 @@ window.Shareyourtest =
   initialize: {}
 
 $(document).ready ->
+	Shareyourtest.signed_in = Boolean $.cookie("remember_token")
 

@@ -109,11 +109,14 @@ class TestPage extends Page
     units = ['#number-questions','#menu-questions-number']
     for unit in units
       if numberQuestions = $ unit
-        numberQuestions.html Shareyourtest.TestPage.questions.length;
+        numberQuestions.html Shareyourtest.TestPage.questions.length
 
     @displayMenuOptions()
 
   @getPerma = ->
     location.href.match(/\/tests\/(.*)/)?[0] || ""  
+
+  @answer: ->
+    alert "Opa"  
 
 window.Shareyourtest.TestPage = TestPage
