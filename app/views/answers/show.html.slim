@@ -1,0 +1,23 @@
+table
+      tr
+        td width='130px' valign='top'
+          div id='question-squares-title'
+            = 'Questions'
+          div class='ml20 mt10'
+            -@test.questions.each do |question|
+              div class='question-number-square'
+                =question.position   
+
+        td class='w100' valign='top'
+          div id='blank-answer-area'   
+            table
+              tr
+                td width='70px' valign='top'
+                  div id='answer-question-number'
+                td      
+
+
+
+javascript:
+  var questions = #{{@test.questions.to_json(include: :answers)}}
+  Shareyourtest.AnswerPage.init();

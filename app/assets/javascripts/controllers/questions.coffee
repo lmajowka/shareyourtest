@@ -2,7 +2,7 @@ class Questions
 
   @updatingQuestion = null
 
-  @create: ->
+  @create: =>
     content = $('#question-content').val()
 
     question = new Shareyourtest.Models.Question(
