@@ -8,7 +8,6 @@ class TestsController < ApplicationController
 
   def create
     @test = current_user.exams.new(test_params)
-    @test.status = "draft"
     if @test.save
       redirect_to @test
     else

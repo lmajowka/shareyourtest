@@ -15,7 +15,6 @@ RSpec.describe Exam, :type => :model do
 
     before(:each) do
       @test.user = user
-      @test.status = "draft"
     end
 
     it { should be_valid }
