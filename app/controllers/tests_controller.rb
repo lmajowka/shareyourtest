@@ -42,6 +42,10 @@ class TestsController < ApplicationController
     end
   end
 
+  def purchase
+    render json: {status: "ok"}
+  end  
+
   private
 
   def my_exam?

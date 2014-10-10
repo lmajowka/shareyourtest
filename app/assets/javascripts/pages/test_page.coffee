@@ -117,6 +117,23 @@ class TestPage extends Page
     location.href.match(/\/tests\/(.*)/)?[0] || ""  
 
   @answer: ->
-    alert "Opa"  
+    if Shareyourtest.signedIn
+      @purchase()
+    else 
+      alert "To be developed"    
+
+  @purchase: ->
+    $.ajax(
+      type: "GET"
+      url: "purchase"
+      data: { id: @test.get('id') }
+    )
+    .done( 
+      ( return_msg ) ->  
+        if return_msg.status is "ok"
+          location.href = location.href.replace(/tests/,"answers")
+    )
+    
+   
 
 window.Shareyourtest.TestPage = TestPage
