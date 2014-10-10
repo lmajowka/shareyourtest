@@ -5,8 +5,8 @@ table
             = 'Questions'
           div class='ml20 mt10'
             -@test.questions.each do |question|
-              div class='question-number-square'
-                =question.position   
+              div class='question-number-square' id='question-number-square#{question.position}' onclick='Shareyourtest.AnswerPage.showQuestion(#{question.position})'
+                = question.position   
 
         td class='w100' valign='top'
           div id='blank-answer-area'   
@@ -14,7 +14,8 @@ table
               tr
                 td width='70px' valign='top'
                   div id='answer-question-number'
-                td      
+                td 
+                  div id='answer-question-content'     
 
 
 

@@ -25,6 +25,11 @@
   cursor:pointer;	
 }
 
+.question-number-square-current{
+  background:#333;
+  color:#FFF !important;	
+}
+
 #question-squares-title{
   font-size:30px;
   margin-top:20px;
@@ -38,4 +43,10 @@
   margin-left:20px;
   margin-top:77px;
   height:300px;
+}
+
+#answer-question-number{
+  font-size:44px;
+  margin-top:10px;
+  margin-left:12px;
 }
