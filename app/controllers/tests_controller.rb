@@ -9,7 +9,7 @@ class TestsController < ApplicationController
   def create
     @test = current_user.created_exams.new(test_params)
     if @test.save
-      current_user.purchase @test
+      current_user.purchase_exam @test
       redirect_to @test
     else
       render 'new'
