@@ -9,6 +9,7 @@ FactoryGirl.define do
     title    "Sample test title"
     description "Description of sample test"
     status "draft"
-    association :user, factory: :user
+    price 0
+    association :owner, factory: :user
   end
 end

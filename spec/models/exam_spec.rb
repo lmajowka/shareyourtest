@@ -14,7 +14,7 @@ RSpec.describe Exam, :type => :model do
     let(:user) { FactoryGirl.create(:user) }
 
     before(:each) do
-      @test.user = user
+      @test.owner = user
     end
 
     it { should be_valid }

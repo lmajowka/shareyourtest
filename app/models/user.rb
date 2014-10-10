@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
-  has_many :exams
+  has_many :created_exams, class_name: "Exam"
+  has_many :purchases
+  has_many :exams, through: :purchases
 
   before_create :create_remember_token
   before_save { self.email = email.downcase }
@@ -19,6 +21,10 @@ class User < ActiveRecord::Base
   def User.digest(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+
+  def purchase_exam(exam)
+    Purchase.create!(exam_id: exam.id, user_id: id, price: exam.price)
+  end  
 
   private
 

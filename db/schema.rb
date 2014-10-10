@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001145612) do
+ActiveRecord::Schema.define(version: 20141010094012) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20141001145612) do
     t.datetime "picture_updated_at"
     t.string   "permalink"
   end
+
+  create_table "purchases", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "exam_id"
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["exam_id"], name: "index_purchases_on_exam_id"
+  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id"
 
   create_table "questions", force: true do |t|
     t.integer  "exam_id"

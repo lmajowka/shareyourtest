@@ -4,7 +4,9 @@ class Exam < ActiveRecord::Base
 
   scope :published, -> {where(status: "published")}
 
-  belongs_to :user
+  belongs_to :owner, class_name: "User", foreign_key: :user_id 
+  has_many :purchases
+  has_many :users, through: :purchases
   has_many :questions, -> { order("position ASC") }
   has_permalink
   has_attached_file :picture, styles: {
@@ -17,7 +19,7 @@ class Exam < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true, length: { minimum: 3 }
   validates :description, presence: true,length: { minimum: 6 }
-  validates_presence_of :user
+  validates_presence_of :owner
   validates_inclusion_of :status, in: STATUSES
   validates_numericality_of :price
 

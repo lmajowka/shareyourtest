@@ -25,4 +25,17 @@ RSpec.describe User, :type => :model do
       it { should_not be_valid }
     end
 
+    describe '#purchase' do
+
+      before do
+       @user.save
+       @exam = @user.created_exams.create!(title:"sample exam", description:"description") 
+      end
+      
+      it 'should aquire an exam' do
+        expect { @user.purchase_exam @exam }.to change{@user.purchases.count}.by(1)
+      end
+
+    end
+
 end
