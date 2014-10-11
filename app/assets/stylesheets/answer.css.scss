@@ -54,6 +54,8 @@
   margin-left:20px;
   margin-top:77px;
   height:300px;
+  padding-right:30px;
+
 }
 
 #answer-question-number{
@@ -63,5 +65,12 @@
 }
 
 #answer-question-content{
-  margin-top:20px;
+  margin-top:22px;
+}
+
+#finish-button{
+  bottom:80px;
+  width:120px;
+  margin-left:20px;
+  position:fixed;
 }

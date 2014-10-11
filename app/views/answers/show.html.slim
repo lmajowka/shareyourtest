@@ -8,14 +8,19 @@ table
               div class='question-number-square' id='question-number-square#{question.position}' onclick='Shareyourtest.AnswerPage.showQuestion(#{question.position})'
                 = question.position   
 
+          div id='finish-button' class='btn btn-success'
+            = 'Finish'
+
         td class='w100' valign='top'
           div id='blank-answer-area'   
             table
               tr
                 td width='70px' valign='top'
                   div id='answer-question-number'
+                    
                 td valign='top'
-                  div id='answer-question-content'     
+                  div id='answer-question-content'
+                  div id='answer-question-answers'     
 
 
 

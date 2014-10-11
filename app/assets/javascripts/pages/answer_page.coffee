@@ -10,6 +10,10 @@ class AnswerPage
   @showQuestion: (number) ->
     $('#answer-question-number').html(number)
     $('#answer-question-content').html(questions[number-1].content)	
+    answersHTML = ""
+    for answer in questions[number-1].answers
+      answersHTML += Shareyourtest.Views.Answers.renderHTML(answer) 	
+    $('#answer-question-answers').html(answersHTML)
     @setSquareCSS number  
     
   @setSquareCSS: (number) ->
