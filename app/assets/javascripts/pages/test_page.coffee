@@ -8,7 +8,6 @@ class TestPage extends Page
     Shareyourtest.Views.Questions.setAnswer false
 
   @updateQuestionView: ->
-    $("#menu-questions").click()
     $("#question-content").val ""
     Shareyourtest.Views.Questions.generatePreview ""
     $('#new-question-title').html "New question"

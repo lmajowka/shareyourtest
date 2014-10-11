@@ -11,6 +11,14 @@
   margin-left:20px;	
 }
 
+#answer-footer{
+  height:60px;
+  background:#CCC;
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+
 .question-number-square{
   background:#EEE;
   border:1px solid #AAA;
@@ -23,11 +31,14 @@
   font-size:11px;
   text-align:center;
   cursor:pointer;	
+  
 }
 
 .question-number-square-current{
   background:#333;
-  color:#FFF !important;	
+  color:#FFF !important;
+  text-shadow: 1px 0px 0px #FFF;	
+  font-weight:bold;
 }
 
 #question-squares-title{
@@ -49,4 +60,8 @@
   font-size:44px;
   margin-top:10px;
   margin-left:12px;
+}
+
+#answer-question-content{
+  margin-top:20px;
 }
