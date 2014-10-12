@@ -3,11 +3,12 @@ class AnswerPage
   @currentQuestion = null
 
   @init: ->
-  	@showQuestion(1)
+  	@showQuestion 1
   	@adjustScreenSize()
-
+    
   @adjustScreenSize: ->
-  	$('#blank-answer-area')[0].style.height = $(window).height() - 184 + 'px'
+    $('#blank-answer-area')[0].style.height = $(window).height() - 184 + 'px'
+    $('#question-panel')[0].style.height = $(window).height() - 144 + 'px'
 
   @showQuestion: (number) ->
     @currentQuestion = number
@@ -42,5 +43,10 @@ class AnswerPage
   @setSquareCSS: (number) ->
     $.each($('.question-number-square'), (index,value) -> $(value).removeClass('question-number-square-current'))
     $('#question-number-square'+number).addClass('question-number-square-current')
+
+  @preloadImages: (images) ->
+    for image in images
+      console.log image
+      #$("<img />").attr("src", image)
 
 window.Shareyourtest.AnswerPage = AnswerPage

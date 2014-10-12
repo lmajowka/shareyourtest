@@ -81,6 +81,7 @@
   width:28px;
   height:26px;
   margin-left:7px;
+  cursor:pointer;
 }
 
 .arrow-prev-question-disabled{
@@ -95,4 +96,9 @@
   background-image: image-url("seta_prox_selecionado.png");
   width:28px;
   height:26px;
+  cursor:pointer;
+}
+
+#question-panel{
+  overflow-y:auto;
 }

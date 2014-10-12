@@ -22,11 +22,13 @@ table
                     div id='arrow-next' class='arrow-next-question fl' onclick='Shareyourtest.AnswerPage.nextQuestion()'
                     
                 td valign='top' class='pl40'
-                  div id='answer-question-content'
-                  div id='answer-question-answers'     
+                  div id='question-panel'
+                    div id='answer-question-content'
+                    div id='answer-question-answers'     
 
 
 
 javascript:
   var questions = #{{@test.questions.to_json(include: :answers)}}
+  Shareyourtest.AnswerPage.preloadImages(["seta_ant_selecionado.png","seta_prox_apagado.png"])
   Shareyourtest.AnswerPage.init();
