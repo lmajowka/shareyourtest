@@ -5,7 +5,7 @@
 #hp_text{
   float:left;
   margin-left:150px;
-  margin-top: 140px;
+  margin-top: 170px;
   width: 600px;
 }
 
@@ -42,21 +42,18 @@
 }
 
 
-
 .water_frame{
-  background-image: image-url("agua.jpg");
-  border-bottom: 3px solid #000;
+  background:#1E1E1E;
 }
 
 .green_frame{
-  background:#2B3C36;
-  border-bottom: 3px solid #000;
+  background:#1E1E1E;
 }
 
 .yellow_frame{
-  background-image: image-url("green.jpg");
-  height:370px !important;
-  border-bottom: 3px solid #000;
+   background: image-url("social.jpg");
+   background-size:100%;
+   background-position: 0 107px;
 }
 
 .pink_frame{
@@ -71,15 +68,6 @@
   margin-top:30px
 }
 
-.social{
-  background: image-url("social.jpeg");
-  height:112px;
-  width:225px;
-  float:right;
-  margin-top:200px;
-  margin-right:55px;
-  box-shadow: 0px 0px 4px;  
-}
 
 .make-money{
   background: image-url("make-money.png");

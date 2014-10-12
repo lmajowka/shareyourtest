@@ -23,15 +23,13 @@
 <div class="cb"></div>
 
   <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
+    <div class="ml40 mt40 alert alert-<%= key %>"><%= value %></div>
   <% end %>
   </div>
 
 <div class='pl40'>
   <%= yield %>
 </div>
-
-<div class='empty-space cb'></div>
 
 <div id="footer">
   <div class="fl mt20 ml20">Shareyourtest.com - 2014</div>

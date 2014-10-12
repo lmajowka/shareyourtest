@@ -41,6 +41,11 @@
   color:#FFF;
 }
 
+#header a:hover{
+  color:#FFE477;
+  font-weight:bold;
+}
+
 .dropdown-menu a{
   color:#000 !important;
 }
@@ -70,7 +75,7 @@ body{
 h1, h2{
   font-size:33px !important;
   font-family: OpenSans;
-  margin: 0 !important;
+  
 }
 
 .alert{

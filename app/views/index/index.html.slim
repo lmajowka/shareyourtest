@@ -18,7 +18,8 @@ div id='hp-main-container'
   div class='hp_frame green_frame' id='frame-answer'
     div class='ml40 mt100 fl answer-tests'
       h2 Practice:
-      h2 Choose your test and start practicing  now.
+      h3 class='mt20 fl'
+        = 'Choose your test and start practicing  now.'
     div class='cb'
     div class='mt40'  
       - @tests.each do |exam|
@@ -27,11 +28,12 @@ div id='hp-main-container'
     div = link_to 'More', exams_path(), class: 'hp-more'
 
 
-  div class='yellow_frame' id='frame-share'
+  div class='hp_frame yellow_frame' id='frame-share'
     div class='ml100 mt100 fl'
       h2 Share your test
-      h2 Submit your practice exam in any topic.
-    div class='social'
+      h3 class='mt20' Submit your practice exam in any topic.
+    =link_to new_exam_path() do
+      div class='btn btn-warning fr mt100 mr140 mt130' Start Now
 
   / div class='hp_frame pink_frame' id='frame-money'
   /   div class='ml100 mt100 fl'
@@ -40,7 +42,7 @@ div id='hp-main-container'
   /   div class='make-money'
 
 
-  div class='cb'
+  
 
   script
     = 'Shareyourtest.IndexPage.initialize();'
