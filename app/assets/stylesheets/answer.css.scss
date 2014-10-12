@@ -61,7 +61,8 @@
 #answer-question-number{
   font-size:44px;
   margin-top:10px;
-  margin-left:12px;
+  width:100%;
+  text-align:center;
 }
 
 #answer-question-content{
@@ -73,4 +74,25 @@
   width:120px;
   margin-left:20px;
   position:fixed;
+}
+
+.arrow-prev-question{
+  background-image: image-url("seta_ant_selecionado.png");
+  width:28px;
+  height:26px;
+  margin-left:7px;
+}
+
+.arrow-prev-question-disabled{
+  background-image: image-url("seta_ant_apagado.png") !important;
+}
+
+.arrow-next-question-disabled{
+  background-image: image-url("seta_prox_apagado.png") !important;
+}
+
+.arrow-next-question{
+  background-image: image-url("seta_prox_selecionado.png");
+  width:28px;
+  height:26px;
 }
