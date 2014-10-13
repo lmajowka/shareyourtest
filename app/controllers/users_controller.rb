@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @exams = current_user.purchases.map(&:exam)
   end
 
   def new
