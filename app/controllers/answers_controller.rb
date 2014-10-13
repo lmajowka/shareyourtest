@@ -9,6 +9,7 @@ class AnswersController < ApplicationController
   	if not @purchase
   	  @purchase = current_user.purchase_exam @test
   	end
+  	@user_answers = UserAnswer.where(purchase_id: @purchase.id)
   end
 
 end

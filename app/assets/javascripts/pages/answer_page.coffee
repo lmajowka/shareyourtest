@@ -22,22 +22,26 @@ class AnswerPage
       answersHTML += Shareyourtest.Views.Answers.renderHTML(answer,index)
       index++ 	
     $('#answer-question-answers').html(answersHTML)
-    if @userAnswers[@currentQuestion]
+    if @userAnswers[@currentQuestion] 
       @checkAnswer @userAnswers[@currentQuestion].get('answer').position
+    if userAnswers[@currentQuestion-1]
+      @checkAnswer userAnswers[@currentQuestion-1].answer.position
     @setSquareCSS number
     @handleArrowsStatus number
 
-
-  @chooseAnswer: (index) ->
+  @createUserAnswer: (index) ->
     QuestionIndex = @currentQuestion-1
     @userAnswers[@currentQuestion] = @userAnswers[@currentQuestion] || new Shareyourtest.Models.UserAnswer(
       user_id: user_id
       purchase_id: purchase_id
       question_id: questions[QuestionIndex].id
-      answer_id: questions[@currentQuestion-1].answers[index-1].id
+      answer_id : questions[@currentQuestion-1].answers[index-1].id
       seconds: 0  
-    )
+    ) 
     @userAnswers[@currentQuestion].save()
+
+  @chooseAnswer: (index) ->
+    @createUserAnswer index    
     @nextQuestion()    
 
   @checkAnswer: (index) ->

@@ -16,7 +16,7 @@ class UserAnswersController < ApplicationController
   private
 
   def user_answers_params
-  	params.permit(:user_id,:purchase_id,:exam_id,:question_id,:answer_id,:id)
+  	params.permit(:user_id,:purchase_id,:question_id,:answer_id,:id)
   end	
 
 end

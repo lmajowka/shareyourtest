@@ -30,6 +30,7 @@ table
 
 javascript:
   var questions = #{{@test.questions.to_json(include: :answers)}}
+  var userAnswers = #{{@user_answers.to_json}}
   var user_id = #{{current_user.id}}
   var purchase_id = #{{@purchase.id}}
   Shareyourtest.AnswerPage.preloadImages(["/assets/seta_ant_selecionado.png","/assets/seta_prox_apagado.png"])
