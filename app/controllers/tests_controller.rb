@@ -1,6 +1,7 @@
 class TestsController < ApplicationController
 
   before_action :find_exam, only: [:update,:show]
+  before_action :set_header, only: :show
 
   def index
     @tests = Exam.published
@@ -67,4 +68,8 @@ class TestsController < ApplicationController
     params.require(:exam).permit(:title,:description)
   end
 
+  def set_header
+    response.headers["Vary"]= "Accept"
+  end
+  
 end
