@@ -15,11 +15,16 @@ class AnswerPage
     $('#answer-question-number').html(number)
     $('#answer-question-content').html(questions[number-1].content)	
     answersHTML = ""
+    index = 1
     for answer in questions[number-1].answers
-      answersHTML += Shareyourtest.Views.Answers.renderHTML(answer) 	
+      answersHTML += Shareyourtest.Views.Answers.renderHTML(answer,index)
+      index++ 	
     $('#answer-question-answers').html(answersHTML)
     @setSquareCSS number
     @handleArrowsStatus number
+
+  @chooseAnswer: ->
+    @nextQuestion()    
 
   @nextQuestion: ->
     if @currentQuestion < questions.length
@@ -46,7 +51,6 @@ class AnswerPage
 
   @preloadImages: (images) ->
     for image in images
-      console.log image
-      #$("<img />").attr("src", image)
+      $("<img />").attr("src", image)
 
 window.Shareyourtest.AnswerPage = AnswerPage

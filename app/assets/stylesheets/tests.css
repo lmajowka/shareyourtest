@@ -143,4 +143,5 @@ h3 {
 .preview-answer{
   padding:15px;
   cursor:pointer;
+  width:100%;
 }

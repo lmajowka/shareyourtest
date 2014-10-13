@@ -21,7 +21,7 @@ table
                     div id='arrow-prev' class='arrow-prev-question fl' onclick='Shareyourtest.AnswerPage.prevQuestion()'
                     div id='arrow-next' class='arrow-next-question fl' onclick='Shareyourtest.AnswerPage.nextQuestion()'
                     
-                td valign='top' class='pl40'
+                td width='850px' valign='top' class='pl40'
                   div id='question-panel'
                     div id='answer-question-content'
                     div id='answer-question-answers'     
@@ -30,5 +30,5 @@ table
 
 javascript:
   var questions = #{{@test.questions.to_json(include: :answers)}}
-  Shareyourtest.AnswerPage.preloadImages(["seta_ant_selecionado.png","seta_prox_apagado.png"])
+  Shareyourtest.AnswerPage.preloadImages(["/assets/seta_ant_selecionado.png","/assets/seta_prox_apagado.png"])
   Shareyourtest.AnswerPage.init();

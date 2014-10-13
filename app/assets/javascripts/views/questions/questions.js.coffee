@@ -111,6 +111,7 @@ class Shareyourtest.Views.Questions extends Backbone.View
         {
           content: content
           index: index
+          callback: "Shareyourtest.Views.Questions.setAnswer(#{index})"
         }
       )
     else

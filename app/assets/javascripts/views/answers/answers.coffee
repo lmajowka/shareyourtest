@@ -10,12 +10,13 @@ class Shareyourtest.Views.Answers extends Backbone.View
     @$el.html @template(@model.toJSON())
     @
 
-  @renderHTML: (answer) ->
+  @renderHTML: (answer,index) ->
     if answer.content.length > 0
       @radioTemplate(
         {
           content: answer.content
-          index: answer.index
+          index: index
+          callback: "Shareyourtest.AnswerPage.chooseAnswer()"
         }
       )
     else
