@@ -90,6 +90,7 @@ body{
   padding:15px;
   float:left;
   color:#222;
+  box-shadow: 0px 0px 6px;
 }
 
 .test-snippet-container:hover{
@@ -104,7 +105,7 @@ h3 {
 .test-snippet-image img{
   width:130px;
   height:130px;
-  border:1px solid #EBEBEB;
+  border: 1px solid #336666;
 }
 
 .test-snippet-info{
