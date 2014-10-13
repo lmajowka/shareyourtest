@@ -7,3 +7,6 @@
         = exam.title
       div
         = truncate(exam.description, length:105)
+      div class='fs12'
+        = exam.questions.size
+        = ' Questions' 
