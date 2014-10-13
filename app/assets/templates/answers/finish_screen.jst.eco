@@ -1,0 +1,2 @@
+Congratulations<br>
+<a href="<%=@viewURL%>">View your answers!</a>

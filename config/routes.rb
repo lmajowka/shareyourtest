@@ -5,9 +5,12 @@ Shareyourtest::Application.routes.draw do
 
   match '/tests/purchase', to: 'tests#purchase', via: 'get'
   match '/tests/:permalink', to: 'tests#show', via: 'all'
-  match '/answers/:permalink', to: 'answers#show', via: 'get'
+  match '/answers/:permalink/(:id)', to: 'answers#show', via: 'get'
 
-  resources :users
+  resources :users do
+    resources :purchases
+  end  
+
   resources :exams ,path: 'tests', controller: :tests do
     resources :questions
   end

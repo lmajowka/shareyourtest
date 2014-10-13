@@ -121,6 +121,9 @@ class TestPage extends Page
     else 
       alert "To be developed"    
 
+  @viewAttempt: (id) ->
+    location.href = location.href.replace(/tests/,"answers") + "/" + id
+
   @purchase: ->
     $.ajax(
       type: "GET"

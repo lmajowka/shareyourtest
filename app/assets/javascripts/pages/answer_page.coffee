@@ -3,10 +3,17 @@ class AnswerPage
   @currentQuestion = null
   @userAnswers = []
 
+  @finishScreenTemplate: JST['answers/finish_screen']  
+
   @init: ->
-  	@showQuestion 1
-  	@adjustScreenSize()
+    @showQuestion 1
+    @adjustScreenSize()
+    @removeFinishButton()
     
+  @removeFinishButton: ->
+    if purchase_status is "answered"
+      $('#finish-button').hide()
+
   @adjustScreenSize: ->
     $('#blank-answer-area')[0].style.height = $(window).height() - 184 + 'px'
     $('#question-panel')[0].style.height = $(window).height() - 144 + 'px'
@@ -73,5 +80,21 @@ class AnswerPage
   @preloadImages: (images) ->
     for image in images
       $("<img />").attr("src", image)
+
+  @finish: ->
+    purchase = new Shareyourtest.Models.Purchase(
+      id: purchase_id
+    )
+    purchase.set('status','answered')
+    purchase.on 'change', @finishScreen()
+    purchase.save()
+
+  @finishScreen: ->
+    $('#finish-button').hide()
+    viewURL = location.href + "/" + purchase_id
+    $('#blank-answer-area').html @finishScreenTemplate(
+      viewURL: viewURL
+    )
+    
 
 window.Shareyourtest.AnswerPage = AnswerPage

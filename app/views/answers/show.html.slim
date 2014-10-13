@@ -5,10 +5,14 @@ table
             = 'Questions'
           div class='ml20 mt10'
             -@test.questions.each do |question|
-              div class='question-number-square' id='question-number-square#{question.position}' onclick='Shareyourtest.AnswerPage.showQuestion(#{question.position})'
+              -if @purchase.status == "answered"
+                -answerclass=' wrong-answer'
+                - if question.answer == @user_answers[question.position-1].answer.position
+                  -answerclass=' right-answer'
+              div class='question-number-square#{answerclass}' id='question-number-square#{question.position}' onclick='Shareyourtest.AnswerPage.showQuestion(#{question.position})'
                 = question.position   
 
-          div id='finish-button' class='btn btn-success'
+          div id='finish-button' class='btn btn-success' onclick="Shareyourtest.AnswerPage.finish()"
             = 'Finish'
 
         td class='w100' valign='top'
@@ -33,5 +37,6 @@ javascript:
   var userAnswers = #{{@user_answers.to_json}}
   var user_id = #{{current_user.id}}
   var purchase_id = #{{@purchase.id}}
+  var purchase_status = "#{{@purchase.status}}"
   Shareyourtest.AnswerPage.preloadImages(["/assets/seta_ant_selecionado.png","/assets/seta_prox_apagado.png"])
   Shareyourtest.AnswerPage.init();

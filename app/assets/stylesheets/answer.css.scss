@@ -35,7 +35,7 @@
 }
 
 .question-number-square-current{
-  background:#333;
+  background:#333 !important;
   color:#FFF !important;
   text-shadow: 1px 0px 0px #FFF;	
   font-weight:bold;
@@ -101,4 +101,11 @@
 
 #question-panel{
   overflow-y:auto;
+}
+
+.right-answer{
+  background:#4ED85E;
+}
+.wrong-answer{
+  background:#F17682;
 }
