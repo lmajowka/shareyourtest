@@ -5,4 +5,6 @@ class Answer < ActiveRecord::Base
   validates :content, presence: true
   validates_presence_of :question
 
+  acts_as_list scope: :question
+
 end

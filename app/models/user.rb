@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
 
   def purchase_exam(exam)
     Purchase.create!(exam_id: exam.id, user_id: id, price: exam.price)
+  end
+
+  def get_ready_purchase(exam)
+    Purchase.find_by(exam_id: exam.id, user_id: id, status: "ready") 
   end  
 
   private

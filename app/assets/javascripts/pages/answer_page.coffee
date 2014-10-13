@@ -1,6 +1,7 @@
 class AnswerPage
 
   @currentQuestion = null
+  @userAnswers = []
 
   @init: ->
   	@showQuestion 1
@@ -12,19 +13,35 @@ class AnswerPage
 
   @showQuestion: (number) ->
     @currentQuestion = number
+    QuestionIndex = number-1
     $('#answer-question-number').html(number)
-    $('#answer-question-content').html(questions[number-1].content)	
+    $('#answer-question-content').html(questions[QuestionIndex].content)	
     answersHTML = ""
     index = 1
-    for answer in questions[number-1].answers
+    for answer in questions[QuestionIndex].answers
       answersHTML += Shareyourtest.Views.Answers.renderHTML(answer,index)
       index++ 	
     $('#answer-question-answers').html(answersHTML)
+    if @userAnswers[@currentQuestion]
+      @checkAnswer @userAnswers[@currentQuestion].get('answer').position
     @setSquareCSS number
     @handleArrowsStatus number
 
-  @chooseAnswer: ->
+
+  @chooseAnswer: (index) ->
+    QuestionIndex = @currentQuestion-1
+    @userAnswers[@currentQuestion] = @userAnswers[@currentQuestion] || new Shareyourtest.Models.UserAnswer(
+      user_id: user_id
+      purchase_id: purchase_id
+      question_id: questions[QuestionIndex].id
+      answer_id: questions[@currentQuestion-1].answers[index-1].id
+      seconds: 0  
+    )
+    @userAnswers[@currentQuestion].save()
     @nextQuestion()    
+
+  @checkAnswer: (index) ->
+    $("#radio-answer-#{index}")[0].checked = true
 
   @nextQuestion: ->
     if @currentQuestion < questions.length

@@ -16,7 +16,7 @@ class Shareyourtest.Views.Answers extends Backbone.View
         {
           content: answer.content
           index: index
-          callback: "Shareyourtest.AnswerPage.chooseAnswer()"
+          callback: "Shareyourtest.AnswerPage.chooseAnswer(#{index})"
         }
       )
     else

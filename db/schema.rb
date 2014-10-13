@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012150313) do
+ActiveRecord::Schema.define(version: 20141013131446) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "exams", force: true do |t|
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20141012150313) do
     t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
   end
 
   add_index "purchases", ["exam_id"], name: "index_purchases_on_exam_id"
@@ -56,6 +58,23 @@ ActiveRecord::Schema.define(version: 20141012150313) do
   end
 
   add_index "questions", ["exam_id"], name: "index_questions_on_exam_id"
+
+  create_table "user_answers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "purchase_id"
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.string   "status"
+    t.integer  "seconds"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "answer"
+  end
+
+  add_index "user_answers", ["answer_id"], name: "index_user_answers_on_answer_id"
+  add_index "user_answers", ["purchase_id"], name: "index_user_answers_on_purchase_id"
+  add_index "user_answers", ["question_id"], name: "index_user_answers_on_question_id"
+  add_index "user_answers", ["user_id"], name: "index_user_answers_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email"
