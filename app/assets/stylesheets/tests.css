@@ -108,6 +108,12 @@ h3 {
   border: 1px solid #336666;
 }
 
+.test-snippet-image-main img{
+  width:130px;
+  height:130px;
+  border: 1px solid #CCC;
+}
+
 .test-snippet-info{
   width:180px;
   margin-left:20px;

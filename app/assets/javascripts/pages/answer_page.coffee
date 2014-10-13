@@ -24,8 +24,8 @@ class AnswerPage
     $('#answer-question-answers').html(answersHTML)
     if @userAnswers[@currentQuestion] 
       @checkAnswer @userAnswers[@currentQuestion].get('answer').position
-    if userAnswers[@currentQuestion-1]
-      @checkAnswer userAnswers[@currentQuestion-1].answer.position
+    if userAnswers[QuestionIndex]
+      @checkAnswer userAnswers[QuestionIndex].answer.position
     @setSquareCSS number
     @handleArrowsStatus number
 
