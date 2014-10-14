@@ -36,7 +36,11 @@ class TestsController < ApplicationController
   def show
     @question = Question.new
     @my_exam = my_exam?
-    @answered_purchases = current_user.purchases.answered_for @test.id
+    if current_user 
+      @answered_purchases = current_user.purchases.answered_for @test.id
+    else
+      @answered_purchases = []
+    end
     respond_to do |format|
       format.html
       format.xml  { render :xml => @test }
