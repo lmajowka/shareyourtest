@@ -42,9 +42,9 @@ class AnswerPage
       user_id: user_id
       purchase_id: purchase_id
       question_id: questions[QuestionIndex].id
-      answer_id : questions[@currentQuestion-1].answers[index-1].id
       seconds: 0  
     ) 
+    @userAnswers[@currentQuestion].set('answer_id',questions[@currentQuestion-1].answers[index-1].id)
     @userAnswers[@currentQuestion].save()
 
   @chooseAnswer: (index) ->
