@@ -11,9 +11,9 @@ div class='card'
   - if @test.status == 'published'
     div class='ml45	btn btn-success' onclick='Shareyourtest.TestPage.answer()'
       = 'Answer'
-    -index=1  
+    -index=@answered_purchases.size  
     -@answered_purchases.each do |answered_purchase|
       div class='ml45 btn btn-info' onclick="Shareyourtest.TestPage.viewAttempt(#{answered_purchase.id})"
         = "View Attempt #{index}"
-      -index = index + 1
+      -index = index - 1
     div class='cb'    
