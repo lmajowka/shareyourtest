@@ -1,6 +1,7 @@
 class AnswerPage
 
   @currentQuestion = null
+  @currentQuestionNumber = null
   @userAnswers = []
 
   @finishScreenTemplate: JST['answers/finish_screen']  
@@ -19,23 +20,29 @@ class AnswerPage
     $('#question-panel')[0].style.height = $(window).height() - 144 + 'px'
 
   @showQuestion: (number) ->
-    @currentQuestion = number
-    QuestionIndex = number-1
+    @currentQuestionNumber = number
+    questionIndex = number-1
+    @currentQuestion = questions[questionIndex]
+    
     $('#answer-question-number').html(number)
-    $('#answer-question-content').html(questions[QuestionIndex].content)	
+    $('#answer-question-content').html(@currentQuestion.content)	
     answersHTML = ""
     index = 1
-    for answer in questions[QuestionIndex].answers
+    for answer in @currentQuestion.answers
+      if purchase_status is "answered" and @currentQuestion.answer is answer.position
+        answersHTML += "<div class='right-answer-text'>"  
       answersHTML += Shareyourtest.Views.Answers.renderHTML(answer,index)
+      if purchase_status is "answered" and @currentQuestion.answer is answer.position
+        answersHTML += "</div>"
       index++ 	
     $('#answer-question-answers').html(answersHTML)
-    if @userAnswers[@currentQuestion] 
-      @checkAnswer @userAnswers[@currentQuestion].get('answer').position
-    if userAnswers[QuestionIndex]
-      @checkAnswer userAnswers[QuestionIndex].answer.position
+    if @userAnswers[@currentQuestionNumber] 
+      @checkAnswer @userAnswers[@currentQuestionNumber].get('answer').position
+    if userAnswers[questionIndex]
+      @checkAnswer userAnswers[questionIndex].answer.position
     @setSquareCSS number
     @handleArrowsStatus number
-    @questionNumberColor(QuestionIndex)    
+    @questionNumberColor(questionIndex)    
 
   @questionNumberColor: (questionIndex) ->
     if purchase_status is "answered"
@@ -48,15 +55,14 @@ class AnswerPage
         
 
   @createUserAnswer: (index) ->
-    QuestionIndex = @currentQuestion-1
-    @userAnswers[@currentQuestion] = @userAnswers[@currentQuestion] || new Shareyourtest.Models.UserAnswer(
+    @userAnswers[@currentQuestionNumber] = @userAnswers[@currentQuestionNumber] || new Shareyourtest.Models.UserAnswer(
       user_id: user_id
       purchase_id: purchase_id
-      question_id: questions[QuestionIndex].id
+      question_id: @currentQuestionNumber.id
       seconds: 0  
     ) 
-    @userAnswers[@currentQuestion].set('answer_id',questions[@currentQuestion-1].answers[index-1].id)
-    @userAnswers[@currentQuestion].save()
+    @userAnswers[@currentQuestionNumber].set('answer_id',@currentQuestionNumber.answers[index-1].id)
+    @userAnswers[@currentQuestionNumber].save()
 
   @chooseAnswer: (index) ->
     @createUserAnswer index    
@@ -64,14 +70,16 @@ class AnswerPage
 
   @checkAnswer: (index) ->
     $("#radio-answer-#{index}")[0].checked = true
+    if purchase_status is "answered" and index isnt @currentQuestion.answer
+      $("#content-answer-#{index}").addClass('wrong-answer-text')
 
   @nextQuestion: ->
-    if @currentQuestion < questions.length
-      @showQuestion(@currentQuestion+1)
+    if @currentQuestionNumber < questions.length
+      @showQuestion(@currentQuestionNumber+1)
 
   @prevQuestion: ->
-    if @currentQuestion > 1
-      @showQuestion(@currentQuestion-1)    
+    if @currentQuestionNumber > 1
+      @showQuestion(@currentQuestionNumber-1)    
     
   @handleArrowsStatus: (number) ->
     if number is 1

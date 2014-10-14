@@ -2,7 +2,7 @@
   <table><tr><td valign='top'>
   <input type='radio' name='radioIndex' id='radio-answer-<%= @index%>' data-position='<%=@index%>' onclick='<%= @callback%>' class='fl'/>
   </td><td>
-  <div class='fl ml10 w100'>
+  <div class='fl ml10 w100' id='content-answer-<%= @index%>'>
     <%= @content %>
   </div>
   </td></tr></table>	
