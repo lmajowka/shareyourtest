@@ -100,6 +100,9 @@ class AnswerPage
     for image in images
       $("<img />").attr("src", image)
 
+  @close: ->
+    location.href = location.href.replace(/answers/,"tests").replace(/\/[0-9]+/,"")
+
   @finish: ->
     purchase = new Shareyourtest.Models.Purchase(
       id: purchase_id
