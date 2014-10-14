@@ -9,7 +9,7 @@ div class='card'
         = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input'
       div class='cb'  
   - if @test.status == 'published'
-    div class='ml45	btn btn-success' onclick='Shareyourtest.TestPage.answer()'
+    div class='ml45 mt10 btn btn-success' onclick='Shareyourtest.TestPage.answer()'
       = 'Answer'
     -index=@answered_purchases.size  
     -@answered_purchases.each do |answered_purchase|
