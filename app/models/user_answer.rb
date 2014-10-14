@@ -4,5 +4,5 @@ class UserAnswer < ActiveRecord::Base
   belongs_to :question
   belongs_to :answer
 
-  scope :answers_for, -> (purchase) {where(purchase_id: purchase.id).order(created_at: :asc)}
+  scope :answers_for, -> (purchase) {includes(:question).where(purchase_id: purchase.id).order('questions.position ASC')	}
 end
