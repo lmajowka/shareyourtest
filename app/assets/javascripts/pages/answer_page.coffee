@@ -14,6 +14,8 @@ class AnswerPage
   @removeFinishButton: ->
     if purchase_status is "answered"
       $('#finish-button').hide()
+    else
+      $('#close-button').hide()
 
   @adjustScreenSize: ->
     $('#blank-answer-area')[0].style.height = $(window).height() - 184 + 'px'
