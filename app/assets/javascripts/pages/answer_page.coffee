@@ -35,10 +35,17 @@ class AnswerPage
       @checkAnswer userAnswers[QuestionIndex].answer.position
     @setSquareCSS number
     @handleArrowsStatus number
-    # if Shareyourtest.Models.UserAnswer.rightAnswer(questions[QuestionIndex])
-    #   $('#answer-question-number').addClass('right-answer-text')
-    # else
-    #   $('#answer-question-number').addClass('wrong-answer-text')
+    @questionNumberColor(QuestionIndex)    
+
+  @questionNumberColor: (questionIndex) ->
+    if purchase_status is "answered"
+      if Shareyourtest.Models.UserAnswer.rightAnswer(questions[questionIndex])
+        $('#answer-question-number').removeClass('wrong-answer-text')
+        $('#answer-question-number').addClass('right-answer-text')
+      else
+        $('#answer-question-number').removeClass('right-answer-text')
+        $('#answer-question-number').addClass('wrong-answer-text')
+        
 
   @createUserAnswer: (index) ->
     QuestionIndex = @currentQuestion-1

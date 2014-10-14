@@ -13,7 +13,7 @@ div class='card'
       = 'Answer'
     -index=@answered_purchases.size  
     -@answered_purchases.each do |answered_purchase|
-      div class='ml45 btn btn-info' onclick="Shareyourtest.TestPage.viewAttempt(#{answered_purchase.id})"
+      div class='ml20 mt10 btn btn-info' onclick="Shareyourtest.TestPage.viewAttempt(#{answered_purchase.id})"
         = "View Attempt #{index}"
       -index = index - 1
     div class='cb'    
