@@ -58,7 +58,7 @@ class AnswerPage
     @userAnswers[@currentQuestionNumber] = @userAnswers[@currentQuestionNumber] || new Shareyourtest.Models.UserAnswer(
       user_id: user_id
       purchase_id: purchase_id
-      question_id: @currentQuestionNumber.id
+      question_id: @currentQuestion.id
       seconds: 0  
     ) 
     @userAnswers[@currentQuestionNumber].set('answer_id',@currentQuestion.answers[index-1].id)
