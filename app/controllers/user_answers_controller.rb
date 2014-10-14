@@ -1,7 +1,8 @@
 class UserAnswersController < ApplicationController
 
   def create
-  	@user_answer = UserAnswer.find_or_create_by(user_answers_params)
+    @user_answer = UserAnswer.find_by(user_answers_params.except(:answer_id))
+  	@user_answer = UserAnswer.create!(user_answers_params) unless @user_answer
   	render json: @user_answer.to_json
   end
 

@@ -7,7 +7,7 @@ table
             -@test.questions.each do |question|
               -if @purchase.status == "answered"
                 -answerclass=' wrong-answer'
-                - if question.answer == @user_answers[question.position-1].answer.position
+                - if @user_answers[question.position-1] and question.answer == @user_answers[question.position-1].answer.position
                   -answerclass=' right-answer'
               div class='question-number-square#{answerclass}' id='question-number-square#{question.position}' onclick='Shareyourtest.AnswerPage.showQuestion(#{question.position})'
                 = question.position   

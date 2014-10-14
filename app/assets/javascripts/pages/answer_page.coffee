@@ -35,6 +35,10 @@ class AnswerPage
       @checkAnswer userAnswers[QuestionIndex].answer.position
     @setSquareCSS number
     @handleArrowsStatus number
+    # if Shareyourtest.Models.UserAnswer.rightAnswer(questions[QuestionIndex])
+    #   $('#answer-question-number').addClass('right-answer-text')
+    # else
+    #   $('#answer-question-number').addClass('wrong-answer-text')
 
   @createUserAnswer: (index) ->
     QuestionIndex = @currentQuestion-1
