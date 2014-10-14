@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013131446) do
+ActiveRecord::Schema.define(version: 20141014142710) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20141013131446) do
 
   create_table "exams", force: true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description",          limit: 255
     t.integer  "user_id"
     t.float    "price"
     t.string   "status"
