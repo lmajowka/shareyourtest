@@ -1,8 +1,8 @@
 - content_for :title, 'Practice - Select your test'
 
-h1 class='ml40' Tests
+h1 class='ml40 mt40' Tests
 
-div class='ml40'	
+div class=''	
   -@tests.each do |test|
     == render 'tests/snippet',	exam: test 
     
