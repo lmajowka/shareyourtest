@@ -43,6 +43,7 @@ class TestsController < ApplicationController
       @answered_purchases = []
     end
     @average_rating = @test.average_rating
+    @number_of_ratings =  "#{@test.number_of_ratings} #{'rating'.pluralize(@test.number_of_ratings)}"
     respond_to do |format|
       format.html
       format.xml  { render :xml => @test }

@@ -31,6 +31,10 @@ class Exam < ActiveRecord::Base
     ratings.sum(:score) / ratings.size
   end
 
+  def number_of_ratings
+    Rating.where(exam_id:id).size
+  end
+
   private
 
   def assign_defaults
