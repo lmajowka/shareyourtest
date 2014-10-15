@@ -1,30 +1,31 @@
-div class='test-menu'
-  div class='mt40 ml30 cp' id='menu-title'
+div class='test-menu tc'
+  div class='mt40 cp' id='menu-title'
     = @test.title
   div class=@test.status
     = @test.status
-  div class='mt40 ml5 cp p5' id='menu-questions'
-    span class='glyphicon glyphicon-file mr10'
-    = 'Questions ('
-    span id='menu-questions-number'
-      = 0
-    = ')'
+  div class='tl'  
+    div class='mt40 ml5 cp p5' id='menu-questions'
+      span class='glyphicon glyphicon-file mr10'
+      = 'Questions ('
+      span id='menu-questions-number'
+        = 0
+      = ')'
 
-  -if @my_exam
-    div class='mt40 ml5 cp p5 dn' id='menu-new-question'
-      span class='glyphicon glyphicon-pencil mr10'
-      = 'New Question'
+    -if @my_exam
+      div class='mt40 ml5 cp p5 dn' id='menu-new-question'
+        span class='glyphicon glyphicon-pencil mr10'
+        = 'New Question'
 
-  -if @my_exam
-    div class='mt40 ml5 cp p5 ' id='menu-settings'
-      span class='glyphicon glyphicon-cog mr10'
-      = 'Settings'
+    -if @my_exam
+      div class='mt40 ml5 cp p5 ' id='menu-settings'
+        span class='glyphicon glyphicon-cog mr10'
+        = 'Settings'
 
-  -if @my_exam
-    div class='mt40 ml5 cp p5 dn' id='menu-publish'
-      span class='glyphicon glyphicon-globe mr10'
-      = 'Publish'
+    -if @my_exam
+      div class='mt40 ml5 cp p5 dn' id='menu-publish'
+        span class='glyphicon glyphicon-globe mr10'
+        = 'Publish'
 
-  -if @my_exam
-    div class='mt40 ml10 dn btn btn-danger' id='menu-unpublish'
-      = 'Unpublish'  
+    -if @my_exam
+      div class='mt40 ml10 dn flat-btn flat-btn-red' id='menu-unpublish'
+        = 'UNPUBLISH'  

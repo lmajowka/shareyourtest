@@ -98,3 +98,7 @@ a:hover{
   font-weight: 100;
   src: local("OpenSans"), local("OpenSans"), url("/assets/OpenSans-Light-webfont.woff");
 }
+
+.greyboard{
+  padding:20px 30px;
+}

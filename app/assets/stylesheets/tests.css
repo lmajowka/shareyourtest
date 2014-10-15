@@ -12,7 +12,7 @@ body{
 }
 
 .test-menu{
-  width:145px;
+  width:155px;
   background: #FFF;
   height: 100%;
   float:left;
@@ -70,12 +70,10 @@ body{
 
 .published{
   color:#4A4;
-  margin-left:30px;
 }
 
 .draft{
   color:#A44;
-  margin-left:30px;
 }
 
 .test-snippet-container-main{

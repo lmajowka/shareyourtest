@@ -3,17 +3,17 @@ div class='card'
   div class='cb'
   - if @my_exam
     div class='pr mb20'
-      div class='pa ml20 btn btn-small btn-warning'
-        = 'Update picture'
+      div class='pa ml15 flat-btn flat-btn-gray'
+        = 'UPDATE PICTURE'
       = form_for @test, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
         = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input'
       div class='cb'  
   - if @test.status == 'published'
-    div class='ml45 mt10 btn btn-success' onclick='Shareyourtest.TestPage.answer()'
-      = 'Answer'
+    div class='fl ml15 mt10 flat-btn flat-btn-green' onclick='Shareyourtest.TestPage.answer()'
+      = 'ANSWER'
     -index=@answered_purchases.size  
     -@answered_purchases.each do |answered_purchase|
-      div class='ml20 mt10 btn btn-info' onclick="Shareyourtest.TestPage.viewAttempt(#{answered_purchase.id})"
-        = "View Attempt #{index}"
+      div class='ml15 fl mt10 flat-btn flat-btn-blue' onclick="Shareyourtest.TestPage.viewAttempt(#{answered_purchase.id})"
+        = "VIEW ATTEMPT #{index}"
       -index = index - 1
     div class='cb'    

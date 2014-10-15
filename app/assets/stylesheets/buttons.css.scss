@@ -1,0 +1,50 @@
+.flat-btn{
+  width:130px;
+  border:2px solid black;
+  padding:10px;
+  font-size:11px;
+  font-weight:bold;
+  font-family:verdana;	
+  text-align:center;
+  cursor:pointer;
+}
+
+.flat-btn-gray{
+  border-color:#AAA;
+  color:#AAA;
+}
+
+.flat-btn-gray:hover{
+  border-color:#777;
+  color:#777;
+}
+
+.flat-btn-green{
+  border-color:#36AA6E;
+  color:#36AA6E;
+}
+
+.flat-btn-green:hover{
+  border-color:#666;
+  color:#666;
+}
+
+.flat-btn-blue{
+  border-color:#428bca;
+  color:#428bca;
+}
+
+.flat-btn-blue:hover{
+  border-color:#666;
+  color:#666;
+}
+
+.flat-btn-red{
+  border-color:#C30409;
+  color:#C30409;
+}
+
+.flat-btn-red:hover{
+  border-color:#666;
+  color:#666;
+}
