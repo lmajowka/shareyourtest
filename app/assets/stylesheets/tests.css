@@ -148,7 +148,8 @@ h3 {
 }
 
 .preview-answer:hover{
-  background: #74B7FF;
+  border:2px solid #74B7FF;
+  padding:13px;
 }
 
 .preview-answer{
