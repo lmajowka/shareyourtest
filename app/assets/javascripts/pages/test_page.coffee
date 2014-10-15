@@ -11,7 +11,7 @@ class TestPage extends Page
     $("#question-content").val ""
     Shareyourtest.Views.Questions.generatePreview ""
     $('#new-question-title').html "New question"
-    $('#create-question-button').html "Create"
+    $('#create-question-button').html "CREATE"
     $('#create-question-button')[0].onclick = Shareyourtest.Controllers.Questions.create
 
   @initialize: (id) ->
