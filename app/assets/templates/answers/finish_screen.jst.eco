@@ -1,2 +1,9 @@
-Congratulations<br>
-<a href="<%=@viewURL%>">View your answers!</a>
+<h1 class='ml40'>Congratulations!</h1>
+
+<div class='ml40'>
+  How would you rate de quality of the question present in this test?
+</div>
+
+<div class='ml40'>
+  <a href="<%=@viewURL%>">View your answers!</a>
+</div>
