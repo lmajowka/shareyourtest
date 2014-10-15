@@ -9,12 +9,13 @@ div class='test-menu tc'
         span class='glyphicon glyphicon-thumbs-up mr10'
         = 'Join Now'
 
-    div class='mt40 ml5 cp p5' id='menu-questions'
-      span class='glyphicon glyphicon-file mr10'
-      = 'Questions ('
-      span id='menu-questions-number'
-        = 0
-      = ')'
+    -if @my_exam 
+      div class='mt40 ml5 cp p5' id='menu-questions'
+        span class='glyphicon glyphicon-file mr10'
+        = 'Questions ('
+        span id='menu-questions-number'
+          = 0
+        = ')'
 
     -if @my_exam
       div class='mt40 ml5 cp p5 dn' id='menu-new-question'
