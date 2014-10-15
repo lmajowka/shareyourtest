@@ -25,7 +25,7 @@
   width:21px;
   height:21px;	
   float:left;
-  padding-top:2px;	
+  padding-top:1px;	
   margin-left:4px;
   margin-top:5px;
   text-align:center;
@@ -38,8 +38,9 @@
 .question-number-square-current{
   background:#333 !important;
   color:#FFF !important;
-  text-shadow: 1px 0px 0px #FFF;	
+  border:2px solid #FFF;  
   font-weight:bold;
+  padding-top:0px;
 }
 
 #question-squares-title{
