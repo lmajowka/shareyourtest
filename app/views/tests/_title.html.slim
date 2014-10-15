@@ -9,11 +9,11 @@ div class='card'
         = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input'
       div class='cb'  
   - if @test.status == 'published'
-    div class='fl ml15 mt10 flat-btn flat-btn-green' onclick='Shareyourtest.TestPage.answer()'
+    div class='fl ml15 mt15 flat-btn flat-btn-green' onclick='Shareyourtest.TestPage.answer()'
       = 'ANSWER'
     -index=@answered_purchases.size  
     -@answered_purchases.each do |answered_purchase|
-      div class='ml15 fl mt10 flat-btn flat-btn-blue' onclick="Shareyourtest.TestPage.viewAttempt(#{answered_purchase.id})"
+      div class='ml15 fl mt15 flat-btn flat-btn-blue' onclick="Shareyourtest.TestPage.viewAttempt(#{answered_purchase.id})"
         = "VIEW ATTEMPT #{index}"
       -index = index - 1
     div class='cb'    
