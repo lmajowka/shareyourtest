@@ -27,6 +27,7 @@ class Exam < ActiveRecord::Base
   after_initialize :assign_defaults
 
   def average_rating
+    return 0 if ratings.size == 0
     ratings.sum(:score) / ratings.size
   end
 
