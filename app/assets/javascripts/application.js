@@ -18,6 +18,7 @@
 //= require backbone
 //= require shareyourtest
 //= require jquery.cookie
+//= require jquery.raty
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

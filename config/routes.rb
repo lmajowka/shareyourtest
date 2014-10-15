@@ -16,6 +16,7 @@ Shareyourtest::Application.routes.draw do
   end
 
   resources :user_answers
+  resources :ratings, only: :update
 
   resources :sessions, only: [:new, :create, :destroy]
 

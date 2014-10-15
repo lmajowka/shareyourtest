@@ -8,6 +8,7 @@ class Exam < ActiveRecord::Base
   has_many :purchases
   has_many :users, through: :purchases
   has_many :questions, -> { order("position ASC") }
+  has_many :ratings
   has_permalink
   has_attached_file :picture, styles: {
     thumb: '100x100>',
@@ -24,6 +25,10 @@ class Exam < ActiveRecord::Base
   validates_numericality_of :price
 
   after_initialize :assign_defaults
+
+  def average_rating
+    ratings.sum(:score) / ratings.size
+  end
 
   private
 

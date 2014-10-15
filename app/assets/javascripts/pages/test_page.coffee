@@ -14,6 +14,13 @@ class TestPage extends Page
     $('#create-question-button').html "CREATE"
     $('#create-question-button')[0].onclick = Shareyourtest.Controllers.Questions.create
 
+  @displayRating: ->
+    $('#test-rating').raty(
+      readOnly: true
+      score: averageRating
+      path: '/assets'
+    ) 
+
   @initialize: (id) ->
     $.cookie("last-test-page",location.href)
     @questions = new Shareyourtest.Collections.Questions()
@@ -25,6 +32,8 @@ class TestPage extends Page
       @questions.on event, Shareyourtest.TestPage.questions.render
 
     @test.on 'sync', @displayMenuOptions
+
+    @displayRating()
 
     @questions.fetch()
     @test.fetch()

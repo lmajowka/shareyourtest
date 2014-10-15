@@ -123,6 +123,16 @@ class AnswerPage
     $('#blank-answer-area').html @finishScreenTemplate(
       viewURL: viewURL
     )
+    $('#user_star').raty(
+      score: 0
+      path: '/assets'
+      click: (score, evt) ->
+        $.ajax(
+          url: '/ratings/' + rating_id
+          type: 'PATCH'
+          data: { score: score }
+        )
+    )    
     
 
 window.Shareyourtest.AnswerPage = AnswerPage

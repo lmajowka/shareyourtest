@@ -42,6 +42,7 @@ class TestsController < ApplicationController
     else
       @answered_purchases = []
     end
+    @average_rating = @test.average_rating
     respond_to do |format|
       format.html
       format.xml  { render :xml => @test }

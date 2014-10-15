@@ -24,5 +24,6 @@ div class='fl w100' id='title-view'
 
     div class='empty-space'
 
-script
-  = "Shareyourtest.TestPage.initialize(#{@test.id});"
+javascript:
+  averageRating = #{{@average_rating}}
+  Shareyourtest.TestPage.initialize(#{@test.id});

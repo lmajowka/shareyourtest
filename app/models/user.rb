@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :created_exams, class_name: "Exam"
   has_many :purchases
   has_many :exams, through: :purchases
+  has_many :ratings
 
   before_create :create_remember_token
   before_save { self.email = email.downcase }
