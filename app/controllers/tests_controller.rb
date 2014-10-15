@@ -35,6 +35,7 @@ class TestsController < ApplicationController
 
   def show
     @question = Question.new
+    @user = User.new
     @my_exam = my_exam?
     if current_user 
       @answered_purchases = current_user.purchases.answered_for @test.id

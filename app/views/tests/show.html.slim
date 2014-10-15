@@ -6,6 +6,10 @@ div class='fl w100' id='title-view'
     == render 'tests/title'
     div class='cb'  
 
+    -if not signed_in?
+      div class='mt20'
+          == render 'tests/join'
+
     -if @my_exam
       div class='mt20'
           == render 'questions/index'
@@ -17,6 +21,8 @@ div class='fl w100' id='title-view'
       div class='cb'
       div class='mt20'
         = render 'tests/settings'     
+
+    div class='empty-space'
 
 script
   = "Shareyourtest.TestPage.initialize(#{@test.id});"

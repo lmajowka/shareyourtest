@@ -27,6 +27,10 @@ body{
   color:#428bca;
 }
 
+.empty-space{
+  height:600px;
+}
+
 .right-answer div{
   color:#428bca !important;
 }
@@ -47,6 +51,16 @@ body{
 #questions-view span{
   color: #888;
   margin-left: 30px;
+}
+
+ .join-now-input{
+  padding:10px;
+  width:350px;
+  border:1px solid #DDD;
+ }
+
+.join-now-button{
+  background:none;
 }
 
 .question-text-area{

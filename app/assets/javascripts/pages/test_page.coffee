@@ -35,6 +35,10 @@ class TestPage extends Page
       @selectMenu($("#menu-title"))
       @animate 'title-view', 60
 
+    $("#menu-join-now").click =>
+      @selectMenu($("#menu-join-now"))
+      @animate 'join-card', 60
+
     $("#menu-questions").click =>
       @selectMenu($("#menu-questions"))
       @animate 'questions-view', 175
@@ -57,7 +61,7 @@ class TestPage extends Page
     $("#menu-title").click()
 
   @selectMenu: (option) ->
-    options =["menu-title","menu-questions","menu-new-question","menu-settings"]
+    options =["menu-title","menu-join-now","menu-questions","menu-new-question","menu-settings"]
     for opt in options
       $("##{opt}").removeClass 'menu-selected'
     option.addClass 'menu-selected'
@@ -119,7 +123,7 @@ class TestPage extends Page
     if Shareyourtest.signedIn
       @purchase()
     else 
-      alert "To be developed"    
+      $("#menu-join-now").click()    
 
   @viewAttempt: (id) ->
     location.href = location.href.replace(/tests/,"answers") + "/" + id

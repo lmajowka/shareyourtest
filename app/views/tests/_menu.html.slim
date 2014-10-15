@@ -3,7 +3,12 @@ div class='test-menu tc'
     = @test.title
   div class=@test.status
     = @test.status
-  div class='tl'  
+  div class='tl'
+    -if not signed_in?
+      div class='mt40 ml5 cp p5' id='menu-join-now'
+        span class='glyphicon glyphicon-thumbs-up mr10'
+        = 'Join Now'
+
     div class='mt40 ml5 cp p5' id='menu-questions'
       span class='glyphicon glyphicon-file mr10'
       = 'Questions ('
