@@ -15,6 +15,7 @@ class TestPage extends Page
     $('#create-question-button')[0].onclick = Shareyourtest.Controllers.Questions.create
 
   @initialize: (id) ->
+    $.cookie("last-test-page",location.href)
     @questions = new Shareyourtest.Collections.Questions()
     @test = new Shareyourtest.Models.Test({id: id, permalink: @getPerma()})
     

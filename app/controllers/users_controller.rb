@@ -1,17 +1,13 @@
 class UsersController < ApplicationController
 
   def create
-
     user = User.find_by(email: params[:user][:email].downcase)
     if user && user.authenticate(params[:user][:password])
-      sign_in user
-      flash[:success] = "Welcome to Share your Test!"
-      redirect_to user
+      sign_in_and_redirect(user)      
     else
       @user = User.new(user_params)
       if @user.save
-        sign_in @user
-        redirect_to @user
+        sign_in_and_redirect(@user)
       else
         render 'new'
       end
@@ -30,6 +26,15 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :name)
+  end
+
+  def sign_in_and_redirect(user)
+    sign_in user
+    if cookies["last-test-page"]
+        redirect_to cookies["last-test-page"]
+      else   
+        redirect_to user
+      end
   end
 
 end

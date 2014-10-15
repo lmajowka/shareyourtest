@@ -1,8 +1,9 @@
 div class='test-menu tc'
   div class='mt40 cp' id='menu-title'
     = @test.title
-  div class=@test.status
-    = @test.status
+  - if @my_exam  
+    div class=@test.status
+      = @test.status
   div class='tl'
     -if not signed_in?
       div class='mt40 ml5 cp p5' id='menu-join-now'

@@ -11,3 +11,7 @@ div class='mt20'
 
     - @exams.each do |exam|
         == render 'tests/snippet', exam: exam 
+
+- if @new_user
+  javascript:
+    self.location = $.cookie("last-test-page")
