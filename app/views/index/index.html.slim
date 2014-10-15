@@ -21,7 +21,7 @@ div id='hp-main-container'
       h3 class='mt20 fl'
         = 'Choose your test and start practicing  now.'
     div class='cb'
-    div class='mt40'  
+    div class='mt40 ml40'  
       - @tests.each do |exam|
           == render 'tests/snippet',  exam: exam 
     div class='cb'      

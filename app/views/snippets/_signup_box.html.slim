@@ -1,12 +1,12 @@
 div class='login-box'
   div
     = 'New to Share your test?'
-    span class='mid-gray' = ' Sign Up'
+    span class='' = ' Sign Up'
 
   = form_for @user do |f|
     = f.text_field :name, class: "log_in_box_larger mt10", placeholder: "Full Name"
     = f.text_field :email, class: "log_in_box_larger mt10", placeholder: "Email"
     = f.password_field :password, class: "log_in_box_larger", placeholder: "Password"
 
-    .actions = f.submit 'SIGN UP NOW!', class: 'flat-btn flat-btn-green mt10 join-now-button'
+    .actions = f.submit 'SIGN UP NOW!', class: 'flat-btn flat-btn-yellow mt10 join-now-button'
 
