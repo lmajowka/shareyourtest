@@ -35,6 +35,10 @@ class Exam < ActiveRecord::Base
     Rating.where(exam_id:id).size
   end
 
+  def pluralize_number_of_ratings
+    "#{number_of_ratings} #{'rating'.pluralize(number_of_ratings)}"
+  end
+
   private
 
   def assign_defaults
