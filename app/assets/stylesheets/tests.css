@@ -91,7 +91,7 @@ body{
 }
 
 .test-snippet-container-main{
-  width: 668px;
+  width: 100%;
   padding:15px;
   float:left;
 }
@@ -138,7 +138,7 @@ h3 {
 }
 
 .test-snippet-info-main{
-  width:440px;
+  width:70%;
   margin-left:15px;
 }
 
