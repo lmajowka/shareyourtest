@@ -21,22 +21,26 @@
 
 .flat-btn-green{
   border-color:#36AA6E;
-  color:#36AA6E;
+  background:#36AA6E;
+  color:#FFF;
 }
 
 .flat-btn-green:hover{
-  border-color:#666;
-  color:#666;
+  border-color:#36AA6E;
+  background:transparent;
+  color:#36AA6E;
 }
 
 .flat-btn-blue{
   border-color:#428bca;
-  color:#428bca;
+  background:#428bca;
+  color:#FFF;
 }
 
 .flat-btn-blue:hover{
-  border-color:#666;
-  color:#666;
+  border-color:#428bca;
+  color:#428bca;
+  background:transparent;
 }
 
 .flat-btn-red{

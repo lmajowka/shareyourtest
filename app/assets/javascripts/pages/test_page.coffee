@@ -50,7 +50,6 @@ class TestPage extends Page
     @menuTitle.push new MenuItem "#menu-settings", 'settings-view', 90
 
     $("#menu-publish").click =>
-      @selectMenu($("#menu-publish"))
       @toggleStatus "published"
 
     $("#menu-unpublish").click =>
