@@ -8,7 +8,11 @@ div class='fl w100' id='title-view'
 
     -if not signed_in?
       div class='mt20'
-          == render 'tests/join'
+        == render 'tests/join'
+
+      div class='cb'
+      div class='mt20'
+        == render 'questions/example'
 
     -if @my_exam
       div class='mt20'
