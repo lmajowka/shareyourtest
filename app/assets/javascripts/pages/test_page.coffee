@@ -41,25 +41,13 @@ class TestPage extends Page
     if $('#question-content').length > 0
       $('#question-content')[0].style.height = $(window).height() - 284 + 'px'
 
-    $("#menu-title").click =>
-      @selectMenu($("#menu-title"))
-      @animate 'title-view', 60
-
-    $("#menu-join-now").click =>
-      @selectMenu($("#menu-join-now"))
-      @animate 'join-card', 60
-
-    $("#menu-questions").click =>
-      @selectMenu($("#menu-questions"))
-      @animate 'questions-view', 175
-
-    $("#menu-new-question").click =>
-      @selectMenu($("#menu-new-question"))
-      @animate 'new-question-view', 98
-
-    $("#menu-settings").click =>
-      @selectMenu($("#menu-settings"))
-      @animate 'settings-view', 90
+    @menuTitle = []
+    @menuTitle.push new MenuItem "#menu-title", 'title-view', 60
+    @menuTitle.push new MenuItem "#menu-join-now", 'join-card', 60
+    @menuTitle.push new MenuItem "#menu-example", 'example-card', 60
+    @menuTitle.push new MenuItem "#menu-questions", 'questions-view', 175
+    @menuTitle.push new MenuItem "#menu-new-question", 'new-question-view', 98
+    @menuTitle.push new MenuItem "#menu-settings", 'settings-view', 90
 
     $("#menu-publish").click =>
       @selectMenu($("#menu-publish"))
@@ -70,11 +58,6 @@ class TestPage extends Page
     
     $("#menu-title").click()
 
-  @selectMenu: (option) ->
-    options =["menu-title","menu-join-now","menu-questions","menu-new-question","menu-settings"]
-    for opt in options
-      $("##{opt}").removeClass 'menu-selected'
-    option.addClass 'menu-selected'
 
   @toggleStatus: (status) ->
     Shareyourtest.TestPage.test.set('status',status)
@@ -151,5 +134,17 @@ class TestPage extends Page
     )
     
    
+class MenuItem
+
+  constructor: (@menuItemId, @cardId, @offset) ->   
+    $(@menuItemId).click =>
+      MenuItem.selectMenu $(@menuItemId)
+      TestPage.animate @cardId, @offset
+
+  @selectMenu: (option) ->
+    options = Shareyourtest.TestPage.menuTitle.map((item) -> item.menuItemId)
+    for opt in options
+      $("#{opt}").removeClass 'menu-selected'
+    option.addClass 'menu-selected'
 
 window.Shareyourtest.TestPage = TestPage
