@@ -45,7 +45,7 @@ class TestsController < ApplicationController
     @average_rating = @test.average_rating 
     @number_of_ratings =  @test.pluralize_number_of_ratings
     @sample_question = @test.questions.first
-
+    @ranking = Ranking.for @test
     respond_to do |format|
       format.html
       format.xml  { render :xml => @test }

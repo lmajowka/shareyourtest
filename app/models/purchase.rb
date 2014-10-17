@@ -17,6 +17,10 @@ class Purchase < ActiveRecord::Base
     right_user_answers = UserAnswer.where(purchase_id:id, status: 'right').count.to_f
     return 0 if total_user_answers == 0
     self.performance =  (right_user_answers/total_user_answers).round(2)
+    ranking = Ranking.find_or_create_by(user_id: self.user_id, exam_id: self.exam_id)
+    if ranking.performance.nil?
+      ranking.update!(performance: self.performance)
+    end  
   end	
 
 end
