@@ -14,10 +14,10 @@ class TestPage extends Page
     $('#create-question-button').html "CREATE"
     $('#create-question-button')[0].onclick = Shareyourtest.Controllers.Questions.create
 
-  @displayRating: ->
-    $('#test-rating').raty(
+  @displayRating:(id,rating) ->
+    $(id).raty(
       readOnly: true
-      score: averageRating
+      score: rating
       path: '/assets'
     ) 
 
@@ -33,7 +33,7 @@ class TestPage extends Page
 
     @test.on 'sync', @displayMenuOptions
 
-    @displayRating()
+    @displayRating("#test-rating",averageRating)
 
     @questions.fetch()
     @test.fetch()

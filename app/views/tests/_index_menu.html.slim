@@ -1,0 +1,22 @@
+div class='test-menu tc'
+  div class='mt40 cp' id='menu-title'
+    Tests
+  - if @my_exam  
+    
+  div class='tl'
+    -if signed_in?
+      div class='mt40 ml5 cp p5' id='menu-join-now'
+        span class='glyphicon glyphicon-thumbs-up mr10'
+        = 'My tests'
+
+    div class='mt40 ml5 cp p5'
+      span class='mr10'
+      = 'Top Tests'
+
+    div class='mt40 ml5 cp p5'
+      span class='mr10'
+      = 'Latest'
+      
+    div class='mt40 ml5 cp p5'
+      span class='mr10'
+      = 'IDC'    

@@ -116,3 +116,9 @@ a:hover{
   width:450px !important;
   padding:37px !important;
 }
+
+.test-card{
+  width:650px !important;
+  padding:37px !important;
+  color:#222;
+}

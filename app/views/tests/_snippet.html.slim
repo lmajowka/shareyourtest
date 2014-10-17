@@ -1,9 +1,9 @@
 = link_to exam do 
-  div class='mr40 mt20 test-snippet-container' 
+  div class='mr40 mt20 card test-card' 
     div class='fl test-snippet-image'
       = image_tag(exam.picture.url(:thumb))
     div class='fl test-snippet-info'  
-      h3 class='fs20'
+      h2 class='mt0'
         = exam.title
       div
         = truncate(exam.description, length:90)

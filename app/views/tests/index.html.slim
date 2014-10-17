@@ -1,8 +1,20 @@
 - content_for :title, 'Practice - Select your test'
 
-h1 class='mt40' Tests
+== render 'tests/index_menu'
 
-div class=''	
-  -@tests.each do |test|
-    == render 'tests/snippet',	exam: test 
+div class='ml108 greyboard'
+
+  div class='card test-card'
+    h1 class='mt0 fl' Tests
+    div class='fr'
+      input type='text' class='join-now-input' placeholder="Search"
+
+  div class=''	
+    -@tests.each do |test|
+      = link_to test do
+        div class='card test-card mt20'
+          == render 'tests/main_snippet',	exam: test 
+          div class='cb'
+
+div class='empty-space'    
     
