@@ -45,6 +45,7 @@ class TestPage extends Page
     @menuTitle.push new MenuItem "#menu-title", 'title-view', 60
     @menuTitle.push new MenuItem "#menu-join-now", 'join-card', 60
     @menuTitle.push new MenuItem "#menu-example", 'example-card', 60
+    @menuTitle.push new MenuItem "#menu-ranking", 'ranking-card', 60
     @menuTitle.push new MenuItem "#menu-questions", 'questions-view', 175
     @menuTitle.push new MenuItem "#menu-new-question", 'new-question-view', 98
     @menuTitle.push new MenuItem "#menu-settings", 'settings-view', 90

@@ -14,6 +14,11 @@ div class='test-menu tc'
         span class='glyphicon glyphicon-ok-sign mr10'
         = 'Example'
 
+    -if @ranking.any? 
+      div class='mt40 ml5 cp p5' id='menu-ranking'
+        span class='glyphicon glyphicon-user mr10'
+        = 'Ranking'
+
     -if @my_exam 
       div class='mt40 ml5 cp p5' id='menu-questions'
         span class='glyphicon glyphicon-file mr10'

@@ -5,7 +5,7 @@ div class='card' id='ranking-card'
       div class='fl' 
         =rank.user.name
       div class='fl ml10'	
-        =rank.performance*100.round(0) 
+        =(rank.performance*100).to_i
         '%
     div class='cb'    
 
