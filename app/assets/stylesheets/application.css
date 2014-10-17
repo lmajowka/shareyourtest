@@ -102,3 +102,17 @@ a:hover{
 .greyboard{
   padding:20px 30px;
 }
+
+
+.card{
+  background:#FFFFFF;
+  box-shadow: 0 0 5px #A6A6A6;
+  float:left;
+  padding:20px;
+  width:100%;
+}
+
+.page-card{
+  width:450px !important;
+  padding:37px !important;
+}

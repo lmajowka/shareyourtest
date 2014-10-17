@@ -1,17 +1,18 @@
-h1 class='ml40 mt40' Create a new Test
-div class='ml40'
-  = form_for @test do |f|
+div class='card mt20 ml20 p40 page-card'
+  h1 Create a new Test
+  div 
+    = form_for @test do |f|
 
-    = f.text_field :title, class: "fl mt20 ml40 join-now-input", placeholder: "Title"
-    - @test.errors.messages[:title].each do |message|
-      div class='fl ml20 mt10 red' = message
+      = f.text_field :title, class: "fl mt20 join-now-input", placeholder: "Title"
+      - @test.errors.messages[:title].each do |message|
+        div class='fl mt5 mr5 red' = message
 
-    div class='cb'
+      div class='cb'
 
-    = f.text_field :description, class: "fl mt20 ml40 join-now-input", placeholder: "Description"
-    - @test.errors.messages[:description].each do |message|
-      div class='fl ml20 mt10 red' = message
+      = f.text_field :description, class: "fl mt20 join-now-input", placeholder: "Description"
+      - @test.errors.messages[:description].each do |message|
+        div class='fl mt5 mr5 red' = message
 
-    div class='cb'
+      div class='cb'
 
-    .actions = f.submit 'CREATE', class: 'flat-btn flat-btn-green mt20 ml40 join-now-button'
+      .actions = f.submit 'CREATE', class: 'flat-btn flat-btn-green mt20 ml40 join-now-button'

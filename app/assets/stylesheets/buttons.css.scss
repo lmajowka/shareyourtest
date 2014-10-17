@@ -10,13 +10,13 @@
 }
 
 .flat-btn-gray{
-  border-color:#AAA;
-  color:#AAA;
+  border-color:#888;
+  color:#888;
 }
 
 .flat-btn-gray:hover{
-  border-color:#777;
-  color:#777;
+  background:#888;
+  color:#FFF;
 }
 
 .flat-btn-green{
@@ -49,13 +49,14 @@
 }
 
 .flat-btn-red:hover{
-  border-color:#666;
-  color:#666;
+  background:#C30409;
+  color:#FFF;
 }
 
 .flat-btn-yellow{
   border-color:#F1D12A;
   color:#F1D12A;
+  background:transparent;
 }
 
 .flat-btn-yellow:hover{
@@ -65,6 +66,7 @@
 .flat-btn-white{
   border-color:#FFF;
   color:#FFF;
+  background:transparent;
 }
 
 .flat-btn-white:hover{

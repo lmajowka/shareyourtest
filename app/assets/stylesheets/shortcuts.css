@@ -1,3 +1,4 @@
+.mt0{margin-top:0px;}
 .mt2{margin-top:2px;}
 .mt5{margin-top:5px;}
 .mt10{margin-top:10px;}
@@ -32,6 +33,7 @@
 
 .p5{padding:5px}
 .p20{padding:20px}
+.p40{padding:40px}
 
 .fs12{font-size:12px;}
 .fs20{font-size:20px;}

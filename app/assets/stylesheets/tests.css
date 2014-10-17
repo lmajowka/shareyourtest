@@ -2,15 +2,6 @@ body{
   background:#E5E5E5 !important;
 }
 
-.card{
-  background:#FFFFFF;
-  box-shadow: 0 0 5px #A6A6A6;
-  float:left;
-  padding:20px;
-  padding-bottom:40px;
-  width:100%;
-}
-
 .test-menu{
   width:155px;
   background: #FFF;
@@ -60,7 +51,7 @@ body{
  }
 
 .join-now-button{
-  background:none;
+  margin-left:100px;
 }
 
 .question-text-area{

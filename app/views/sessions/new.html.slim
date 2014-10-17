@@ -1,10 +1,11 @@
 - content_for :title, 'Sign in to Share your Test'
-h1 class='ml40 mt100' Sign in
+div class='card mt20 ml20 p40 page-card'
+	h1 class='' Sign in
 
-= form_for :session, url: sessions_path do |f|
-  = f.text_field :email, class: "join-now-input mt20 ml40 mt20", placeholder: "Email"
-  div class='cb'
-  = f.password_field :password , class: "join-now-input ml40 mt20", placeholder: "Password"
-  div class='cb'
+	= form_for :session, url: sessions_path do |f|
+	  = f.text_field :email, class: "join-now-input mt20 mt20", placeholder: "Email"
+	  div class='cb'
+	  = f.password_field :password , class: "join-now-input mt20", placeholder: "Password"
+	  div class='cb'
 
-  = f.submit "SIGN IN", class: "flat-btn flat-btn-green ml40 mt20"
+	  = f.submit "SIGN IN", class: "flat-btn flat-btn-green ml100 mt20"

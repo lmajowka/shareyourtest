@@ -5,5 +5,11 @@ div class='card' id='example-card'
     =@sample_question.content
   
   -@sample_question.answers.each do |answer|
-    div class='mt20'
-      =answer.content
+    div class='mt20 fl preview-answer'
+      table
+        tr
+          td valign='top'
+            input type='radio' 
+          td valign='top'
+            div class='fl ml10 w100'
+              =answer.content
