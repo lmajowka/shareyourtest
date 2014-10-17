@@ -110,18 +110,21 @@ class AnswerPage
     location.href = location.href.replace(/answers/,"tests").replace(/\/[0-9]+/,"")
 
   @finish: ->
-    purchase = new Shareyourtest.Models.Purchase(
+    @purchase = new Shareyourtest.Models.Purchase(
       id: purchase_id
     )
-    purchase.set('status','answered')
-    purchase.on 'change', @finishScreen()
-    purchase.save()
+    @purchase.set('status','answered')
+    @purchase.on 'sync', @finishScreen
+    @purchase.save()
 
   @finishScreen: ->
     $('#finish-button').hide()
     viewURL = location.href + "/" + purchase_id
-    $('#blank-answer-area').html @finishScreenTemplate(
+    $('#blank-answer-area').html Shareyourtest.AnswerPage.finishScreenTemplate(
       viewURL: viewURL
+      performance: (Shareyourtest.AnswerPage.purchase.get('performance') * 100)
+      totalQuestions: questions.length
+      rightQuestions: Shareyourtest.AnswerPage.userAnswers.filter( (userAnswer) -> userAnswer.get('status') == 'right' ).length
     )
     $('#user_star').raty(
       score: 0

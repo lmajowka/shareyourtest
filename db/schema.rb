@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015134021) do
+ActiveRecord::Schema.define(version: 20141017125851) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20141015134021) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
+    t.float    "perfomance"
+    t.float    "performance"
   end
 
   add_index "purchases", ["exam_id"], name: "index_purchases_on_exam_id"
