@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20141017135016) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
-    t.float    "perfomance"
     t.float    "performance"
   end
 
