@@ -6,7 +6,7 @@ class UserAnswer < ActiveRecord::Base
 
   before_save :update_status
 
-  scope :answers_for, -> (purchase) {includes(:question).where(purchase_id: purchase.id).order('questions.position ASC')}
+  scope :answers_for, ->(purchase) {includes(:question).where(purchase_id: purchase.id).order('questions.position ASC')}
 
   private
 

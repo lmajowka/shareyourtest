@@ -5,7 +5,7 @@ class Purchase < ActiveRecord::Base
   after_initialize :assign_defaults
   before_update :calculate_performance
 
-  scope :answered_for, -> (test_id) {where(status: "answered", exam_id:test_id).order(created_at: :desc)}
+  scope :answered_for, ->(test_id) {where(status: "answered", exam_id:test_id).order(created_at: :desc)}
 
   def assign_defaults
     self.status ||= 'ready'
