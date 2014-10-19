@@ -10,12 +10,14 @@
   input[type=text],input[type=password]{
     height:30px;
     padding-left: 4px;
-    border:1px solid #FFF
+    border:1px solid #FFF;
+    color:#000;
   }
   input[type=password]{
     margin-top:12px;
     margin-right: 10px;
     width:132px;
+    color:#000;
   }
 }
 
