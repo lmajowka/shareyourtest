@@ -23,7 +23,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :test, :development do
-  gem 'byebug'
+  #gem 'byebug'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'jasmine-rails'
