@@ -2,47 +2,67 @@
 
 div id='hp-main-container'
 
-  div class='hp_frame water_frame' id="frame-index"
+  div class='background-hp1'
+    div class='hp-wrapper'
+      div id='hp-header'
+        div id='hp-logo' class='fl mt20'
+          = link_to 'Share your Test', root_path, class:'cp'
+        div id='hp-header-links' class='fr mt30'
+          div class='fl ml50' id='practice-button'
+            'PRACTICE
+          div class='fl ml50'
+            div = link_to 'TESTS', exams_path()
+          div class='fl ml50'
+            = link_to 'SIGN IN', signin_path
 
-    div id='hp_text'
+    div class='tc fl mt100 w100'
       h1
-        = 'Welcome to Share your Test'
-      div id='hp_site_description'
-        = 'Shareyourtest is a collaborative platform where teachers and students can share tests of hundreds of subjects and certifications.'
-    div id='hp_singin'
-      div
-        == render 'snippets/login_box'
-      div class='mt10'
-        == render 'snippets/signup_box'
+        div
+          = 'WELCOME TO'
+        div class='big-title mt20'
+          = 'SHARE YOUR TEST'
 
-  div class='hp_frame green_frame' id='frame-answer'
-    div class='ml40 mt100 fl answer-tests'
-      h2 Practice:
-      h3 class='mt20 fl'
-        = 'Choose your test and start practicing  now.'
-    div class='cb'
-    div class='mt40 ml40'  
-      - @tests.each do |exam|
-          == render 'tests/snippet',  exam: exam 
-    div class='cb'      
-    div = link_to 'More', exams_path(), class: 'hp-more'
+      div class='mt40 sub-text'
+        = 'Shareyourtest is an open source collaborative platform where teachers and students can share tests of hundreds of subjects and certifications.'
 
+      div class='tc w100'
+        div id='sign-up-now-button' class='flat-btn-big flat-btn-blue mt60 mauto'
+          = 'SIGN UP NOW!'
 
-  div class='hp_frame yellow_frame' id='frame-share'
-    div class='ml100 mt100 fl'
-      h2 Share your test
-      h3 class='mt20' Submit your practice exam in any topic.
-    =link_to new_exam_path() do
-      div class='btn btn-warning fr mt100 mr140 mt130' Start Now
+  div class='background-hp2'
+    div
+      = ''
+    div
+      = ''
+    div
+      = ''
 
-  / div class='hp_frame pink_frame' id='frame-money'
-  /   div class='ml100 mt100 fl'
-  /     h2 Make money
-  /     h2 Share or Sell your test for hundreds of users.
-  /   div class='make-money'
+  div class='background-hp3 fl w100' id='background-hp3'
+    div class='hp-wrapper tc'
+      h2 class='mt40 mauto' Practice
+      div class='cb'
+      div class='mt40 mid-gray' Choose your test and start practicing now
+      div class='mt40'
+        - @tests.each do |exam|
+          == render 'tests/snippet',  exam: exam
+      div class='cb'
+      div class='mt20'
+        div = link_to 'More', exams_path()
 
 
-  
+  div class='background-hp4' id='background-hp4'
+    div class='ml100 mt40'
+      == render 'snippets/signup_box'
+
+
+  div class='hp-footer'
+    div class='fl mt20 ml20'
+      = 'Shareyourtest.com - 2014'
+    div class='fr mt20 mr20'
+      = 'Github: '
+      a href='https://github.com/lmajowka/shareyourtest'
+        = 'https://github.com/lmajowka/shareyourtest'
+
 
   script
     = 'Shareyourtest.IndexPage.initialize();'

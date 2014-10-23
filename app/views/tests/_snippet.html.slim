@@ -1,7 +1,8 @@
 = link_to exam do 
-  div class='mr40 mt20 card test-card' 
-    div class='fl test-snippet-image'
+  div class='mr50 mt20 card test-card'
+    div class='test-snippet-image'
       = image_tag(exam.picture.url(:thumb))
+    div class='cb'
     div class='fl test-snippet-info'  
       h2 class='mt0'
         = exam.title

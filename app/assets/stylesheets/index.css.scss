@@ -1,79 +1,64 @@
-// Place all the styles related to the index controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.background-hp1{
+  background: image-url("background-hp1.png");
+  min-height:678px;
+}
 
-#hp_text{
+.background-hp2{
+  background: #FFF;
+  height:278px;
+}
+
+.background-hp3{
+  background: #F1F1F1;
+  height:578px;
+}
+
+.background-hp4{
   float:left;
-  margin-left:150px;
-  margin-top: 170px;
-  width: 600px;
-}
-
-#hp-main-container{
-  margin-left:-40px;
-  margin-top:-80px;
-}
-
-#hp-main-container{
-   h1,h2{
-   color:#F1D12A !important;
-   text-shadow: 0px 0px 3px #000;
-   font-weight: bold !important;  
-  }
-}
-
-#hp_site_description{
-  width:500px;
-  margin-top: 60px;
-  font-size:28px;
-  color:#FFF;
-  text-shadow: 0px 0px 2px #000;
-}
-
-#hp_singin{
-  float:left;
-  margin-top: 150px;
-  margin-left: 0px;
-}
-
-.hp_frame{
-  min-height:650px;
+  background: #6161F1;
+  height:478px;
   width:100%;
 }
 
-
-.water_frame{
-  background:#1E1E1E;
+#hp-main-container{
+  margin:0;
 }
 
-.green_frame{
-  background:#1E1E1E;
+.hp-wrapper{
+  width:1200px;
+  margin:0 auto;
 }
 
-.yellow_frame{
-   background: image-url("social.jpg");
-   background-size:100%;
-   background-position: 0 107px;
+#hp-header-links{
+  font-size:17px;
+  font-weight:bold;
+  color:#333;
+  font-family:Arial !important;
 }
 
-.pink_frame{
-  background:#7AB8F1;
+#hp-logo{
+  font-size:29px;
 }
 
-.hp-more{
-  float:right;
-  margin-right:70px;
-  font-size:30px;
-  color:#FFF;
-  margin-top:30px
+.big-title{
+  font-size:59px;
+  font-weight: bold;
+  color:#295E88;
 }
 
+.sub-text{
+  width: 598px;
+  margin: 0 auto;
+  font-size: 17px;
+}
 
-.make-money{
-  background: image-url("make-money.png");
-  height:293px;
-  width:390px;
-  float:right;
-  margin-top:200px;
-  margin-right:30px;
+#hp-main-container h2{
+  font-size:15px;
+  font-weight: bold;
+  color:#295E88;
+}
+
+#practice-button{
+  color: #295E88;
+  cursor:pointer;
 }

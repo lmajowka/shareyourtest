@@ -17,5 +17,4 @@ class UserAnswer < ActiveRecord::Base
       self.status = 'wrong'
     end     	
   end
-
 end

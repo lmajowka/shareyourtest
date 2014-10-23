@@ -19,22 +19,21 @@
 </head>
 <body>
 
-<%= render 'application/header'%>
+<%= if not @homepage
+     render 'application/header'
+   end %>
 <div class="cb"></div>
 
-  <% flash.each do |key, value| %>
-    <div class="ml40 mt40 alert alert-<%= key %>"><%= value %></div>
-  <% end %>
-  </div>
-
-<div class='pl40'>
+<% if not @homepage %><div class="pl40"><% end %>
   <%= yield %>
-</div>
+<% if not @homepage %></div><% end %>
 
+<% if not @homepage %>
 <div id="footer">
   <div class="fl mt20 ml20">Shareyourtest.com - 2014</div>
   <div class="fr mt20 mr20">Github: <a href="https://github.com/lmajowka/shareyourtest">https://github.com/lmajowka/shareyourtest</a></div>
 </div>
+<% end %>
 
 </body>
 </html>

@@ -6,6 +6,7 @@ class IndexController < ApplicationController
     end
     @user = User.new
     @tests = Exam.published.limit 3
+    @homepage = true
   end
 
 end
