@@ -5,7 +5,7 @@
 
 .background-hp2{
   background: #FFF;
-  height:278px;
+  height:329px;
 }
 
 .background-hp3{
@@ -67,4 +67,41 @@
   height:70px;
   background: #1E1E1E;
   color: #FFF;
+}
+
+.hp-pencil{
+  background: image-url("pencil.png");
+  height:82px;
+  width:55px;
+}
+.hp-monitor{
+  background: image-url("monitor.png");
+  height:81px;
+  width:70px;
+}
+.hp-target{
+  background: image-url("target.png");
+  height:72px;
+  width:86px;
+  margin-bottom:3px;
+  margin-top:7px;
+}
+.learn-more-unit{
+  width:250px;
+  margin-right:135px;
+}
+
+.hp-learn-more{
+  width:1020px;
+  margin-top:60px;
+}
+
+.hp-learn-more-subtitle{
+  font-size:17px;
+  color:#000;
+}
+
+.hp-learn-more-text{
+  margin-top:25px;
+  color:#AAA;
 }
