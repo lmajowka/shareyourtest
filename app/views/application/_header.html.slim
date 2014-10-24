@@ -1,15 +1,11 @@
 div id='header'
   div id='logo'
     = link_to 'Share your Test', root_path, class:'cp'
-  div class='fl mt20 ml40'
-    = '»'
-  div class='fl mt20 ml40'
+  div class='fl mt20 ml100'
     = link_to 'Practice', exams_path(), class:'cp'
-  div class='fl mt20 ml40'
-      = '»'
-  div class='fl mt20 ml40'
+  div class='fl mt20 ml100'
     = link_to 'Share your Test', new_exam_path(), class:'cp'
-  div class='fl mt20 ml40'
+  div class='fl mt20 ml100'
 
   div class='fr mr95 mt20'
     - if signed_in?

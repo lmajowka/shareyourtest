@@ -1,6 +1,6 @@
 h1 class='mt40' Welcome to Shareyourtest. Good luck!
  
-div class='mt20' 
+div class='mt20 fl'
 
 - if @exams.size > 0
     h2 class='fl' Your tests
@@ -11,6 +11,9 @@ div class='mt20'
 
     - @exams.each do |exam|
         == render 'tests/snippet', exam: exam 
+
+div class='cb'
+div class='empty-space'
 
 - if @new_user
   javascript:

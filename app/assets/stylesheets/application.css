@@ -43,7 +43,6 @@
 
 #header a:hover{
   color:#FFE477;
-  font-weight:bold;
 }
 
 .dropdown-menu a{
@@ -85,7 +84,7 @@ h1, h2{
 }
 
 .empty-space{
-  height:320px;
+  height:120px;
 }
 
 a:hover{
