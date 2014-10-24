@@ -9,14 +9,14 @@
 }
 
 .background-hp3{
-  background: #F1F1F1;
-  height:578px;
+  background: #f2f4f5;
+  height:598px;
 }
 
 .background-hp4{
   float:left;
-  background: #6161F1;
-  height:478px;
+  background: image-url("background-hp4.png");
+  height:406px;
   width:100%;
 }
 
@@ -61,4 +61,10 @@
 #practice-button{
   color: #295E88;
   cursor:pointer;
+}
+
+#hp-footer{
+  height:70px;
+  background: #1E1E1E;
+  color: #FFF;
 }

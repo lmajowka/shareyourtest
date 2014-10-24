@@ -1,9 +1,8 @@
 .login-box{
   width:300px;
-  background:#000;
   color:#FFF;
   padding: 13px;
-  border:1px solid #FFF;  
+  margin:0 auto;
 }
 
 .login-box {
@@ -11,12 +10,6 @@
     height:30px;
     padding-left: 4px;
     border:1px solid #FFF;
-    color:#000;
-  }
-  input[type=password]{
-    margin-top:12px;
-    margin-right: 10px;
-    width:132px;
     color:#000;
   }
 }
