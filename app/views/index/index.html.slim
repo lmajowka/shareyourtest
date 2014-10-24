@@ -8,11 +8,11 @@ div id='hp-main-container'
         div id='hp-logo' class='fl mt20'
           = link_to 'Share your Test', root_path, class:'cp'
         div id='hp-header-links' class='fr mt30'
-          div class='fl ml50' id='practice-button'
+          div class='fl ml50 hp-link mt1' id='practice-button'
             'PRACTICE
-          div class='fl ml50'
-            div = link_to 'TESTS', exams_path()
-          div class='fl ml50'
+          div class='fl ml50 hp-link'
+            div = link_to 'TESTS ', exams_path()
+          div class='fl ml50 hp-link'
             = link_to 'SIGN IN', signin_path
 
     div class='tc fl mt100 w100'
@@ -67,7 +67,7 @@ div id='hp-main-container'
           == render 'tests/snippet',  exam: exam
       div class='cb'
       div class='mt20'
-        div = link_to 'View all tests', exams_path()
+        div = link_to 'VIEW ALL TESTS', exams_path()
 
 
   div class='background-hp4' id='background-hp4'
