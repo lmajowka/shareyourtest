@@ -12,8 +12,7 @@ div class='ml108 greyboard'
   div class=''	
     -@tests.each do |test|
       = link_to test do
-        div class='card test-card mt20'
-          == render 'tests/main_snippet',	exam: test 
+        == render 'tests/snippet',	exam: test
           div class='cb'
 
   div class='cb'
