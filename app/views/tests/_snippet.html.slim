@@ -4,10 +4,21 @@
       = image_tag(exam.picture.url(:thumb))
     div class='cb'
     div class='fl test-snippet-info'  
-      h2 class='mt0'
+      h2 class='mt10'
         = exam.title
-      div
+      div class='mt20 mid-gray'
         = truncate(exam.description, length:90)
       div class='fs12'
         = exam.questions.size
-        = ' Questions' 
+        = ' Questions'
+      div class='w100 tl mt40'
+        div class='fl ml20' id='test-rating#{{exam.id}}'
+        div class='fr flat-btn flat-btn-blue'
+          = 'ANSWER'
+
+
+javascript:
+  $(document).ready(function () {
+    Shareyourtest.TestPage.displayRating("#test-rating#{{exam.id}}",#{{exam.average_rating}});
+  });
+

@@ -122,7 +122,8 @@ h3 {
 }
 
 .test-snippet-info h2 {
-  font-size:15px !important;
+  font-size:20px !important;
+  color:#000 !important;
 }
 
 .test-snippet-info h3{

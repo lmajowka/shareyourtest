@@ -5,6 +5,8 @@ class IndexPage extends Page
       Shareyourtest.IndexPage.slideTo("background-hp4")
     $('#practice-button')[0].onclick = ->
       Shareyourtest.IndexPage.slideTo("background-hp3")
+    $('#learn-more')[0].onclick = ->
+      Shareyourtest.IndexPage.slideTo("background-hp2")
 
 
     $('a[href="/"]')[0].removeAttribute 'href'
