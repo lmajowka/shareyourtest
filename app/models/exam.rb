@@ -18,7 +18,9 @@ class Exam < ActiveRecord::Base
 
   
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
-  validates :title, presence: true, length: { minimum: 3 }
+  validates :title, presence: true,
+            length: { minimum: 3 },
+            uniqueness: { case_sensitive: false }
   validates :description, presence: true,length: { minimum: 6 }
   validates_presence_of :owner
   validates_inclusion_of :status, in: STATUSES
