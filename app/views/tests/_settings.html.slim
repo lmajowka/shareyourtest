@@ -1,4 +1,18 @@
 div class='card'
   div id='settings-view'
     h2 Settings
-    div No settings yet
+    = form_for @test, method: :patch do |f|
+
+      = f.text_field :title, class: "fl mt20 join-now-input", placeholder: "Title"
+      - @test.errors.messages[:title].each do |message|
+        div class='fl mt5 mr5 red' = message
+
+      div class='cb'
+
+      = f.text_field :description, class: "fl mt20 join-now-input", placeholder: "Description"
+      - @test.errors.messages[:description].each do |message|
+        div class='fl mt5 mr5 red' = message
+
+      div class='cb'
+
+      .actions = f.submit 'UPDATE', class: 'flat-btn flat-btn-green mt20 ml40 join-now-button'
