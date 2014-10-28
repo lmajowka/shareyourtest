@@ -69,9 +69,9 @@ class TestsController < ApplicationController
 
   def update_params
     if params[:exam]
-      params[:picture] = params[:exam][:picture]
-      params[:title] = params[:exam][:title]
-      params[:description] = params[:exam][:description]
+      params[:picture] = params[:exam][:picture] if params[:exam][:picture]
+      params[:title] = params[:exam][:title] if params[:exam][:title]
+      params[:description] = params[:exam][:description] if params[:exam][:description]
     end
     params.permit(:status,:picture,:title,:description)
   end
