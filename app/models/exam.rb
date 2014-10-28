@@ -19,14 +19,14 @@ class Exam < ActiveRecord::Base
   
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true,
-            length: { minimum: 3 },
-            uniqueness: { case_sensitive: false }
+            length: { minimum: 3 }
   validates :description, presence: true,length: { minimum: 6 }
   validates_presence_of :owner
   validates_inclusion_of :status, in: STATUSES
   validates_numericality_of :price
 
   after_initialize :assign_defaults
+  before_validation :check_permalink_uniqueness, on: :create
 
   def average_rating
     return 0 if ratings.size == 0
@@ -47,5 +47,12 @@ class Exam < ActiveRecord::Base
     self.status ||= 'draft'
     self.price ||= 0
   end  
+
+  def check_permalink_uniqueness
+    if Exam.where(permalink: self.permalink.parameterize).count > 0
+      random_string = (0...3).map { ('a'..'z').to_a[rand(26)] }.join
+      self.permalink += "-#{random_string}"
+    end
+  end
 
 end

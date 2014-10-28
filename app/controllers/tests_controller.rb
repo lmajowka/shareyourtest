@@ -27,7 +27,7 @@ class TestsController < ApplicationController
   def update
     if my_exam?
       @test.update(update_params)
-      @test.save!
+      @test.save
       return redirect_to @test unless params[:status]
     end
     render json: @test.to_json
