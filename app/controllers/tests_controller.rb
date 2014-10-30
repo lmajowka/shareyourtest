@@ -5,6 +5,7 @@ class TestsController < ApplicationController
 
   def index
     @tests = Exam.published
+    @number_of_tests = @tests.size
   end
 
   def create

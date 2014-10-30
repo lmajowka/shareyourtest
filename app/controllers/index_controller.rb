@@ -7,6 +7,7 @@ class IndexController < ApplicationController
     @user = User.new
     @tests = Exam.published.limit 3
     @homepage = true
+    @number_of_tests = Exam.published.count
   end
 
 end
