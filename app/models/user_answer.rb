@@ -8,6 +8,15 @@ class UserAnswer < ActiveRecord::Base
 
   scope :answers_for, ->(purchase) {includes(:question).where(purchase_id: purchase.id).order('questions.position ASC')}
 
+  def self.ordered_answers_for(purchase)
+    @user_answers = self.answers_for(purchase)
+    answers = []
+    (1..@user_answers.last.question.position).each do |position|
+      answers << @user_answers.find { |ua| ua.question.position == position }
+    end
+    answers
+  end
+
   private
 
   def update_status

@@ -1,36 +1,44 @@
 table
-      tr
-        td width='130px' valign='top'
-          div id='question-squares-title'
-            = 'Questions'
-          div class='ml20 mt10'
-            -@test.questions.each do |question|
-              -if @purchase.status == "answered"
-                -answerclass=' wrong-answer'
-                - if @user_answers[question.position-1] and question.answer == @user_answers[question.position-1].answer.position
-                  -answerclass=' right-answer'
-              div class='question-number-square#{answerclass}' id='question-number-square#{question.position}' onclick='Shareyourtest.AnswerPage.showQuestion(#{question.position})'
-                = question.position   
+  tr
+    td width='130px' valign='top'
+      div id='question-squares-title'
+        = 'Questions'
+      div class='ml20 mt10'
 
-          div id='finish-button' class='flat-btn flat-btn-green' onclick="Shareyourtest.AnswerPage.finish()"
-            = 'FINISH'
-          div id='close-button' class='flat-btn flat-btn-green' onclick="Shareyourtest.AnswerPage.close()"
-            = 'CLOSE'  
+        -@test.questions.each do |question|
+          -user_answer = @user_answers[question.position-1]
+          -answerclass = ""
+          -if @purchase.status == "answered"
+            -answerclass = ' wrong-answer'
+            - if user_answer and question.answer == user_answer.answer.position
+              -answerclass = ' right-answer'
 
-        td class='w100' valign='top'
-          div id='blank-answer-area'   
-            table
-              tr
-                td width='70px' valign='top'
-                  div id='answer-question-number'
-                  div class='fl'
-                    div id='arrow-prev' class='arrow-prev-question fl' onclick='Shareyourtest.AnswerPage.prevQuestion()'
-                    div id='arrow-next' class='arrow-next-question fl' onclick='Shareyourtest.AnswerPage.nextQuestion()'
-                    
-                td width='850px' valign='top' class='pl40'
-                  div id='question-panel'
-                    div id='answer-question-content'
-                    div id='answer-question-answers'     
+          -else
+            -if user_answer
+              -answerclass += ' fwb'
+
+          div class='question-number-square#{answerclass}' id='question-number-square#{question.position}' onclick='Shareyourtest.AnswerPage.showQuestion(#{question.position})'
+            = question.position
+
+      div id='finish-button' class='flat-btn flat-btn-green' onclick="Shareyourtest.AnswerPage.finish()"
+        = 'FINISH'
+      div id='close-button' class='flat-btn flat-btn-green' onclick="Shareyourtest.AnswerPage.close()"
+        = 'CLOSE'
+
+    td class='w100' valign='top'
+      div id='blank-answer-area'
+        table
+          tr
+            td width='70px' valign='top'
+              div id='answer-question-number'
+              div class='fl'
+                div id='arrow-prev' class='arrow-prev-question fl' onclick='Shareyourtest.AnswerPage.prevQuestion()'
+                div id='arrow-next' class='arrow-next-question fl' onclick='Shareyourtest.AnswerPage.nextQuestion()'
+
+            td width='850px' valign='top' class='pl40'
+              div id='question-panel'
+                div id='answer-question-content'
+                div id='answer-question-answers'
 
 
 

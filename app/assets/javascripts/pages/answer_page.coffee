@@ -43,9 +43,11 @@ class AnswerPage
       @checkAnswer @userAnswers[@currentQuestionNumber].get('answer').position
     if userAnswers[questionIndex]
       @checkAnswer userAnswers[questionIndex].answer.position
+
     if purchase_status is "answered"
       $('input[type=radio]').each( (key,value) -> value.disabled = true ) 
       $('.preview-answer').removeClass('preview-answer')
+
     @setSquareCSS number
     @handleArrowsStatus number
     @questionNumberColor(questionIndex)    
