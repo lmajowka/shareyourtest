@@ -31,10 +31,22 @@
 <% if not @homepage %>
 <div id="footer">
   <div class="fl mt20 ml20">Shareyourtest.com - 2014</div>
+  <div class="fl fb-like mt20 ml40" data-href="http://www.shareyourtest.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
   <div class="fr mt20 mr20">Github: <a href="https://github.com/lmajowka/shareyourtest">https://github.com/lmajowka/shareyourtest</a></div>
 </div>
 <% end %>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1476794865887392&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 </body>
 </html>
+
+
 
