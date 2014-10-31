@@ -10,6 +10,7 @@ class UserAnswer < ActiveRecord::Base
 
   def self.ordered_answers_for(purchase)
     @user_answers = self.answers_for(purchase)
+    return [] if @user_answers.empty?
     answers = []
     (1..@user_answers.last.question.position).each do |position|
       answers << @user_answers.find { |ua| ua.question.position == position }
