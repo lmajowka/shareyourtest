@@ -15,6 +15,15 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   validates :name, presence: true, length: { minimum: 6 }
 
+  has_attached_file :picture, styles: {
+      thumb: '100x100>',
+      square: '200x200#',
+      medium: '300x300>'
+  } , default_url: 'nopictureuser.jpg'
+
+
+  validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+
   has_secure_password validations: false
 
   def User.new_remember_token

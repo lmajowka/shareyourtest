@@ -1,8 +1,25 @@
 h1 class='mt40' Welcome to Shareyourtest. Good luck!
- 
-div class='mt20 fl'
 
-- if @exams.size > 0
+h2 class='mt40 fl'
+  = current_user.name
+
+div class='cb'
+
+div class='mt20 fl user_profile_picture'
+  = image_tag(current_user.picture.url(:thumb))
+
+div class='cb'
+
+div class='mt20 pa flat-btn flat-btn-gray'
+  = 'UPDATE PICTURE'
+= form_for @user, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
+  = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input'
+
+div class='cb'
+
+div class='mt100 fl'
+
+  - if @exams.size > 0
     h2 class='fl' Your tests
     
     div class='cb' 

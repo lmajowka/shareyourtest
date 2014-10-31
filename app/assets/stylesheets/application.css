@@ -123,3 +123,13 @@ a:hover{
   text-align:center;
   min-height: 296px;
 }
+
+#fat-menu img{
+   width: 30px;
+   height:30px;
+   border-radius: 14px;
+}
+
+.dropdown-menu{
+  min-width: 100px !important;
+}

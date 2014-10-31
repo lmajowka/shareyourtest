@@ -16,13 +16,24 @@ class UsersController < ApplicationController
 
   def show
     @exams = current_user.purchases.map(&:exam).uniq
+    @user = current_user
   end
 
   def new
     @user = User.new()
   end
 
+  def update
+    current_user.update(update_params)
+    current_user.save
+    redirect_to current_user
+  end
+
   private
+
+  def update_params
+    params.require(:user).permit(:picture)
+  end
 
   def user_params
     params.require(:user).permit(:email, :password, :name)
