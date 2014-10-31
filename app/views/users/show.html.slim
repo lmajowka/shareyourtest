@@ -5,12 +5,12 @@ h2 class='mt40 fl'
 
 div class='cb'
 
-div class='mt20 fl user_profile_picture'
+div class='mt20 mb20 fl user_profile_picture'
   = image_tag(current_user.picture.url(:thumb))
 
 div class='cb'
 
-div class='mt20 pa flat-btn flat-btn-gray'
+div class='pa flat-btn flat-btn-gray'
   = 'UPDATE PICTURE'
 = form_for @user, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
   = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input'
