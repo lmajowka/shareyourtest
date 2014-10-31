@@ -118,6 +118,8 @@ h3 {
 .test-snippet-info h2 {
   font-size:20px !important;
   color:#000 !important;
+  overflow-y: hidden;
+  height: 25px;
 }
 
 .test-snippet-info h3{
