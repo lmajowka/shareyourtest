@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def update_params
     params[:picture] = params[:user][:picture] if params[:user][:picture]
-    params.require(:user).permit(:picture)
+    params.permit(:picture)
   end
 
   def user_params
