@@ -10,10 +10,10 @@ div class='mt20 mb20 fl user_profile_picture'
 
 div class='cb'
 
-div class='pa flat-btn flat-btn-gray'
+div id='update_picture' class='pa flat-btn flat-btn-gray'
   = 'UPDATE PICTURE'
 = form_for @user, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
-  = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input'
+  = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input cp', onmouseover: '$("#update_picture").addClass("flat-btn-gray-hover")', onmouseout: '$("#update_picture").removeClass("flat-btn-gray-hover")'
 
 div class='cb'
 
