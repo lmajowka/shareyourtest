@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   end
 
   def check_permalink_uniqueness
-    if User.where(permalink: self.permalink.parameterize).count > 0
+    if self.permalink and User.where(permalink: self.permalink.parameterize).count > 0
       random_string = (0...3).map { ('a'..'z').to_a[rand(26)] }.join
       self.permalink += "-#{random_string}"
     end
