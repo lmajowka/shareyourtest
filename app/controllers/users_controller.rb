@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @exams = current_user.purchases.map(&:exam).uniq
-    @user = current_user
+    @user = User.find(params[:id])
+    @my_profile = @user == current_user
+    @exams = current_user.purchases.map(&:exam).uniq if @my_profile
   end
 
   def new

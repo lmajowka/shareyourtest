@@ -1,26 +1,35 @@
-h1 class='mt40' Welcome to Shareyourtest. Good luck!
+-if @my_profile
+  h1 class='mt40' Welcome to Shareyourtest. Good luck!
 
-h2 class='mt40 fl'
-  = current_user.name
+h1 class='mt40 fl'
+  = @user.name
 
 div class='cb'
 
 div class='mt20 mb20 fl user_profile_picture'
   div class='fl'
-    = image_tag(current_user.picture.url(:thumb))
+    = image_tag(@user.picture.url(:thumb))
 
-    div id='update_picture' class='pa mt20 flat-btn flat-btn-gray'
-      = 'UPDATE PICTURE'
-      = form_for @user, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
-        = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input cp', onmouseover: '$("#update_picture").addClass("flat-btn-gray-hover")', onmouseout: '$("#update_picture").removeClass("flat-btn-gray-hover")'
+    -if @my_profile
+
+      div id='update_picture' class='pa mt20 flat-btn flat-btn-gray'
+        = 'UPDATE PICTURE'
+        = form_for @user, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
+          = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input cp', onmouseover: '$("#update_picture").addClass("flat-btn-gray-hover")', onmouseout: '$("#update_picture").removeClass("flat-btn-gray-hover")'
 
   div class='fl ml40'
     = 'Bio'
-    = form_for @user, html: {id: 'form-bio'}, method: :patch do |f|
-      = f.text_area :bio, class: 'bio-input'
+
+    -if @my_profile
+      = form_for @user, html: {id: 'form-bio'}, method: :patch do |f|
+        = f.text_area :bio, class: 'bio-input'
+    -else
+      div
+        = @user.bio
 
       div class='cb'
 
+    -if @my_profile
       div class='flat-btn mt15 flat-btn-green fr' onclick='$("#form-bio").submit()'
         = 'SAVE'
 
@@ -30,21 +39,22 @@ div class='cb'
 
 div class='cb'
 
-div class='mt100 fl'
+-if @my_profile
+  div class='mt100 fl'
 
-  - if @exams.size > 0
-    h2 class='fl' Your tests
-    
-    div class='cb' 
+    - if @exams.size > 0
+      h2 class='fl' Your tests
 
-    div class='mt20'
+      div class='cb'
 
-    - @exams.each do |exam|
-        == render 'tests/snippet', exam: exam 
+      div class='mt20'
 
-div class='cb'
-div class='empty-space'
+      - @exams.each do |exam|
+          == render 'tests/snippet', exam: exam
 
-- if @new_user
-  javascript:
-    self.location = $.cookie("last-test-page")
+  div class='cb'
+  div class='empty-space'
+
+  - if @new_user
+    javascript:
+      self.location = $.cookie("last-test-page")
