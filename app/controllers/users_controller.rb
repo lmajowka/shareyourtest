@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_permalink params[:id]
     @my_profile = @user == current_user
     @exams = current_user.purchases.map(&:exam).uniq if @my_profile
   end

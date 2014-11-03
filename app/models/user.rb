@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   before_create :create_remember_token
   before_save { self.email = email.downcase }
+  before_validation :check_permalink_uniqueness, on: :create
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:   true,
@@ -21,6 +22,7 @@ class User < ActiveRecord::Base
       medium: '300x300>'
   } , default_url: 'nopictureuser.jpg'
 
+  has_permalink :name
 
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
@@ -46,6 +48,13 @@ class User < ActiveRecord::Base
 
   def create_remember_token
     self.remember_token = User.digest(User.new_remember_token)
+  end
+
+  def check_permalink_uniqueness
+    if User.where(permalink: self.permalink.parameterize).count > 0
+      random_string = (0...3).map { ('a'..'z').to_a[rand(26)] }.join
+      self.permalink += "-#{random_string}"
+    end
   end
 
 end

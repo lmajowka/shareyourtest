@@ -12,6 +12,8 @@ div class='test-snippet-container-main'
       div class='fl mt2 ml10 mid-gray' 
         =@number_of_ratings
         ' &nbsp;
+      div class='fl ml20 mt2'
+        = link_to exam.owner.name, exam.owner
     div class='cb'
     div class='mt10'
       = exam.description
