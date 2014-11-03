@@ -145,6 +145,9 @@ h3 {
   -moz-opacity:0;
   opacity: 0;
   height: 34px;
+  position:absolute;
+  top:0;
+  left:0;
 }
 
 #create-question-error{
