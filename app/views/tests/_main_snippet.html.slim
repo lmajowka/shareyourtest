@@ -5,15 +5,15 @@ div class='test-snippet-container-main'
     h1 class='fs20'
       = exam.title
     div
-      div class='fl mt2' 
+      div class='fl mt2'
+        = link_to "By #{exam.owner.name}", exam.owner
+      div class='fl mt2 ml20'
         =exam.questions.size 
         ' &nbsp;Questions   
       div class='fl ml20' id='test-rating#{{exam.id}}'  
       div class='fl mt2 ml10 mid-gray' 
         =@number_of_ratings
         ' &nbsp;
-      div class='fl ml20 mt2'
-        = link_to exam.owner.name, exam.owner
     div class='cb'
     div class='mt10'
       = exam.description
