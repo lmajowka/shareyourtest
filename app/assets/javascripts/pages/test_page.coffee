@@ -58,13 +58,18 @@ class TestPage extends Page
     
     $("#menu-title").click()
 
-
-  @toggleStatus: (status) ->
-    Shareyourtest.TestPage.test.set('status',status)
+  @saveAndRefresh: (property,value) ->
+    Shareyourtest.TestPage.test.set property, value
     Shareyourtest.TestPage.test.save(null,{
       success: ->
-        location.href = location.href
+        #location.href = location.href
     })
+
+  @setCategory: (examCategoryId) ->
+    @saveAndRefresh 'exam_category_id', examCategoryId
+
+  @toggleStatus: (status) ->
+    @saveAndRefresh 'status', status
 
   @displayMenuOptions: =>
     

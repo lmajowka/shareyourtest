@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104070531) do
+ActiveRecord::Schema.define(version: 20141105070815) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -39,7 +39,10 @@ ActiveRecord::Schema.define(version: 20141104070531) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "permalink"
+    t.integer  "exam_category_id"
   end
+
+  add_index "exams", ["exam_category_id"], name: "index_exams_on_exam_category_id"
 
   create_table "purchases", force: true do |t|
     t.integer  "user_id"

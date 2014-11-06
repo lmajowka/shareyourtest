@@ -1,0 +1,28 @@
+- content_for :title, @exam_category.name
+
+== render 'exam_categories/menu'
+
+div class='ml108 greyboard'
+
+  div class='card'
+    h1 class='mt0 fl' =@exam_category.name
+
+  div class='fl ml0 mt10 ml-25'
+    -@tests.each do |test|
+      = link_to test do
+        == render 'tests/snippet',  exam: test
+          div class='cb'
+
+  div class='card mt10'
+    h2 class='mt0 fl' Info
+  div class='cb'
+
+  div class='card mt10'
+    h2 class='mt0 fl' Question Sample
+  div class='cb'
+
+  div class='card mt10'
+    h2 class='mt0 fl' Calendar
+
+  div class='cb'
+  div class='empty-space'

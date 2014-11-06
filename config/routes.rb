@@ -12,12 +12,15 @@ Shareyourtest::Application.routes.draw do
     resources :purchases
   end  
 
+
   resources :exams ,path: 'tests', controller: :tests do
     resources :questions
   end
 
+
   resources :user_answers
   resources :ratings, only: :update
+  resources :exam_categories
 
   resources :sessions, only: [:new, :create, :destroy]
 

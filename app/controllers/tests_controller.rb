@@ -26,7 +26,7 @@ class TestsController < ApplicationController
   end
 
   def update
-    if my_exam?
+    if my_exam? or current_user.admin?
       @test.update(update_params)
       @test.save
       return redirect_to @test unless params[:status]
@@ -74,7 +74,7 @@ class TestsController < ApplicationController
       params[:title] = params[:exam][:title] if params[:exam][:title]
       params[:description] = params[:exam][:description] if params[:exam][:description]
     end
-    params.permit(:status,:picture,:title,:description)
+    params.permit(:status,:picture,:title,:description,:exam_category_id)
   end
 
   def test_params

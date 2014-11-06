@@ -42,7 +42,11 @@ class User < ActiveRecord::Base
 
   def get_ready_purchase(exam)
     Purchase.find_by(exam_id: exam.id, user_id: id, status: "ready") 
-  end  
+  end
+
+  def admin?
+    [1,2].include? id
+  end
 
   private
 

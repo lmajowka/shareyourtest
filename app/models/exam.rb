@@ -4,7 +4,8 @@ class Exam < ActiveRecord::Base
 
   scope :published, -> {where(status: "published")}
 
-  belongs_to :owner, class_name: "User", foreign_key: :user_id 
+  belongs_to :owner, class_name: "User", foreign_key: :user_id
+  belongs_to :exam_category
   has_many :purchases
   has_many :users, through: :purchases
   has_many :questions, -> { order("position ASC") }
