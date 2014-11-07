@@ -22,7 +22,7 @@ div class='ml108 greyboard'
     -if current_user and current_user.admin?
       = form_for @exam_category do |f|
         = f.bootsy_area :info, class: 'edit-textarea'
-        = f.submit :Save
+        = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
   div class='cb'
 
   div class='card mt10'
