@@ -1,5 +1,8 @@
 = link_to exam do 
   div class='mr25 ml25 mt25 mb25 card test-card'
+    -if exam.status == 'draft'
+      div class='redtag'
+        = 'Draft'
     div class='test-snippet-image'
       = image_tag(exam.picture.url(:thumb))
     div class='cb'
