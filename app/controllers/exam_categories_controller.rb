@@ -20,10 +20,22 @@ class ExamCategoriesController < ApplicationController
     end
   end
 
+  def update
+    if current_user.admin?
+      exam_category = ExamCategory.find_by_permalink(params[:id])
+      exam_category.update(exam_category_params)
+      if exam_category.save
+        redirect_to exam_category
+      else
+        render '404'
+      end
+    end
+  end
+
   private
 
   def exam_category_params
-    params.require(:exam_category).permit(:name)
+    params.require(:exam_category).permit(:name,:info)
   end
 
 end

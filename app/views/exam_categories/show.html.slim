@@ -15,6 +15,13 @@ div class='ml108 greyboard'
 
   div class='card mt10'
     h2 class='mt0 fl' Info
+    div class='cb'
+    div
+      =@exam_category.info
+    -if current_user and current_user.admin?
+      = form_for @exam_category do |f|
+        = f.text_area :info, class: 'edit-textarea'
+        = f.submit :Save
   div class='cb'
 
   div class='card mt10'

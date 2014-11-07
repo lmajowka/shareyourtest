@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105070815) do
+ActiveRecord::Schema.define(version: 20141107121723) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20141105070815) do
   create_table "exam_categories", force: true do |t|
     t.string "name"
     t.string "permalink"
+    t.text   "info"
   end
 
   create_table "exams", force: true do |t|
