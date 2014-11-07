@@ -1,4 +1,5 @@
 Shareyourtest::Application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
   root 'index#index'
