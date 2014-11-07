@@ -62,7 +62,7 @@ class TestPage extends Page
     Shareyourtest.TestPage.test.set property, value
     Shareyourtest.TestPage.test.save(null,{
       success: ->
-        #location.href = location.href
+        location.href = location.href
     })
 
   @setCategory: (examCategoryId) ->

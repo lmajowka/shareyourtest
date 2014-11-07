@@ -1,0 +1,13 @@
+- content_for :title, 'Create a new Exam'
+div class='card mt20 ml20 p40 page-card'
+  h1 Create a new Exam
+  div
+    = form_for @exam do |f|
+
+      = f.text_field :name, class: "fl mt20 join-now-input", placeholder: "Name"
+      - @exam.errors.messages[:name].each do |message|
+        div class='fl mt5 mr5 red' = message
+
+      div class='cb'
+
+        .actions = f.submit 'CREATE', class: 'flat-btn flat-btn-green mt20 ml40 join-now-button'
