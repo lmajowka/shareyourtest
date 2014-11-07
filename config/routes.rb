@@ -20,7 +20,7 @@ Shareyourtest::Application.routes.draw do
 
   resources :user_answers
   resources :ratings, only: :update
-  resources :exam_categories
+  resources :exam_categories ,path: 'exams'
 
   resources :sessions, only: [:new, :create, :destroy]
 
