@@ -112,6 +112,10 @@ a:hover{
   width:100%;
 }
 
+.mini-card{
+  width:240px !important;
+}
+
 .page-card{
   width:450px !important;
   padding:37px !important;

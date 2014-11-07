@@ -1,0 +1,5 @@
+div class='card ml20' id='performance-card'
+  h2 Performance
+  div class='performance-chart'
+    = column_chart current_user.purchases.where(exam_id:@test.id).group(:created_at).sum('performance * 100')
+

@@ -16,8 +16,14 @@ div class='fl w100' id='title-view'
 
     -if @ranking.any?
       div class='cb'
-      div class='mt20'
-        == render 'tests/ranking'      
+      table
+        tr
+          td
+            div class='mt20'
+              == render 'tests/ranking'
+          td class='pr20 w100'
+            div class='mt20'
+              == render 'tests/performance'
 
     -if @my_exam
       div class='mt20'

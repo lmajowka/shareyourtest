@@ -168,3 +168,13 @@ h3 {
 .test-snippet-info-main h1{
   margin-top: 0px
 }
+
+
+#ranking-card, #performance-card{
+  height:400px;
+}
+
+.performance-chart{
+  width:640px;
+  height:130px;
+}
