@@ -58,6 +58,9 @@ class TestPage extends Page
     
     $("#menu-title").click()
 
+    $('#form-category select')[0]?.onchange = ->
+      Shareyourtest.TestPage.setCategory $('#form-category select').val()
+
   @saveAndRefresh: (property,value) ->
     Shareyourtest.TestPage.test.set property, value
     Shareyourtest.TestPage.test.save(null,{

@@ -22,9 +22,9 @@ div class='fl w100' id='title-view'
             div class='mt20'
               == render 'tests/ranking'
           td class='pr20 w100'
-          -if current_user
-            div class='mt20'
-              == render 'tests/performance'
+            -if current_user
+              div class='mt20'
+                == render 'tests/performance'
 
     -if @my_exam
       div class='mt20'
