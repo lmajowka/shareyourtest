@@ -2,7 +2,7 @@ div class='card mini-card' id='ranking-card'
   h2 Ranking
   -@ranking.each do |rank|
     div
-      div class='fl' 
+      div class='fl ranking-name'
         =rank.user.name
       div class='fl ml10'	
         =(rank.performance*100).to_i
