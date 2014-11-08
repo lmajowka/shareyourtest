@@ -1,5 +1,6 @@
 div class='card ml20' id='performance-card'
   h2 Performance
   div class='performance-chart'
-    = column_chart current_user.purchases.where(exam_id:@test.id).group(:created_at).sum('performance * 100')
+    = column_chart @answered_purchases.reverse!.map { |p| [p.created_at.strftime("%d/%m/%Y %H:%M"), "#{p.performance*100}%"] }, library: @chart_options
+
 

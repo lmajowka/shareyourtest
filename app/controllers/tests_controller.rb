@@ -40,6 +40,10 @@ class TestsController < ApplicationController
     @my_exam = my_exam?
     if current_user 
       @answered_purchases = current_user.purchases.answered_for @test.id
+      @chart_options = {
+        title: "Max: 100%",
+        colors: ['#b6c7F6']
+      }
     else
       @answered_purchases = []
     end
