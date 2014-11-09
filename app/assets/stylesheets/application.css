@@ -115,6 +115,9 @@ a:hover{
 .mini-card{
   width:240px !important;
 }
+.profile-card{
+  width:700px !important;
+}
 
 .page-card{
   width:450px !important;

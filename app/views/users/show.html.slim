@@ -1,37 +1,38 @@
 -if @my_profile
   h1 class='mt40' Welcome to Shareyourtest. Good luck!
 
-h1 class='mt40 fl'
-  = @user.name
+div class='mt40 card profile-card'
+  h1 class='fl'
+    = @user.name
 
-div class='cb'
+  div class='cb'
 
-div class='mt20 mb20 fl user_profile_picture'
-  div class='fl'
-    = image_tag(@user.picture.url(:thumb))
+  div class='mt20 mb20 fl user_profile_picture'
+    div class='fl'
+      = image_tag(@user.picture.url(:thumb))
 
-    -if @my_profile
+      -if @my_profile
 
-      div id='update_picture' class='pa mt20 flat-btn flat-btn-gray'
-        = 'UPDATE PICTURE'
-        = form_for @user, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
-          = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input cp', onmouseover: '$("#update_picture").addClass("flat-btn-gray-hover")', onmouseout: '$("#update_picture").removeClass("flat-btn-gray-hover")'
+        div id='update_picture' class='pa mt20 flat-btn flat-btn-gray'
+          = 'UPDATE PICTURE'
+          = form_for @user, html: {id:'form-for-picture'},multipart: true, method: :patch, class: 'pa' do |f|
+            = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input cp', onmouseover: '$("#update_picture").addClass("flat-btn-gray-hover")', onmouseout: '$("#update_picture").removeClass("flat-btn-gray-hover")'
 
-  div class='fl ml40'
-    = 'Bio'
+    div class='fl ml40'
+      = 'Bio'
 
-    -if @my_profile
-      = form_for @user, html: {id: 'form-bio'}, method: :patch do |f|
-        = f.text_area :bio, class: 'bio-input'
-    -else
-      div
-        = @user.bio
+      -if @my_profile
+        = form_for @user, html: {id: 'form-bio'}, method: :patch do |f|
+          = f.text_area :bio, class: 'bio-input'
+      -else
+        div
+          = @user.bio
 
-      div class='cb'
+        div class='cb'
 
-    -if @my_profile
-      div class='flat-btn mt15 flat-btn-green fr' onclick='$("#form-bio").submit()'
-        = 'SAVE'
+      -if @my_profile
+        div class='flat-btn mt15 flat-btn-green fr' onclick='$("#form-bio").submit()'
+          = 'SAVE'
 
 div class='cb'
 
@@ -40,7 +41,7 @@ div class='cb'
 div class='cb'
 
 -if @my_profile
-  div class='mt100 fl'
+  div class='mt40 fl'
 
     - if @exams.size > 0
       h2 class='fl' Your tests
