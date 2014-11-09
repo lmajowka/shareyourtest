@@ -117,6 +117,8 @@ a:hover{
 }
 .profile-card{
   width:700px !important;
+  padding-left:40px;
+  margin-left:20px;
 }
 
 .page-card{
