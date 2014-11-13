@@ -182,3 +182,9 @@ h3 {
 .ranking-name{
   width:150px;
 }
+
+.review-text-area{
+  width:70%;
+  height:120px;
+  padding: 10px;
+}

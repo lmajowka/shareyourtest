@@ -25,7 +25,7 @@ div class='mt40 card profile-card'
         = form_for @user, html: {id: 'form-bio'}, method: :patch do |f|
           = f.text_area :bio, class: 'bio-input'
       -else
-        div
+        div class='bio-input'
           = @user.bio
 
         div class='cb'

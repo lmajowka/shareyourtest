@@ -144,3 +144,9 @@ a:hover{
 .dropdown-menu{
   min-width: 100px !important;
 }
+
+.round-profile{
+  width:60px;
+  height:60px;
+  border-radius:32px;
+}

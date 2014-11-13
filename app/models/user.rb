@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :purchases
   has_many :exams, through: :purchases
   has_many :ratings
+  has_many :reviews
 
   before_create :create_remember_token
   before_save { self.email = email.downcase }

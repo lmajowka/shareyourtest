@@ -10,6 +10,7 @@ class Exam < ActiveRecord::Base
   has_many :users, through: :purchases
   has_many :questions, -> { order("position ASC") }
   has_many :ratings
+  has_many :reviews
   has_permalink
   has_attached_file :picture, styles: {
     thumb: '100x100>',

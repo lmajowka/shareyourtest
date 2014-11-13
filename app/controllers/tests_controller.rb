@@ -37,6 +37,7 @@ class TestsController < ApplicationController
   def show
     @question = Question.new
     @user = User.new
+    @review = Review.new
     @my_exam = my_exam?
     if current_user 
       @answered_purchases = current_user.purchases.answered_for @test.id
@@ -50,6 +51,8 @@ class TestsController < ApplicationController
     @average_rating = @test.average_rating 
     @number_of_ratings =  @test.pluralize_number_of_ratings
     @sample_question = @test.questions.first
+    @reviews = @test.reviews
+    @show_review_form = show_review_form?
     @ranking = Ranking.for @test
     respond_to do |format|
       format.html
@@ -87,6 +90,10 @@ class TestsController < ApplicationController
 
   def set_header
     response.headers["Vary"]= "Accept"
+  end
+
+  def show_review_form?
+    Purchase.where(user_id: current_user.id, exam_id: @test.id).any? and Review.where(exam_id: @test.id, user_id: current_user.id).empty?
   end
   
 end

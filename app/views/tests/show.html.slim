@@ -26,10 +26,14 @@ div class='fl w100' id='title-view'
               div class='mt25'
                 == render 'tests/performance'
 
+      div class='mt25'
+        == render 'tests/reviews'
+      div class='cb'
+
     -if @my_exam
       div class='mt25'
           == render 'questions/index'
-       
+
       div class='cb'
       div class='mt25'
         == render 'questions/new'

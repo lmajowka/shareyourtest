@@ -1,0 +1,30 @@
+div class='card' id='reviews-card'
+  h2 Reviews
+
+  -if @reviews.size == 0
+    = 'No Reviews Yet!'
+  -else
+    -@reviews.each do |review|
+      div class='mt20'
+        div class='fl'
+          = image_tag(review.user.picture.url(:thumb), class: 'round-profile fl mt20')
+        div class='fl ml40 mt20'
+          div
+            =review.user.name
+          div class='mid-gray'
+            =review.content
+
+      div class='cb'
+
+  -if @show_review_form
+    div class='mt40'
+      h2 Please leave your review about this test:
+
+      = image_tag(current_user.picture.url(:thumb), class: 'round-profile fl mt20')
+      = form_for [@test,@review] do |f|
+        = f.text_area :content, class: 'review-text-area fl mt20 ml20'
+
+      div class='cb'
+
+      div class='flat-btn flat-btn-green fr mt20' onclick="Shareyourtest.Controllers.Reviews.create()"
+        = 'POST'

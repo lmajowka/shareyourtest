@@ -16,6 +16,7 @@ Shareyourtest::Application.routes.draw do
 
   resources :exams ,path: 'tests', controller: :tests do
     resources :questions
+    resources :reviews
   end
 
 
