@@ -39,12 +39,12 @@ class TestsController < ApplicationController
     @user = User.new
     @review = Review.new
     @my_exam = my_exam?
+    @chart_options = {
+      title: "Max: 100%",
+      colors: ['#b6c7F6']
+    }
     if current_user 
       @answered_purchases = current_user.purchases.answered_for @test.id
-      @chart_options = {
-        title: "Max: 100%",
-        colors: ['#b6c7F6']
-      }
     else
       @answered_purchases = []
       @average_performance  = @test.purchases.where('performance is not null').group(:performance).count
