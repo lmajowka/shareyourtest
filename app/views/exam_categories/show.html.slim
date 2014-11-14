@@ -7,7 +7,7 @@ div class='ml108 greyboard'
   div class='card'
     h1 class='mt0 fl' =@exam_category.name
 
-  div class='fl ml0 mt10 ml-15'
+  div class='fl ml0 mt10 ml-5 mr-5'
     -@tests.each do |test|
       = link_to test do
         == render 'tests/snippet',  exam: test

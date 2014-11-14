@@ -1,5 +1,5 @@
 = link_to exam do 
-  div class='mr15 ml15 mt25 mb25 card test-card'
+  div class='mr5 ml5 mt25 mb25 card test-card'
     -if exam.status == 'draft'
       div class='redtag'
         = 'Draft'
@@ -13,7 +13,7 @@
         div
           =link_to exam.exam_category.name, exam.exam_category
       div class='mt5 mid-gray snippet-description'
-        = truncate(exam.description, length:90)
+        = truncate(exam.description, length:88)
       div class='fs12'
         = exam.questions.size
         = ' Questions'

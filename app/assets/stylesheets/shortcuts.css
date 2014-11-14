@@ -18,7 +18,7 @@
 .mt150{margin-top:150px;}
 .mt130{margin-top:130px;}
 
-.ml-15{margin-left:-15px;}
+.ml-5{margin-left:-5px;}
 .ml-2{margin-left:-2px;}
 .ml5{margin-left:5px;}
 .ml10{margin-left:10px;}
@@ -33,6 +33,7 @@
 .ml100{margin-left:100px;}
 .ml108{margin-left:108px;}
 
+.mr-5{margin-right:-5px;}
 .mr0{margin-right:0px;}
 .mr5{margin-right:5px;}
 .mr10{margin-right:10px;}
