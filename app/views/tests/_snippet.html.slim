@@ -1,5 +1,5 @@
 = link_to exam do 
-  div class='mr25 ml25 mt25 mb25 card test-card'
+  div class='mr15 ml15 mt25 mb25 card test-card'
     -if exam.status == 'draft'
       div class='redtag'
         = 'Draft'
@@ -7,9 +7,12 @@
       = image_tag(exam.picture.url(:thumb))
     div class='cb'
     div class='fl test-snippet-info w100'
-      h2 class='mt10'
+      h2 class='mt10 mb0'
         = exam.title
-      div class='mt20 mid-gray snippet-description'
+      - if exam.exam_category
+        div
+          =link_to exam.exam_category.name, exam.exam_category
+      div class='mt5 mid-gray snippet-description'
         = truncate(exam.description, length:90)
       div class='fs12'
         = exam.questions.size

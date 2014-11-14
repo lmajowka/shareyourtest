@@ -127,11 +127,11 @@ a:hover{
 }
 
 .test-card{
-  width:350px !important;
+  width:332px !important;
   padding:17px !important;
   color:#222;
   text-align:center;
-  min-height: 296px;
+  min-height: 315px;
   position:relative;
 }
 

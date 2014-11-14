@@ -18,7 +18,7 @@
 .mt150{margin-top:150px;}
 .mt130{margin-top:130px;}
 
-.ml-25{margin-left:-25px;}
+.ml-15{margin-left:-15px;}
 .ml-2{margin-left:-2px;}
 .ml5{margin-left:5px;}
 .ml10{margin-left:10px;}
@@ -29,12 +29,14 @@
 .ml40{margin-left:40px;}
 .ml45{margin-left:45px;}
 .ml50{margin-left:50px;}
+.ml60{margin-left:60px;}
 .ml100{margin-left:100px;}
 .ml108{margin-left:108px;}
 
 .mr0{margin-right:0px;}
 .mr5{margin-right:5px;}
 .mr10{margin-right:10px;}
+.mr15{margin-right:15px;}
 .mr20{margin-right:20px;}
 .mr25{margin-right:25px;}
 .mr40{margin-right:40px;}
@@ -43,6 +45,7 @@
 .mr95{margin-right:95px;}
 .mr140{margin-right:140px;}
 
+.mb0{margin-bottom:0px;}
 .mb20{margin-bottom:20px;}
 .mb25{margin-bottom:25px;}
 .mb30{margin-bottom:30px;}
