@@ -10,7 +10,7 @@ class TestsController < ApplicationController
         @tests = @category.exams
         @category_name = @category.name
       else
-        @tests = Exam.where("title like '%#{params[:permalink]}%'")
+        @tests = Exam.where("title like '%#{params[:permalink]}%' or description like '%#{params[:permalink]}%'")
         @category_name = params[:permalink]
       end
     else
