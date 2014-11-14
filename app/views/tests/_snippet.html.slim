@@ -12,6 +12,8 @@
       - if exam.exam_category
         div
           =link_to exam.exam_category.name, exam.exam_category
+      - else
+        div class='mt22'
       div class='mt5 mid-gray snippet-description'
         = truncate(exam.description, length:88)
       div class='fs12'
