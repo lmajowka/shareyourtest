@@ -5,16 +5,7 @@ div class='card' id='reviews-card'
     = 'No Reviews Yet!'
   -else
     -@reviews.each do |review|
-      div class='mt20'
-        div class='fl'
-          = image_tag(review.user.picture.url(:thumb), class: 'round-profile fl mt20')
-        div class='fl ml40 mt20'
-          div
-            =review.user.name
-          div class='mid-gray'
-            =review.content
-
-      div class='cb'
+      == render 'reviews/show', review: review
 
   -if @show_review_form
     div class='mt40'

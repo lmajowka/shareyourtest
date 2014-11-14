@@ -1,0 +1,22 @@
+div class='mt20'
+  div class='fl'
+    = image_tag(review.user.picture.url(:thumb), class: 'round-profile fl mt20')
+  div class='fl ml40 mt20'
+    div
+      =review.user.name
+    div class='mid-gray'
+      =review.content
+    div
+      div class='fl' id='test-rating#{{review.user.id}}'
+      -
+      div class='fl ml20 mid-gray fs12 mt3'
+        = distance_of_time_in_words(review.created_at, Time.now )
+        = ' ago'
+
+div class='cb'
+
+javascript:
+  $(document).ready(function () {
+    Shareyourtest.TestPage.displayRating("#test-rating#{{review.user.id}}",
+    #{{Rating.where(user_id: review.user.id, exam_id:@test.id).try(:first).score}});
+  });
