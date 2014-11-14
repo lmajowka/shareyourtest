@@ -9,6 +9,7 @@ Shareyourtest::Application.routes.draw do
   match '/tests/:permalink', to: 'tests#update', via: 'put,patch'
   match '/answers/:permalink/(:id)', to: 'answers#show', via: 'get'
   match '/tests-index/:permalink', to: 'tests#index', via: 'get'
+  match '/tests-search/:permalink', to: 'tests#index', via: 'get'
 
   resources :users do
     resources :purchases

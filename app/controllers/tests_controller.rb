@@ -6,8 +6,13 @@ class TestsController < ApplicationController
   def index
     if params[:permalink]
       @category = ExamCategory.find_by_permalink params[:permalink]
-      @tests = @category.exams
-      @category_name = @category.name
+      if @category
+        @tests = @category.exams
+        @category_name = @category.name
+      else
+        @tests = Exam.where("title like '%#{params[:permalink]}%'")
+        @category_name = params[:permalink]
+      end
     else
       @tests = Exam.published
       @category_name = "Tests"
