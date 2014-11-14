@@ -4,7 +4,7 @@
   You got <b><%=@rightQuestions%></b> out of <b><%=@totalQuestions%></b> questions right. Your performance is <b><%=@performance%>%</b>
 </div>
 
-<div class='ml40 mt40'>
+<div class='ml40 mt40' id='finish-screen-rating'>
   How would you rate de quality of the question present in this test?
   <div id="user_star"></div>
 </div>

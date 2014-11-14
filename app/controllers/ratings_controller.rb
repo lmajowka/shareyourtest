@@ -1,7 +1,6 @@
 class RatingsController < ApplicationController
-  def update
-    @rating = Rating.find(params[:id])
-    return unless belongs_to_me? @rating.user_id
+  def create
+    @rating = Rating.find_or_create_by(exam_id: params[:exam_id], user_id: current_user.id)
     @exam = @rating.exam
     @rating.update_attributes(score: params[:score])
     render text: "ok"

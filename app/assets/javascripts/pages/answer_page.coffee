@@ -133,11 +133,12 @@ class AnswerPage
       path: '/assets'
       click: (score, evt) ->
         $.ajax(
-          url: '/ratings/' + rating_id
-          type: 'PATCH'
-          data: { score: score }
+          url: '/ratings/'
+          type: 'POST'
+          data: { score: score , exam_id: exam_id}
         )
-    )    
-    
+    )
+    if rating
+      $('#finish-screen-rating').hide()
 
 window.Shareyourtest.AnswerPage = AnswerPage

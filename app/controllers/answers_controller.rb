@@ -7,7 +7,7 @@ class AnswersController < ApplicationController
   	@test = Exam.find_by_permalink params[:permalink]
     get_purchase	
   	@user_answers = UserAnswer.ordered_answers_for @purchase
-    @rating = Rating.find_or_create_by(exam_id: @test.id, user_id: current_user.id)  
+    @rating = Rating.where(exam_id: @test.id, user_id: current_user.id).any?
   end
 
   private

@@ -6,4 +6,7 @@ class Shareyourtest.Controllers.Reviews
       content: $('.review-text-area').val()
     )
 
-    review.save()
+    review.save(null,{
+      success: ->
+        location.href = location.href
+    })
