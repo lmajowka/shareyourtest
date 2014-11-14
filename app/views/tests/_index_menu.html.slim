@@ -13,10 +13,9 @@ div class='test-menu tc'
       span class='mr10'
       = 'Top Tests'
 
-    div class='mt40 ml5 cp p5'
-      span class='mr10'
-      = 'Latest'
+    -ExamCategory.all.each do |category|
+
+      div class='mt40 ml5 cp p5'
+        span class='mr10'
+        = link_to "#{category.name} (#{category.exams.size})", "/tests-index/#{category.permalink}"
       
-    div class='mt40 ml5 cp p5'
-      span class='mr10'
-      = 'IDC'    

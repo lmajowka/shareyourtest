@@ -4,7 +4,14 @@ class TestsController < ApplicationController
   before_action :set_header, only: :show
 
   def index
-    @tests = Exam.published
+    if params[:permalink]
+      @category = ExamCategory.find_by_permalink params[:permalink]
+      @tests = @category.exams
+      @category_name = @category.name
+    else
+      @tests = Exam.published
+      @category_name = "Tests"
+    end
     @number_of_tests = @tests.size
   end
 
