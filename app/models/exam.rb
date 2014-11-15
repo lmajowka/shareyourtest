@@ -17,7 +17,7 @@ class Exam < ActiveRecord::Base
     square: '200x200#',
     medium: '300x300>'
   } , default_url: 'nopicture.jpg'
-
+  searchkick
   
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true,

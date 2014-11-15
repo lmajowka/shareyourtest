@@ -23,6 +23,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootsy'
 gem "chartkick"
+gem 'searchkick'
 
 group :test, :development do
   #gem 'byebug'
