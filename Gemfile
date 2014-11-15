@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootsy'
 gem "chartkick"
 gem 'searchkick'
+gem 'newrelic_rpm'
 
 group :test, :development do
   #gem 'byebug'
