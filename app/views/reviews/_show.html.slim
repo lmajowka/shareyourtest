@@ -15,8 +15,9 @@ div class='mt20'
 
 div class='cb'
 
-javascript:
-  $(document).ready(function () {
-    Shareyourtest.TestPage.displayRating("#test-rating#{{review.user.id}}",
-    #{{Rating.where(user_id: review.user.id, exam_id:@test.id).try(:first).score}});
-  });
+- if rating = Rating.where(user_id: review.user.id, exam_id:@test.id).presence
+  javascript:
+    $(document).ready(function () {
+      Shareyourtest.TestPage.displayRating("#test-rating#{{review.user.id}}",
+      #{{rating.first.score}});
+    });
