@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user = User.find_by_permalink params[:id]
     @my_profile = @user == current_user
     @exams = current_user.purchases.map(&:exam).uniq if @my_profile
+    @published_exams = @user.exams.published
   end
 
   def new

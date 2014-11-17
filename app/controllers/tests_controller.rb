@@ -10,7 +10,7 @@ class TestsController < ApplicationController
         @tests = @category.exams
         @category_name = @category.name
       else
-        @tests = Exam.search "2% #{params[:permalink]}"
+        @tests = Exam.search "2% #{params[:permalink]}", where: { status: 'published'}
         @category_name = params[:permalink]
       end
     else
