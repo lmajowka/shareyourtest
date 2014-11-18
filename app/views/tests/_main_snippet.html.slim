@@ -9,7 +9,8 @@ div class='test-snippet-container-main'
         = link_to "By #{exam.owner.name}", exam.owner
       div class='fl mt2 ml20'
         =exam.questions.size 
-        ' &nbsp;Questions   
+        ' &nbsp;
+        = t(:question).pluralize(exam.questions.size)
       div class='fl ml20' id='test-rating#{{exam.id}}'  
       div class='fl mt2 ml10 mid-gray' 
         =@number_of_ratings
