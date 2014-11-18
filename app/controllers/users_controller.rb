@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_permalink params[:id]
+    return not_found unless @user
     @my_profile = @user == current_user
     @exams = current_user.purchases.map(&:exam).uniq if @my_profile
     @published_exams = Exam.where(user_id: @user.id, status: 'published')

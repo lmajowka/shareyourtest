@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
 
   def create
-    return unless user_already_answered
-    return if user_already_reviewed
+    return render {} unless user_already_answered
+    return render {} if user_already_reviewed
     @review = Review.create!(review_params)
     render json: @review.to_json
   end
