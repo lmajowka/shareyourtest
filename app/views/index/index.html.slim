@@ -9,11 +9,11 @@ div id='hp-main-container'
           = link_to 'Share your Test', root_path, class:'cp'
         div id='hp-header-links' class='fr mt30'
           div class='fl ml50 hp-link mt1' id='practice-button'
-            'PRACTICE
+            = t(:practice)
           div class='fl ml50 hp-link'
-            div = link_to 'TESTS ', exams_path()
+            div = link_to t(:tests), exams_path()
           div class='fl ml50 hp-link'
-            = link_to 'SIGN IN', signin_path
+            = link_to t(:signin), signin_path
 
     div class='tc fl mt100 w100'
       h1
@@ -23,14 +23,14 @@ div id='hp-main-container'
           = 'SHARE YOUR TEST'
 
       div class='mt40 sub-text'
-        = 'Shareyourtest is an open source collaborative platform where teachers and students can share tests of hundreds of subjects and certifications.'
+        = t(:slogan_hp)
 
       div class='tc w100'
         div id='sign-up-now-button' class='flat-btn-big flat-btn-blue mt60 mauto'
           = 'SIGN UP NOW!'
 
       div id='learn-more' class='mt40 cp'
-        = 'learn more'
+        = t(:learn_more)
 
   div class='background-hp2 tc fl w100' id='background-hp2'
 
