@@ -14,7 +14,10 @@ class ApplicationController < ActionController::Base
 
   def extract_locale_from_tld
     parsed_locale = request.host.split('.').last
-    I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
+    if parsed_locale == 'br'
+      :'pt-BR'
+    end
+    nil
   end
 
 end
