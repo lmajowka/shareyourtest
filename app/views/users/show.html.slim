@@ -58,7 +58,9 @@ div class='cb'
 
   - if @new_user
     javascript:
-      self.location = $.cookie("last-test-page")
+      ga 'send', 'registration', 'user', 'registered'
+      if $.cookie("last-test-page")
+        self.location = $.cookie("last-test-page")
 
 - else
   div class='mt40 fl'
