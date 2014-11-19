@@ -33,3 +33,6 @@ pt-BR:
   create_an_account: "Cria uma conta para salvar seus resultados"
   full_name: "Nome Completo"
   example_of_question: "Exemplo de questão"
+  not_found: "Página não encontrada"
+  try_again: "Tente novamente"
+  search: "Buscar"

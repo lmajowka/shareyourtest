@@ -1,12 +1,13 @@
+- content_for :title, t(:not_found)
 h1 class='mt20 fl'
-  = 'Page not found!'
+  = t(:not_found)
 
 div class='cb'
 
 div class='mt40 fl'
-  = 'Try again'
+  = t(:try_again)
 
 div class='cb'
 
 div class='fl mt20'
-  input id='search-input' type='text' class='join-now-input' placeholder="Search" onkeypress="Shareyourtest.TestIndexPage.goSearch(event)"
+  input id='search-input' type='text' class='join-now-input' placeholder="#{{t(:search)}}" onkeypress="Shareyourtest.TestIndexPage.goSearch(event)"

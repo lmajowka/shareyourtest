@@ -87,6 +87,7 @@ class TestsController < ApplicationController
 
   def find_exam
     @test = Exam.find_by_permalink params[:id]
+    return not_found unless @test
   end
 
   def update_params
