@@ -1,9 +1,9 @@
 div class='card' id='join-card'
-  h2 Join Shareyourtest now!
-  div Create an account so we can save your results
+  h2 =t(:join_syt_now)
+  div =t(:create_an_account)
 
   = form_for @user do |f|
-    = f.text_field :name, class: "mt20 fl join-now-input", placeholder: "Full Name"
+    = f.text_field :name, class: "mt20 fl join-now-input", placeholder: t(:full_name)
     div class='cb'
     = f.text_field :email, class: "mt20 fl join-now-input", placeholder: "Email"
     div class='cb'

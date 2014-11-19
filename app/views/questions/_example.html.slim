@@ -1,8 +1,8 @@
 div class='card' id='example-card'
-  h2 Example of question
+  h2 = t(:example_of_question)
   
   div class='mt20'
-    =@sample_question.content
+    = @sample_question.content
   
   -@sample_question.answers.each do |answer|
     div class='mt20 fl preview-answer'
