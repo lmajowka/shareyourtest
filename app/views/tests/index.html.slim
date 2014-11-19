@@ -7,7 +7,7 @@ div class='ml108 greyboard'
   div class='card'
     h1 class='mt0 fl' #{@category_name} (#{@number_of_tests})
     div class='fr'
-      input id='search-input' type='text' class='join-now-input' placeholder="Search" onkeypress="Shareyourtest.TestIndexPage.goSearch(event)"
+      input id='search-input' type='text' class='join-now-input' placeholder="#{{t(:search)}}" onkeypress="Shareyourtest.TestIndexPage.goSearch(event)"
 
   div class='fl ml-5 mt10 mr-5'
     -@tests.each do |test|

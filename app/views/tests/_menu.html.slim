@@ -8,11 +8,11 @@ div class='test-menu tc'
     -if not signed_in?
       div class='mt40 ml5 cp p5' id='menu-join-now'
         span class='glyphicon glyphicon-thumbs-up mr10'
-        = 'Join Now'
+        = t(:join_now)
 
       div class='mt40 ml5 cp p5' id='menu-example'
         span class='glyphicon glyphicon-ok-sign mr10'
-        = 'Example'
+        = t(:example)
 
     -if @ranking.any? 
       div class='mt40 ml5 cp p5' id='menu-ranking'
@@ -26,7 +26,8 @@ div class='test-menu tc'
     -if @my_exam 
       div class='mt40 ml5 cp p5' id='menu-questions'
         span class='glyphicon glyphicon-file mr10'
-        = 'Questions ('
+        = t(:questions)
+        = ' ('
         span id='menu-questions-number'
           = 0
         = ')'
@@ -34,20 +35,20 @@ div class='test-menu tc'
     -if @my_exam
       div class='mt40 ml5 cp p5 dn' id='menu-new-question'
         span class='glyphicon glyphicon-pencil mr10'
-        = 'New Question'
+        = t(:new_question)
 
     -if @my_exam
       div class='mt40 ml5 cp p5 ' id='menu-settings'
         span class='glyphicon glyphicon-cog mr10'
-        = 'Settings'
+        = t(:settings)
 
     -if @my_exam
       div class='mt40 ml5 cp p5 dn' id='menu-publish'
         span class='glyphicon glyphicon-globe mr10'
-        = 'Publish'
+        = t(:publish)
 
     -if @my_exam
       div class='mt40 ml10 dn flat-btn flat-btn-red' id='menu-unpublish'
-        = 'UNPUBLISH'
+        = t(:unpublish)
 
     div class='fb-like mt40 ml10' data-href='#{request.original_url}' data-layout='button_count' data-action='like' data-show-faces='false' data-share='false'
