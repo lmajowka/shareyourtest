@@ -58,7 +58,7 @@ div class='cb'
 
   - if @new_user
     javascript:
-      ga 'send', 'registration', 'user', 'registered'
+      _gaq.push(['_trackEvent', 'send', 'registration', 'user', 'registered'])
       if $.cookie("last-test-page")
         self.location = $.cookie("last-test-page")
 
