@@ -8,7 +8,7 @@ div class='ml108 greyboard'
     h1 class='mt0 fl' =@exam_category.name
     div class='cb'
     div class='mt10 fl'
-      =@exam_category.description
+      ==@exam_category.description
     div class='cb'
     -if current_user and current_user.admin?
       = form_for @exam_category do |f|
