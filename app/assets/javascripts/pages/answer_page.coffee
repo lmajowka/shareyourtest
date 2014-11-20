@@ -19,7 +19,7 @@ class AnswerPage
 
   @adjustScreenSize: ->
     $('#blank-answer-area')[0].style.height = $(window).height() - 184 + 'px'
-    $('#question-panel')[0].style.height = $(window).height() - 144 + 'px'
+    $('#question-panel')[0].style.height = $(window).height() - 204 + 'px'
 
   @showQuestion: (number) ->
     @currentQuestionNumber = number
@@ -27,7 +27,7 @@ class AnswerPage
     @currentQuestion = questions[questionIndex]
     
     $('#answer-question-number').html(number)
-    $('#answer-question-content').html(@currentQuestion.content)	
+    $('#answer-question-content').html(@currentQuestion.content.replace(/\n/g,'<br/>'))
     answersHTML = ""
     index = 1
     for answer in @currentQuestion.answers

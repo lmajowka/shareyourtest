@@ -174,6 +174,10 @@ h3 {
   height:400px;
 }
 
+#ranking-card{
+  overflow-y: scroll;
+}
+
 .performance-chart{
   width:640px;
   height:130px;
