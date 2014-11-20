@@ -36,7 +36,7 @@ class ExamCategoriesController < ApplicationController
   private
 
   def exam_category_params
-    params.require(:exam_category).permit(:name,:info)
+    params.require(:exam_category).permit(:name,:info,:calendar)
   end
 
 end
