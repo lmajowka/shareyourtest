@@ -56,12 +56,6 @@ div class='cb'
   div class='cb'
   div class='empty-space'
 
-  - if @new_user
-    javascript:
-      _gaq.push(['_trackEvent', 'send', 'registration', 'user', 'registered'])
-      if $.cookie("last-test-page")
-        self.location = $.cookie("last-test-page")
-
 - else
   div class='mt40 fl'
 
@@ -77,3 +71,9 @@ div class='cb'
 
     div class='cb'
     div class='empty-space'
+
+javascript:
+  if ($.cookie("new-user") == "true") {
+    ga('send', 'registration', 'user', 'registered');
+    $.cookie("new-user") == "false";
+  }

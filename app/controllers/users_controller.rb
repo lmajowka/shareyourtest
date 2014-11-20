@@ -48,7 +48,8 @@ class UsersController < ApplicationController
     sign_in user
     if cookies["last-test-page"]
         redirect_to cookies["last-test-page"]
-      else   
+    else
+      cookies["new-user"] = "true"
         redirect_to user
       end
   end
