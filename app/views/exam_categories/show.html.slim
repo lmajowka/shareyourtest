@@ -6,6 +6,14 @@ div class='ml108 greyboard'
 
   div class='card'
     h1 class='mt0 fl' =@exam_category.name
+    div class='cb'
+    div class='mt10 fl'
+      =@exam_category.description
+    div class='cb'
+    -if current_user and current_user.admin?
+      = form_for @exam_category do |f|
+        = f.bootsy_area :description, class: 'edit-textarea'
+        = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
 
   div class='fl ml0 mt10 ml-5 mr-5'
     -@tests.each do |test|
