@@ -5,19 +5,32 @@ class TestsController < ApplicationController
 
   def index
     if params[:permalink]
-      @category = ExamCategory.find_by_permalink params[:permalink]
-      if @category
-        @tests = @category.exams
-        @category_name = @category.name
-      else
-        @tests = Exam.search "2% #{params[:permalink]}", where: { status: 'published'}
-        @category_name = params[:permalink]
-      end
+      get_tests
     else
       @tests = Exam.published
       @category_name = "Tests"
     end
     @number_of_tests = @tests.size
+  end
+
+  def get_tests
+
+    if params[:permalink] == "my-tests"
+      @tests = current_user.exams
+      @category_name = "My Tests"
+      return
+    end
+
+    @category = ExamCategory.find_by_permalink params[:permalink]
+    if @category
+      @tests = @category.exams.published
+      @category_name = @category.name
+      return
+    end
+
+    @tests = Exam.search "2% #{params[:permalink]}", where: { status: 'published'}
+    @category_name = params[:permalink]
+
   end
 
   def create
