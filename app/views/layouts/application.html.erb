@@ -46,6 +46,12 @@
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<script>
+if ($.cookie("new-user") == "true") {
+  ga('send', 'registration', 'user', 'registered');
+  $.cookie("new-user") == "false";
+}</script>
+
 </body>
 </html>
 

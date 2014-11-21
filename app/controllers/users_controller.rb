@@ -46,10 +46,10 @@ class UsersController < ApplicationController
 
   def sign_in_and_redirect(user)
     sign_in user
+    cookies["new-user"] = "true"
     if cookies["last-test-page"]
         redirect_to cookies["last-test-page"]
     else
-      cookies["new-user"] = "true"
         redirect_to user
       end
   end
