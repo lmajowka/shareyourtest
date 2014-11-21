@@ -5,6 +5,8 @@ class ExamCategory < ActiveRecord::Base
 
   before_validation :check_permalink_uniqueness, on: :create
 
+  scope :ordered_by_size, -> { joins(:exams).order('count(exams.id) DESC').group('exam_categories.id') }
+
   private
 
   def check_permalink_uniqueness

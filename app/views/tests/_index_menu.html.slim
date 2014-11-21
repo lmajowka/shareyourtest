@@ -19,7 +19,7 @@ div class='test-menu tc'
       -else
         = all_tests_label
 
-    -ExamCategory.all.each do |category|
+    -ExamCategory.all.ordered_by_size.each do |category|
 
       div class='mt5 ml5 cp p5'
         span class='mr10'
