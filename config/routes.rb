@@ -21,7 +21,7 @@ Shareyourtest::Application.routes.draw do
     resources :reviews
   end
 
-
+  resources :comments
   resources :user_answers
   resources :ratings
   resources :exam_categories ,path: 'exams'

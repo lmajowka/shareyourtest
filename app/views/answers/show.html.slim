@@ -40,15 +40,19 @@ table
                 div id='answer-question-content'
                 div id='answer-question-answers'
 
-
+                div id='comment-form-container' class='mt40'
+                  div id='question-comments'
+                    h1 Comments
+                  == render 'answers/comment_form'
 
 javascript:
-  var questions = #{{@test.questions.to_json(include: :answers)}};
+  var questions = #{{@test.questions.to_json(include: [:answers, :comments])}};
   var userAnswers = #{{@user_answers.to_json}};
   var user_id = #{{current_user.id}};
   var purchase_id = #{{@purchase.id}};
   var purchase_status = "#{{@purchase.status}}";
   var exam_id = #{{@test.id}};
   var rating = #{{@rating}};
+  var pictures = #{{@picture_urls}};
   Shareyourtest.AnswerPage.preloadImages(["/assets/seta_ant_selecionado.png","/assets/seta_prox_apagado.png"]);
   Shareyourtest.AnswerPage.init();

@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
 
+  include Commentable
+
   def create
     @question = Question.create!(question_params)
     create_answers if @question

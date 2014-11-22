@@ -10,7 +10,15 @@ class AnswerPage
     @showQuestion 1
     @adjustScreenSize()
     @removeFinishButton()
-    
+
+  @showComments: ->
+    if purchase_status is "answered"
+      $('#comment-form-container').show()
+      for comment in @currentQuestion.comments
+        commentModel = new Shareyourtest.Models.Comment comment
+        commentView = new Shareyourtest.Views.Comments(model: commentModel)
+        $('#question-comments').append commentView.render().$el
+
   @removeFinishButton: ->
     if purchase_status is "answered"
       $('#finish-button').hide()
@@ -50,7 +58,8 @@ class AnswerPage
 
     @setSquareCSS number
     @handleArrowsStatus number
-    @questionNumberColor(questionIndex)    
+    @questionNumberColor(questionIndex)
+    @showComments()
 
   @questionNumberColor: (questionIndex) ->
     if purchase_status is "answered"

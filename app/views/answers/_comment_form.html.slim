@@ -1,0 +1,14 @@
+h1 class='mt40'
+  | Leave your comment
+
+div class='mt20'
+  table
+    tr
+      td valign="top"
+        = image_tag(current_user.picture.url(:thumb), class: 'round-profile fl mt20')
+      td
+        textarea class='mt20 ml20 comment-text-area' id='comment-text-area'
+        div class='cb'
+        div class='flat-btn flat-btn-green fr mt20' onclick="Shareyourtest.Controllers.Comments.create('question',Shareyourtest.AnswerPage.currentQuestion.id)"
+          = 'COMMENT'
+

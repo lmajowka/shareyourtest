@@ -25,6 +25,7 @@ gem 'bootsy'
 gem "chartkick"
 gem 'searchkick'
 gem 'newrelic_rpm'
+gem 'ancestry'
 
 group :test, :development do
   #gem 'byebug'

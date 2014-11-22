@@ -8,6 +8,13 @@ class AnswersController < ApplicationController
     get_purchase	
   	@user_answers = UserAnswer.ordered_answers_for @purchase
     @rating = Rating.where(exam_id: @test.id, user_id: current_user.id).any?
+    @picture_urls = Hash.new
+    @test.questions.map{|q| q.comments}.first.each do |c|
+      pic = c.user.picture.url
+      additional = (pic == "nopictureuser.jpg") ? "/assets/" : ""
+      @picture_urls[c.user.id] = additional + pic
+    end
+    @picture_urls = @picture_urls.to_json
   end
 
   private

@@ -1,0 +1,12 @@
+<div class='mt40'>
+  <table>
+    <tr>
+      <td valign="top">
+        <img src="<%= pictures[@user_id] %>" class="round-profile">
+      </td>
+      <td>
+         <div class='ml40'> <%= @content %> </div>
+      </td>
+    </tr>
+  </table>
+</div>
