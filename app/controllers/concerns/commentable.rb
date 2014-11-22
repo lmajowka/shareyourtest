@@ -4,7 +4,7 @@ module Commentable
   extend ActiveSupport::Concern
 
   included do
-     before_filter :comments, only => [:show]
+     before_action :comments, only: :show
   end
 
   def comments
