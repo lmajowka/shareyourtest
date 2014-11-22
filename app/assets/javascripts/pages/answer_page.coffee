@@ -14,6 +14,7 @@ class AnswerPage
   @showComments: ->
     if purchase_status is "answered"
       $('#comment-form-container').show()
+      $('#question-comments').html ""
       for comment in @currentQuestion.comments
         commentModel = new Shareyourtest.Models.Comment comment
         commentView = new Shareyourtest.Views.Comments(model: commentModel)
