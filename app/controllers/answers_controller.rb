@@ -25,7 +25,7 @@ class AnswersController < ApplicationController
   private
 
   def comments
-    @test.questions.map{|q| q.comments}.first
+    @test.questions.reject{|q| q.comments.size == 0}.map{|q| q.comments}.flatten
   end
 
   def get_purchase
