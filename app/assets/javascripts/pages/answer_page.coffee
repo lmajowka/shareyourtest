@@ -11,14 +11,20 @@ class AnswerPage
     @adjustScreenSize()
     @removeFinishButton()
 
+  @addNewComment: (comment) ->
+    Shareyourtest.AnswerPage.currentQuestion.comments.push comment.attributes
+    Shareyourtest.AnswerPage.showComments()
+    $('#comment-text-area').val("")
+
+
   @showComments: ->
     if purchase_status is "answered"
       $('#comment-form-container').show()
-      $('#question-comments').html ""
+      $('#question-comments-container').html ""
       for comment in @currentQuestion.comments
         commentModel = new Shareyourtest.Models.Comment comment
         commentView = new Shareyourtest.Views.Comments(model: commentModel)
-        $('#question-comments').append commentView.render().$el
+        $('#question-comments-container').append commentView.render().$el
 
   @removeFinishButton: ->
     if purchase_status is "answered"

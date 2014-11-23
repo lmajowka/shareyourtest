@@ -1,11 +1,15 @@
-<div class='mt40'>
+<div class='mt60'>
   <table>
     <tr>
       <td valign="top">
-        <img src="<%= pictures[@user_id] %>" class="round-profile">
+        <img src="<%= pictures[@user_id] %>" class="round-profile mt5">
       </td>
       <td>
-         <div class='ml40'> <%= @content %> </div>
+         <div class='ml40'>
+           <div class='mid-gray'><%= commenters_name[@user_id] %></div>
+           <div class='fwb'><%= @content %></div>
+           <div class='mid-gray'><%= Shareyourtest.Utils.timeSince(new Date(@created_at).getTime()) %> ago</div>
+         </div>
       </td>
     </tr>
   </table>

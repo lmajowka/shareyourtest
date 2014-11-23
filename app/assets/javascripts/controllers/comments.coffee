@@ -1,6 +1,7 @@
 class Shareyourtest.Controllers.Comments
 
-  @create: (commentable_type,commentable_id) ->
+  @create: (commentable_type,commentable_id, callback) ->
+    @callback = callback
     comment = new Shareyourtest.Models.Comment(
       commentable_id: commentable_id,
       commentable_type: commentable_type,
@@ -8,6 +9,6 @@ class Shareyourtest.Controllers.Comments
     )
 
     comment.save(null,{
-      success: ->
-        location.href = location.href
+      success: (response) =>
+        @callback(response)
     })

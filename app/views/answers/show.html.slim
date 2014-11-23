@@ -43,6 +43,7 @@ table
                 div id='comment-form-container' class='mt40'
                   div id='question-comments'
                     h1 Comments
+                    div id='question-comments-container'
                   == render 'answers/comment_form'
 
 javascript:
@@ -54,5 +55,6 @@ javascript:
   var exam_id = #{{@test.id}};
   var rating = #{{@rating}};
   var pictures = #{{@picture_urls}};
+  var commenters_name = #{{@commenters_name}};
   Shareyourtest.AnswerPage.preloadImages(["/assets/seta_ant_selecionado.png","/assets/seta_prox_apagado.png"]);
   Shareyourtest.AnswerPage.init();
