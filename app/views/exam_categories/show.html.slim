@@ -49,4 +49,22 @@ div class='ml108 greyboard'
           = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
 
   div class='cb'
+
+  -@exam_category.embeddables.each do |embeddable|
+    div class='card mt20'
+      h2 class='mt0 fl'
+        ==embeddable.title
+      div class='cb'
+        div class='p40'
+          ==embeddable.content
+
+  -if current_user and current_user.admin?
+    div class='cb'
+    div class='card mt20'
+      = form_for [ @exam_category , @embeddable] do |f|
+        = f.text_field :title, class: ''
+        = f.text_area :content, class: 'edit-textarea'
+        = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
+
+  div class='cb'
   div class='empty-space'

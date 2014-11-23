@@ -1,6 +1,7 @@
 class ExamCategory < ActiveRecord::Base
 
   has_many :exams
+  has_many :embeddables
   has_permalink :name
 
   before_validation :check_permalink_uniqueness, on: :create

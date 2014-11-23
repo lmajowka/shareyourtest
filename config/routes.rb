@@ -24,7 +24,10 @@ Shareyourtest::Application.routes.draw do
   resources :comments
   resources :user_answers
   resources :ratings
-  resources :exam_categories ,path: 'exams'
+  resources :exam_categories ,path: 'exams' do
+    resources :embeddables
+  end
+
 
   resources :sessions, only: [:new, :create, :destroy]
 
