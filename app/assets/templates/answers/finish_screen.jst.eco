@@ -9,6 +9,6 @@
   <div id="user_star"></div>
 </div>
 
-<div class='ml40 mt40'>
+<div class='ml40 mt40' style='display:none' id='view-answers'>
   <a href="<%=@viewURL%>">View your answers!</a>
 </div>

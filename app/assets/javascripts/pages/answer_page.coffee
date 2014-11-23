@@ -153,8 +153,10 @@ class AnswerPage
           type: 'POST'
           data: { score: score , exam_id: exam_id}
         )
+        $('#view-answers').show()
     )
     if rating
       $('#finish-screen-rating').hide()
+      $('#view-answers').show()
 
 window.Shareyourtest.AnswerPage = AnswerPage
