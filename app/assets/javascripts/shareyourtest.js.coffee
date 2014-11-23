@@ -7,5 +7,6 @@ window.Shareyourtest =
   initialize: {}
 
 $(document).ready ->
-	Shareyourtest.signedIn = Boolean $.cookie("remember_token")
-
+  Shareyourtest.signedIn = Boolean $.cookie("remember_token")
+  Turbolinks.enableTransitionCache()
+  Turbolinks.enableProgressBar()

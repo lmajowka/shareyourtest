@@ -150,3 +150,9 @@ a:hover{
   height:60px;
   border-radius:32px;
 }
+
+html.turbolinks-progress-bar::before {
+  background-color: #409CFC !important;
+  height: 4px !important;
+  z-index:2;
+}
