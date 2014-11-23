@@ -19,9 +19,9 @@ div class='mt40 card profile-card'
             = f.file_field :picture, onchange:"$('#form-for-picture').submit()", class: 'submit-picture-input cp', onmouseover: '$("#update_picture").addClass("flat-btn-gray-hover")', onmouseout: '$("#update_picture").removeClass("flat-btn-gray-hover")'
 
     div class='fl ml40'
-      = 'Bio'
 
       -if @my_profile
+        = 'About you'
         = form_for @user, html: {id: 'form-bio'}, method: :patch do |f|
           = f.text_area :bio, class: 'bio-input'
       -else
@@ -41,7 +41,7 @@ div class='cb'
 div class='cb'
 
 -if @my_profile
-  div class='mt40 fl'
+  div class='mt40 fl ml20'
 
     - if @exams.size > 0
       h2 class='fl' Your Tests (#{{@exams.size}})
@@ -57,9 +57,9 @@ div class='cb'
   div class='empty-space'
 
 - else
-  div class='mt40 fl'
+  div class='mt40 fl ml20'
 
-  - if @published_exams
+  - if @published_exams.size > 0
     h2 class='fl' Published tests (#{{@published_exams.size}})
 
     div class='cb'
