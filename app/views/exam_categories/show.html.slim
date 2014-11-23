@@ -45,7 +45,7 @@ div class='ml108 greyboard'
     br
       -if current_user and current_user.admin?
         = form_for @exam_category do |f|
-          = f.bootsy_area :calendar, class: 'edit-textarea'
+          = f.text_area :calendar, class: 'edit-textarea'
           = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
 
   div class='cb'
