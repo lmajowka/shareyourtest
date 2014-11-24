@@ -49,7 +49,7 @@
 <script>
 if ($.cookie("new-user") == "true") {
   ga('send', 'event', 'registration', 'user', 'registered');
-  $.removeCookie("new-user");
+  $.removeCookie('new-user', { path: '/' });
 }</script>
 
 </body>
