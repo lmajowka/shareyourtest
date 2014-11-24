@@ -29,8 +29,6 @@ SitemapGenerator::Sitemap.create do
   #   add exam_category_path(exam_category)
   # end
 
-  SitemapGenerator::Sitemap.public_path = 'tmp/'
-
   Exam.find_each do |exam|
     add exam_path(exam), lastmod: exam.updated_at
   end
