@@ -27,6 +27,7 @@ gem 'searchkick'
 gem 'newrelic_rpm'
 gem 'ancestry'
 gem 'sitemap_generator'
+gem 'pg'
 
 group :test, :development do
   #gem 'byebug'
@@ -47,6 +48,4 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :production do
-  gem 'pg'
-end
+
