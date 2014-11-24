@@ -48,8 +48,8 @@
 
 <script>
 if ($.cookie("new-user") == "true") {
-  ga('send', 'registration', 'user', 'registered');
-  $.removeCookie("mew-user");
+  ga('send', 'event', 'registration', 'user', 'registered');
+  $.removeCookie("new-user");
 }</script>
 
 </body>
