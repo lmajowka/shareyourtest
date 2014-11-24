@@ -192,3 +192,8 @@ h3 {
   height:120px;
   padding: 10px;
 }
+
+#ranking-container{
+  overflow-y: scroll;
+  height: 280px;
+}
