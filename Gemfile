@@ -26,6 +26,7 @@ gem "chartkick"
 gem 'searchkick'
 gem 'newrelic_rpm'
 gem 'ancestry'
+gem 'sitemap_generator'
 
 group :test, :development do
   #gem 'byebug'
