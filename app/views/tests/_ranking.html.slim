@@ -1,11 +1,12 @@
 div class='card mini-card' id='ranking-card'
   h2 Ranking
-  -@ranking.each do |rank|
-    div
-      div class='fl ranking-name'
-        =rank.user.name
-      div class='fl ml10 tr' style='width:34px;'
-        =(rank.performance*100).to_i
-        '%
-    div class='cb'    
+  div id='ranking-container'
+    -@ranking.each do |rank|
+      div
+        div class='fl ranking-name'
+          =rank.user.name
+        div class='fl ml10 tr' style='width:34px;'
+          =(rank.performance*100).to_i
+          '%
+      div class='cb'
 
