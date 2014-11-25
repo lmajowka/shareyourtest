@@ -155,4 +155,5 @@ html.turbolinks-progress-bar::before {
   background-color: #409CFC !important;
   height: 4px !important;
   z-index:2;
+  box-shadow: 1px 1px 3px #FFF;
 }
