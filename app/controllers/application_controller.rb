@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   before_action :set_locale
-  before_action :set_cache
 
   def set_locale
     I18n.locale = extract_locale_from_tld || I18n.default_locale
@@ -19,10 +18,6 @@ class ApplicationController < ActionController::Base
       return :'pt-BR'
     end
     nil
-  end
-
-  def set_cache
-    expires_in 3.days, :public => true
   end
 
 end
