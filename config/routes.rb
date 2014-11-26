@@ -4,6 +4,7 @@ Shareyourtest::Application.routes.draw do
 
   root 'index#index'
 
+  match '/tests/:id/populate', to: 'tests#populate', via: 'get'
   match '/tests/purchase', to: 'tests#purchase', via: 'get'
   match '/tests/:permalink', to: 'tests#show', via: 'get,post'
   match '/tests/:permalink', to: 'tests#update', via: 'put,patch'

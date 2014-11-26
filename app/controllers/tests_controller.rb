@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
 
-  before_action :find_exam, only: [:update,:show]
+  before_action :find_exam, only: [:update,:show, :populate]
   before_action :set_header, only: :show
 
   def index
@@ -31,6 +31,13 @@ class TestsController < ApplicationController
     @tests = Exam.search "2% #{params[:permalink]}", where: { status: 'published'}
     @category_name = params[:permalink]
 
+  end
+
+  def populate
+    if current_user.admin?
+      @test.populate
+      redirect_to @test
+    end
   end
 
   def create
