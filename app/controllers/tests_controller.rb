@@ -34,10 +34,11 @@ class TestsController < ApplicationController
   end
 
   def populate
-    if current_user.admin?
+    if current_user and current_user.admin?
       @test.populate
       redirect_to @test
     end
+    render not_found
   end
 
   def create
