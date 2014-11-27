@@ -2,6 +2,7 @@ class Exam < ActiveRecord::Base
 
   STATUSES = ['draft', 'published']
   AVERAGE_PERFORMANCE_KEY = "tests/%s/average_performance"
+  AVERAGE_RATING_KEY = "tests/%s/average_rating"
 
   scope :published, -> {where(status: "published")}
 
@@ -33,7 +34,9 @@ class Exam < ActiveRecord::Base
 
   def average_rating
     return 0 if ratings.size == 0
-    ratings.sum(:score) / ratings.size
+    return @cached_result if @cached_result = Rails.cache.read(AVERAGE_RATING_KEY % permalink)
+    ar = ratings.sum(:score) / ratings.size
+    Rails.cache.write(AVERAGE_RATING_KEY % permalink, ar, expires_in: 1.day) && ar
   end
 
   def number_of_ratings
@@ -52,11 +55,9 @@ class Exam < ActiveRecord::Base
   end
 
   def average_performance
-    @cached_result = Rails.cache.read(AVERAGE_PERFORMANCE_KEY % permalink)
-    return @cached_result if @cached_result
+    return @cached_result if @cached_result = Rails.cache.read(AVERAGE_PERFORMANCE_KEY % permalink)
     ap = purchases.where('performance is not null').group(:performance).count
-    Rails.cache.write(AVERAGE_PERFORMANCE_KEY % permalink, ap, expires_in: 1.day)
-    ap
+    Rails.cache.write(AVERAGE_PERFORMANCE_KEY % permalink, ap, expires_in: 1.day) && ap
   end
 
   private
