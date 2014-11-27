@@ -80,7 +80,7 @@ class TestsController < ApplicationController
       @answered_purchases = current_user.purchases.answered_for @test.id
     else
       @answered_purchases = []
-      @average_performance  = @test.purchases.where('performance is not null').group(:performance).count
+      @average_performance  = @test.average_performance
       @average = "Average"
     end
     @average_rating = @test.average_rating 

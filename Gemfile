@@ -28,6 +28,7 @@ gem 'newrelic_rpm'
 gem 'ancestry'
 gem 'sitemap_generator'
 gem 'pg'
+gem 'dalli'
 
 group :test, :development do
   #gem 'byebug'

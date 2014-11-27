@@ -1,6 +1,7 @@
 class Exam < ActiveRecord::Base
 
   STATUSES = ['draft', 'published']
+  AVERAGE_PERFORMANCE_KEY = "tests/%s/average_performance"
 
   scope :published, -> {where(status: "published")}
 
@@ -50,7 +51,16 @@ class Exam < ActiveRecord::Base
     end
   end
 
+  def average_performance
+    @cached_result = Rails.cache.read(AVERAGE_PERFORMANCE_KEY % permalink)
+    return @cached_result if @cached_result
+    ap = purchases.where('performance is not null').group(:performance).count
+    Rails.cache.write(AVERAGE_PERFORMANCE_KEY % permalink, ap, expires_in: 1.day)
+    ap
+  end
+
   private
+
 
   def assign_defaults
     self.status ||= 'draft'
