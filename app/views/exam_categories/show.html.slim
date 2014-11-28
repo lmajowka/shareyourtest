@@ -34,7 +34,8 @@ div class='ml108 greyboard'
   div class='cb'
 
   div class='mt20'
-    == render 'questions/example'
+    -if @exam_category.exams.size > 0
+      == render 'questions/example'
   div class='cb'
 
   div class='card mt20'
