@@ -1,4 +1,5 @@
-- content_for :title, @exam_category.name
+- content_for :title, "#{@exam_category.name} | Share your Test"
+- content_for :description, @exam_category.description
 
 == render 'exam_categories/menu'
 

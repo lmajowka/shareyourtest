@@ -1,4 +1,6 @@
-- content_for :title, 'Practice - Select your test'
+- content_for :title, 'Practice Now by Selecting a Test | Share your Test'
+- content_for :description, 'Share you Test lets choose practice exams  from hundreds of options. From the most popular topics and certifications to the most specific exams. Start practicing now!'
+- content_for :keywords, raw(@tests.map(&:title).to_s.gsub(/[\"\[\]]/,''))
 
 == render 'tests/index_menu'
 

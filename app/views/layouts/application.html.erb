@@ -2,6 +2,8 @@
 <html>
 <head>
   <title><%= yield(:title) %></title>
+  <meta name="description" content="<%= yield(:description) %>" />
+  <meta name="keywords" content="<%= yield(:keywords) %>" />
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>

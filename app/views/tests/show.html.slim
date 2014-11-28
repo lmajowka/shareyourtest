@@ -1,4 +1,6 @@
-- content_for :title, @test.title  
+- content_for :title, "#{@test.title} | Share your Test"
+- content_for :description, @test.description
+
 == render 'tests/menu'
 
 div class='fl w100' id='title-view'
