@@ -1,6 +1,9 @@
 div class='test-snippet-container-main'
-  div class='fl test-snippet-image-main'
+  div class='fl test-snippet-image-main pr'
     = image_tag(exam.picture.url(:thumb))
+    -if @badge
+      div class='#{{@badge.badge}}tag'
+        = @badge.badge
   div class='fl test-snippet-info-main'  
     h1 class='fs20'
       = exam.title

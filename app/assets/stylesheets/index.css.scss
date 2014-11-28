@@ -128,3 +128,41 @@
   padding-left:12px;
   font-size:11px;
 }
+
+.goldtag{
+  background: image-url("goldtag.png");
+  width:63px;
+  height:37px;
+  position:absolute;
+  right:-5px;
+  top:5px;
+  color:#777;
+  padding-top:12px;
+  padding-left:32px;
+  font-size:11px;
+}
+
+.silvertag{
+  background: image-url("silvertag.png");
+  width:63px;
+  height:37px;
+  position:absolute;
+  right:-5px;
+  top:5px;
+  color:#FFF;
+  padding-top:12px;
+  padding-left:32px;
+  font-size:11px;
+}
+.bronzetag{
+  background: image-url("bronzetag.png");
+  width:63px;
+  height:37px;
+  position:absolute;
+  right:-5px;
+  top:5px;
+  color:#000;
+  padding-top:12px;
+  padding-left:22px;
+  font-size:11px;
+}

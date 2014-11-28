@@ -87,6 +87,7 @@ class TestsController < ApplicationController
     @number_of_ratings =  @test.pluralize_number_of_ratings
     @sample_question = @test.questions.first
     @reviews = @test.reviews
+    @badge = Badge.find_by exam_id: @test.id, user_id: current_user.id
     @show_review_form = show_review_form?
     @ranking = Ranking.for @test
     respond_to do |format|

@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123192650) do
+ActiveRecord::Schema.define(version: 20141128072445) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -20,6 +23,17 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.datetime "updated_at"
     t.integer  "position"
   end
+
+  create_table "badges", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "exam_id"
+    t.string   "badge"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "badges", ["exam_id"], name: "index_badges_on_exam_id", using: :btree
+  add_index "badges", ["user_id"], name: "index_badges_on_user_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -31,8 +45,8 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.integer  "user_id"
   end
 
-  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "embeddables", force: true do |t|
     t.integer  "exam_category_id"
@@ -42,7 +56,7 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.datetime "updated_at"
   end
 
-  add_index "embeddables", ["exam_category_id"], name: "index_embeddables_on_exam_category_id"
+  add_index "embeddables", ["exam_category_id"], name: "index_embeddables_on_exam_category_id", using: :btree
 
   create_table "exam_categories", force: true do |t|
     t.string "name"
@@ -54,7 +68,7 @@ ActiveRecord::Schema.define(version: 20141123192650) do
 
   create_table "exams", force: true do |t|
     t.string   "title"
-    t.text     "description",          limit: 255
+    t.text     "description"
     t.integer  "user_id"
     t.float    "price"
     t.string   "status"
@@ -68,7 +82,7 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.integer  "exam_category_id"
   end
 
-  add_index "exams", ["exam_category_id"], name: "index_exams_on_exam_category_id"
+  add_index "exams", ["exam_category_id"], name: "index_exams_on_exam_category_id", using: :btree
 
   create_table "purchases", force: true do |t|
     t.integer  "user_id"
@@ -80,8 +94,8 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.float    "performance"
   end
 
-  add_index "purchases", ["exam_id"], name: "index_purchases_on_exam_id"
-  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id"
+  add_index "purchases", ["exam_id"], name: "index_purchases_on_exam_id", using: :btree
+  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.integer  "exam_id"
@@ -92,7 +106,7 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.integer  "position"
   end
 
-  add_index "questions", ["exam_id"], name: "index_questions_on_exam_id"
+  add_index "questions", ["exam_id"], name: "index_questions_on_exam_id", using: :btree
 
   create_table "rankings", force: true do |t|
     t.integer "user_id"
@@ -100,8 +114,8 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.float   "performance"
   end
 
-  add_index "rankings", ["exam_id"], name: "index_rankings_on_exam_id"
-  add_index "rankings", ["user_id"], name: "index_rankings_on_user_id"
+  add_index "rankings", ["exam_id"], name: "index_rankings_on_exam_id", using: :btree
+  add_index "rankings", ["user_id"], name: "index_rankings_on_user_id", using: :btree
 
   create_table "ratings", force: true do |t|
     t.integer  "exam_id"
@@ -111,8 +125,8 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.datetime "updated_at"
   end
 
-  add_index "ratings", ["exam_id"], name: "index_ratings_on_exam_id"
-  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
+  add_index "ratings", ["exam_id"], name: "index_ratings_on_exam_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
 
   create_table "reviews", force: true do |t|
     t.integer  "exam_id"
@@ -122,8 +136,8 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.datetime "updated_at"
   end
 
-  add_index "reviews", ["exam_id"], name: "index_reviews_on_exam_id"
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+  add_index "reviews", ["exam_id"], name: "index_reviews_on_exam_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "user_answers", force: true do |t|
     t.integer  "user_id"
@@ -137,10 +151,10 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.integer  "answer"
   end
 
-  add_index "user_answers", ["answer_id"], name: "index_user_answers_on_answer_id"
-  add_index "user_answers", ["purchase_id"], name: "index_user_answers_on_purchase_id"
-  add_index "user_answers", ["question_id"], name: "index_user_answers_on_question_id"
-  add_index "user_answers", ["user_id"], name: "index_user_answers_on_user_id"
+  add_index "user_answers", ["answer_id"], name: "index_user_answers_on_answer_id", using: :btree
+  add_index "user_answers", ["purchase_id"], name: "index_user_answers_on_purchase_id", using: :btree
+  add_index "user_answers", ["question_id"], name: "index_user_answers_on_question_id", using: :btree
+  add_index "user_answers", ["user_id"], name: "index_user_answers_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -157,7 +171,7 @@ ActiveRecord::Schema.define(version: 20141123192650) do
     t.string   "permalink"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
