@@ -3,8 +3,9 @@ class Exam < ActiveRecord::Base
   STATUSES = ['draft', 'published']
   AVERAGE_PERFORMANCE_KEY = "tests/%s/average_performance"
   AVERAGE_RATING_KEY = "tests/%s/average_rating"
+  PUBLISHED_KEY = "tests/published"
 
-  scope :published, -> {where(status: "published")}
+  scope :published, -> { where(status: "published") }
 
   belongs_to :owner, class_name: "User", foreign_key: :user_id
   belongs_to :exam_category
@@ -58,6 +59,12 @@ class Exam < ActiveRecord::Base
     return @cached_result if @cached_result = Rails.cache.read(AVERAGE_PERFORMANCE_KEY % permalink)
     ap = purchases.where('performance is not null').group(:performance).count
     Rails.cache.write(AVERAGE_PERFORMANCE_KEY % permalink, ap, expires_in: 1.day) && ap
+  end
+
+  def self.all_published
+    return @cached_result if @cached_result = Rails.cache.read(PUBLISHED_KEY)
+    p = published.all
+    Rails.cache.write(PUBLISHED_KEY, p, expires_in: 1.day) && p
   end
 
   private

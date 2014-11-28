@@ -7,7 +7,7 @@ class TestsController < ApplicationController
     if params[:permalink]
       get_tests
     else
-      @tests = Exam.published
+      @tests = Exam.all_published
       @category_name = "Tests"
     end
     @number_of_tests = @tests.size
