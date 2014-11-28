@@ -3,12 +3,6 @@
     -if exam.status == 'draft'
       div class='redtag'
         = 'Draft'
-    /div class='goldtag'
-    /  = 'Gold'
-    /div class='silvertag'
-    /  = 'Silver'
-    /div class='bronzetag'
-    /  = 'Bronze'
     div class='test-snippet-image'
       = image_tag(exam.picture.url(:thumb))
     div class='cb'

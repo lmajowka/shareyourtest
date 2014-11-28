@@ -1,4 +1,7 @@
 div class='card'
+  -if @badge
+    div class='#{{@badge.badge}}tag'
+      = @badge.badge
   == render 'tests/main_snippet', exam: @test
   div class='cb'
   - if @my_exam
