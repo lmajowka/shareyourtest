@@ -5,7 +5,7 @@
 
 div class='ml108 greyboard'
 
-  div class='card'
+  div class='card' id='title-view'
     h1 class='mt0 fl' =@exam_category.name
     div class='cb'
     div class='mt10 fl'
@@ -16,13 +16,13 @@ div class='ml108 greyboard'
         = f.bootsy_area :description, class: 'edit-textarea'
         = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
 
-  div class='fl ml0 mt10 ml-5 mr-5'
+  div class='fl ml0 mt10 ml-5 mr-5' id='tests-view'
     -@tests.each do |test|
       = link_to test do
         == render 'tests/snippet',  exam: test
           div class='cb'
 
-  div class='card mt10'
+  div class='card mt10' id='info-view'
     h2 class='mt0 fl' Info
     div class='cb'
     div class='p40'
@@ -34,12 +34,12 @@ div class='ml108 greyboard'
         = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
   div class='cb'
 
-  div class='mt20'
+  div class='mt20' id='sample-view'
     -if @exam_category.exams.size > 0
       == render 'questions/example'
   div class='cb'
 
-  div class='card mt20'
+  div class='card mt20' id='calendar-view'
     h2 class='mt0 fl' Calendar
     div class='cb'
     div class='p40'
@@ -70,3 +70,6 @@ div class='ml108 greyboard'
 
   div class='cb'
   div class='empty-space'
+
+javascript:
+  Shareyourtest.ExamPage.initialize(#{@exam_category.id});

@@ -42,14 +42,14 @@ class TestPage extends Page
       $('#question-content')[0].style.height = $(window).height() - 284 + 'px'
 
     @menuTitle = []
-    @menuTitle.push new MenuItem "#menu-title", 'title-view', 60
-    @menuTitle.push new MenuItem "#menu-join-now", 'join-card', 60
-    @menuTitle.push new MenuItem "#menu-example", 'example-card', 60
-    @menuTitle.push new MenuItem "#menu-ranking", 'ranking-card', 60
-    @menuTitle.push new MenuItem "#menu-reviews", 'reviews-card', 60
-    @menuTitle.push new MenuItem "#menu-questions", 'questions-view', 175
-    @menuTitle.push new MenuItem "#menu-new-question", 'new-question-view', 98
-    @menuTitle.push new MenuItem "#menu-settings", 'settings-view', 90
+    @menuTitle.push new Shareyourtest.MenuItem "#menu-title", 'title-view', 60, 'TestPage'
+    @menuTitle.push new Shareyourtest.MenuItem "#menu-join-now", 'join-card', 60, 'TestPage'
+    @menuTitle.push new Shareyourtest.MenuItem "#menu-example", 'example-card', 60, 'TestPage'
+    @menuTitle.push new Shareyourtest.MenuItem "#menu-ranking", 'ranking-card', 60, 'TestPage'
+    @menuTitle.push new Shareyourtest.MenuItem "#menu-reviews", 'reviews-card', 60, 'TestPage'
+    @menuTitle.push new Shareyourtest.MenuItem "#menu-questions", 'questions-view', 175, 'TestPage'
+    @menuTitle.push new Shareyourtest.MenuItem "#menu-new-question", 'new-question-view', 98, 'TestPage'
+    @menuTitle.push new Shareyourtest.MenuItem "#menu-settings", 'settings-view', 90, 'TestPage'
 
     $("#menu-publish").click =>
       @toggleStatus "published"
@@ -142,17 +142,5 @@ class TestPage extends Page
           location.href = location.href.replace(/tests/,"answers")
     )
 
-class MenuItem
-
-  constructor: (@menuItemId, @cardId, @offset) ->   
-    $(@menuItemId).click =>
-      MenuItem.selectMenu $(@menuItemId)
-      TestPage.animate @cardId, @offset
-
-  @selectMenu: (option) ->
-    options = Shareyourtest.TestPage.menuTitle.map((item) -> item.menuItemId)
-    for opt in options
-      $("#{opt}").removeClass 'menu-selected'
-    option.addClass 'menu-selected'
 
 window.Shareyourtest.TestPage = TestPage
