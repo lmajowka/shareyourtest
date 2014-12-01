@@ -64,7 +64,7 @@ class Exam < ActiveRecord::Base
   def self.all_published
     return @cached_result if @cached_result = Rails.cache.read(PUBLISHED_KEY)
     p = published.all
-    Rails.cache.write(PUBLISHED_KEY, p, expires_in: 1.day) && p
+    Rails.cache.write(PUBLISHED_KEY, p, expires_in: 1.hour) && p
   end
 
   private
