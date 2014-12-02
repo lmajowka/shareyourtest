@@ -6,3 +6,5 @@ class Shareyourtest.ExamPage extends Page
     @menuTitle.push new Shareyourtest.MenuItem "#menu-info", 'info-view', 60, 'ExamPage'
     @menuTitle.push new Shareyourtest.MenuItem "#menu-sample", 'sample-view', 60, 'ExamPage'
     @menuTitle.push new Shareyourtest.MenuItem "#menu-calendar", 'calendar-view', 60, 'ExamPage'
+
+    $("#menu-title").click()
