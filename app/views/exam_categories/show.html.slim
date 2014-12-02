@@ -16,14 +16,14 @@ div class='ml108 greyboard'
         = f.bootsy_area :description, class: 'edit-textarea'
         = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
 
-  div class='fl ml0 mt10 ml-5 mr-5' id='tests-view'
+  div class='fl ml0 mt0 ml-5 mr-5' id='tests-view'
     -@tests.each do |test|
       = link_to test do
         == render 'tests/snippet',  exam: test
           div class='cb'
 
   -if @exam_category.permalink == 'toefl'
-    div class='card mt10' id='estore-view'
+    div class='card mt0' id='estore-view'
       h1 You may also be interested in
 
       div class='mt20 ml40 fl'
@@ -43,7 +43,7 @@ div class='ml108 greyboard'
 
 
 
-  div class='card mt10' id='info-view'
+  div class='card mt20' id='info-view'
     h2 class='mt0 fl' Info
     div class='cb'
     div class='p40'
