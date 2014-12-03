@@ -8,7 +8,10 @@ class User < ActiveRecord::Base
   has_many :comments
 
   before_create :create_remember_token
-  before_save { self.email = email.downcase }
+  before_save {
+    self.email = email.downcase
+    self.name = name.titleize
+  }
   before_validation :check_permalink_uniqueness, on: :create
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
