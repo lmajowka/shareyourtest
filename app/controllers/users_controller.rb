@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     else
       @user = User.new(user_params)
       if @user.save
+        cookies["new-user"] = "true"
         sign_in_and_redirect(@user)
       else
         render 'new'
@@ -46,12 +47,11 @@ class UsersController < ApplicationController
 
   def sign_in_and_redirect(user)
     sign_in user
-    cookies["new-user"] = "true"
     if cookies["last-test-page"]
         redirect_to cookies["last-test-page"]
     else
         redirect_to user
-      end
+    end
   end
 
 end
