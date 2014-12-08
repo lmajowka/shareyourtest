@@ -33,6 +33,9 @@ SitemapGenerator::Sitemap.create do
     add exam_path(exam), lastmod: exam.updated_at
   end
 
+  ExamCategory.all.each do |exam_category|
+    add exam_category_path(exam_category)
+  end
 
 
 end
