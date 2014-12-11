@@ -4,6 +4,8 @@
 div class='card mt20 ml20 p40 page-card'
 	h1 class='' Sign in
 
+    = flash[:error]
+
 	= form_for :session, url: sessions_path do |f|
 	  = f.text_field :email, class: "join-now-input mt20 mt20", placeholder: "Email"
 	  div class='cb'

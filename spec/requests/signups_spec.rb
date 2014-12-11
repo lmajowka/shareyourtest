@@ -7,14 +7,13 @@ RSpec.describe "Signups", :type => :request do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_content('Join') }
     it { should have_title('Join Share your test right now!') }
   end
 
   describe "singup" do
     before { visit signup_path }
 
-    let(:submit) { "Join now!" }
+    let(:submit) { "JOIN NOW!" }
 
     context "with invalid information" do
       it "should not create a user" do
@@ -24,6 +23,7 @@ RSpec.describe "Signups", :type => :request do
 
     context "with valid information" do
       before do
+        fill_in "Full name",          with: "michael iceberg"
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
       end
