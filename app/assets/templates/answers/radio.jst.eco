@@ -1,6 +1,6 @@
 <div class='mt20 fl preview-answer' onclick="$('#radio-answer-<%= @index%>')[0].checked=true;<%= @callback%>">
   <table><tr><td valign='top'>
-  <input type='radio' name='radioIndex' id='radio-answer-<%= @index%>' data-position='<%=@index%>' onclick='<%= @callback%>' class='fl'/>
+  <input type='radio' name='radioIndex' id='radio-answer-<%= @index%>' data-position='<%=@index%>' class='fl'/>
   </td><td>
   <div class='fl ml10 w100' id='content-answer-<%= @index%>'>
     <%= @content %>
