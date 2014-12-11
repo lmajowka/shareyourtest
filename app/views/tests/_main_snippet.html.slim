@@ -7,20 +7,31 @@ div class='test-snippet-container-main'
     div
       div class='fl mt2'
         = link_to "By #{exam.owner.name}", exam.owner
-      div class='fl mt2 ml20'
-        =exam.questions.size 
-        ' &nbsp;
-        = t(:question).pluralize(exam.questions.size)
+
       div class='fl ml20' id='test-rating#{{exam.id}}'  
-      div class='fl mt2 ml10 mid-gray' 
-        =@number_of_ratings
-        ' &nbsp;
+
       -if exam.exam_category
         div class='fl mt2 ml10 mid-gray'
           =link_to exam.exam_category.name, exam.exam_category
+
     div class='cb'
-    div class='mt10'
-      = exam.description
+    table
+      tr
+        td valign="top" width="110px"
+          div class='mid-gray mt10'
+            =exam.questions.size
+            ' &nbsp;
+            = t(:question).pluralize(exam.questions.size)
+          div class='mid-gray'
+            =@number_of_ratings
+            ' &nbsp;
+          -if @number_of_comments>0
+            div class='mid-gray'
+              = @number_of_comments
+              |&nbsp; Comments
+        td valign="top"
+          div class='mt10 ml20 fl'
+            = exam.description
 
   -if current_user.try(:admin?)
     = form_for @test, html: {id: 'form-category'}, method: :patch do |f|

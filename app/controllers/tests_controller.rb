@@ -83,6 +83,7 @@ class TestsController < ApplicationController
       @average_performance  = @test.average_performance
       @average = "Average"
     end
+    @number_of_comments = @test.questions.map(&:comments).size
     @average_rating = @test.average_rating 
     @number_of_ratings =  @test.pluralize_number_of_ratings
     @sample_question = @test.questions.first
