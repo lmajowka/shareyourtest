@@ -132,6 +132,7 @@ class TestsController < ApplicationController
 
   def show_review_form?
     return false unless current_user
+    return false if @test.reviews.size > 5
     Purchase.where(user_id: current_user.id, exam_id: @test.id).any? and Review.where(exam_id: @test.id, user_id: current_user.id).empty?
   end
   
