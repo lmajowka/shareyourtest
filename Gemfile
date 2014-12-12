@@ -29,6 +29,7 @@ gem 'ancestry'
 gem 'sitemap_generator'
 gem 'pg'
 gem 'dalli'
+gem 'rack-zippy'
 
 group :test, :development do
   #gem 'byebug'
