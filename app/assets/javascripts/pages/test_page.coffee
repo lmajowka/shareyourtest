@@ -23,19 +23,20 @@ class TestPage extends Page
 
   @initialize: (id) ->
     $.cookie("last-test-page",location.href)
-    @questions = new Shareyourtest.Collections.Questions()
     @test = new Shareyourtest.Models.Test({id: id, permalink: @getPerma()})
-    
-    events = ['sync','change','destroy']
-    for event in events
-      @questions.on event, Shareyourtest.TestPage.renderNumberQuestions
-      @questions.on event, Shareyourtest.TestPage.questions.render
+
+    if myExam
+      @questions = new Shareyourtest.Collections.Questions()
+      events = ['sync','change','destroy']
+      for event in events
+        @questions.on event, Shareyourtest.TestPage.renderNumberQuestions
+        @questions.on event, Shareyourtest.TestPage.questions.render
+      @questions.fetch()
 
     @test.on 'sync', @displayMenuOptions
 
     @displayRating("#test-rating",averageRating)
 
-    @questions.fetch()
     @test.fetch()
 
     if $('#question-content').length > 0
@@ -81,7 +82,7 @@ class TestPage extends Page
     @publishedFilter()
     @unpublishedFilter()
 
-    if Shareyourtest.TestPage.questions.length is 0
+    if not myExam or Shareyourtest.TestPage.questions.length is 0
       $('#menu-publish').hide()
 
   @hideElements: (elements) ->
@@ -102,7 +103,7 @@ class TestPage extends Page
 
   @moreThanOneQuestionFilter: ->
     elements = ["#menu-questions","#menu-publish","#questions-view-card"]
-    @showOrHide(Shareyourtest.TestPage.questions.length is 0, elements)    
+    @showOrHide( myExam && Shareyourtest.TestPage.questions.length is 0, elements)
 
   @showOrHide: (condition,elements) ->
     if condition  
