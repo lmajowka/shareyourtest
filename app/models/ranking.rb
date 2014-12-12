@@ -5,7 +5,7 @@ class Ranking < ActiveRecord::Base
 
   scope :for, ->(exam) {
     return @cached_result if @cached_result = Rails.cache.read(FOR_KEY % exam.id)
-    scope = where(exam_id: exam.id).order(performance: :desc)
+    scope = includes(:user).where(exam_id: exam.id).order(performance: :desc).all
     Rails.cache.write(FOR_KEY % exam.id, scope, expires_in: 1.hour) && scope
   }
   belongs_to :user

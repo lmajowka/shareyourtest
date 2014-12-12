@@ -12,6 +12,7 @@ class Exam < ActiveRecord::Base
   has_many :purchases
   has_many :users, through: :purchases
   has_many :questions, -> { order("position ASC") }
+  has_many :comments, through: :questions
   has_many :ratings
   has_many :reviews
   has_permalink
@@ -32,6 +33,10 @@ class Exam < ActiveRecord::Base
 
   after_initialize :assign_defaults
   before_validation :check_permalink_uniqueness, on: :create
+
+  scope :number_of_comments_for, ->(id){
+    includes(:questions).includes(:comments).where(id:id).count('comments.id')
+  }
 
   def average_rating
     return 0 if ratings.size == 0
