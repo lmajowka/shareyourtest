@@ -68,34 +68,42 @@ class TestsController < ApplicationController
   end
 
   def show
+    instantiate_variables
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @test }
+      format.json { render :json => @test }
+    end
+  end
+
+  def get_performance
+    if current_user
+      current_user.purchases.answered_for @test.id
+    else
+      @average_performance  = @test.average_performance
+      @average = "Average"
+      []
+    end
+  end
+
+  def instantiate_variables
+    @answered_purchases = get_performance
     @question = Question.new
     @user = User.new
     @review = Review.new
     @my_exam = my_exam?
-    @chart_options = {
-      title: "Max: 100%",
-      colors: ['#b6c7F6']
-    }
-    if current_user 
-      @answered_purchases = current_user.purchases.answered_for @test.id
-    else
-      @answered_purchases = []
-      @average_performance  = @test.average_performance
-      @average = "Average"
-    end
     @number_of_comments = Exam.number_of_comments_for @test.id
-    @average_rating = @test.average_rating 
+    @average_rating = @test.average_rating
     @number_of_ratings =  @test.pluralize_number_of_ratings
     @sample_question = @test.questions.first
     @reviews = @test.reviews
     @badge = Badge.find_by exam_id: @test.id, user_id: current_user.id if current_user
     @show_review_form = show_review_form?
     @ranking = Ranking.for @test
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @test }
-      format.json { render :json => @test }
-    end
+    @chart_options = {
+      title: "Max: 100%",
+      colors: ['#b6c7F6']
+    }
   end
 
   def purchase
