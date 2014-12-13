@@ -28,6 +28,7 @@ class Purchase < ActiveRecord::Base
     ranking = Ranking.find_or_create_by(user_id: self.user_id, exam_id: self.exam_id)
     if ranking.performance.nil?
       ranking.update!(performance: self.performance)
+      Rails.cache.delete(Ranking::FOR_KEY % self.exam_id)
     end
   end
 
