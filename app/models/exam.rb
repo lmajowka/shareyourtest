@@ -56,6 +56,7 @@ class Exam < ActiveRecord::Base
     users_ids = 10.times.map{ 183 + Random.rand(50) }
     users_ids.each do |uid|
       Ranking.create(user_id: uid, exam_id: id, performance: (0.6 + Random.rand(0.4)))
+      Rails.cache.delete(Ranking::FOR_KEY % id)
     end
   end
 
