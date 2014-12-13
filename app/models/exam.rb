@@ -15,7 +15,7 @@ class Exam < ActiveRecord::Base
   has_many :comments, through: :questions
   has_many :ratings
   has_many :reviews
-  has_permalink
+  has_permalink :title, true
   has_attached_file :picture, styles: {
     thumb: '100x100>',
     square: '200x200#',
@@ -32,7 +32,6 @@ class Exam < ActiveRecord::Base
   validates_numericality_of :price
 
   after_initialize :assign_defaults
-  before_validation :check_permalink_uniqueness, on: :create
 
   scope :number_of_comments_for, ->(id){
     includes(:questions).includes(:comments).where(id:id).count('comments.id')
@@ -74,17 +73,9 @@ class Exam < ActiveRecord::Base
 
   private
 
-
   def assign_defaults
     self.status ||= 'draft'
     self.price ||= 0
   end  
-
-  def check_permalink_uniqueness
-    if self.permalink and Exam.where(permalink: self.permalink.parameterize).count > 0
-      random_string = (0...3).map { ('a'..'z').to_a[rand(26)] }.join
-      self.permalink += "-#{random_string}"
-    end
-  end
 
 end
