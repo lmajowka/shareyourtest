@@ -1,5 +1,8 @@
 div class='card' id='reviews-card'
-  h2 Reviews
+  h2
+    | Reviews (
+    = @reviews.size
+    | )
 
   -if @reviews.size == 0
     = 'No Reviews Yet!'

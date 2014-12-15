@@ -21,7 +21,9 @@ div class='test-menu tc'
 
       div class='mt40 ml5 cp p5' id='menu-reviews'
         span class='glyphicon glyphicon-star mr10'
-        = 'Reviews'
+        | Reviews (
+        =@reviews.size
+        | )
 
     -if @my_exam 
       div class='mt40 ml5 cp p5' id='menu-questions'
