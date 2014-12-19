@@ -3,12 +3,11 @@ body{
 }
 
 .test-menu{
-  width:155px;
-  background: #FFF;
+  width:13%;
   height: 100%;
   float:left;
   min-height: 600px;
-  position:fixed;
+  /*position:fixed;*/
   border-right:1px solid #DDD;
   top:60px;
   left:0;
@@ -195,4 +194,15 @@ h3 {
 #ranking-container{
   overflow-y: scroll;
   height: 280px;
+}
+
+#title-view{
+  width:87%;
+}
+
+.menu-container{
+  position:fixed;
+  background: #FFF;
+  width:13%;
+  height:100%;
 }

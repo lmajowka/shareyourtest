@@ -29,9 +29,7 @@
    end %>
 <div class="cb"></div>
 
-<% if not @homepage %><div class="pl40"><% end %>
-  <%= yield %>
-<% if not @homepage %></div><% end %>
+<%= yield %>
 
 <% if not @homepage %>
 <div id="footer">

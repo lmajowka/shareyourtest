@@ -1,37 +1,38 @@
 div class='test-menu tc'
-  div class='mt40 cp' id='menu-title'
-    =@exam_category.name
+  div class='menu-container'
+    div class='mt40 cp' id='menu-title'
+      =@exam_category.name
 
-  div class='tl'
-    div class='mt40 ml5 cp p5' id='menu-tests'
-      span class='glyphicon glyphicon-list-alt mr10'
-      = 'Tests'
+    div class='tl'
+      div class='mt40 ml5 cp p5' id='menu-tests'
+        span class='glyphicon glyphicon-list-alt mr10'
+        = 'Tests'
 
-    div class='mt40 ml5 cp p5' id='menu-info'
-      span class='glyphicon glyphicon-info-sign mr10'
-      = 'Info'
+      div class='mt40 ml5 cp p5' id='menu-info'
+        span class='glyphicon glyphicon-info-sign mr10'
+        = 'Info'
 
-    div class='mt40 ml5 cp p5' id='menu-sample'
-      span class='glyphicon glyphicon-ok-sign mr10'
-      = 'Question Sample'
+      div class='mt40 ml5 cp p5' id='menu-sample'
+        span class='glyphicon glyphicon-ok-sign mr10'
+        = 'Question Sample'
 
-    div class='mt40 ml5 cp p5' id='menu-calendar'
-      span class='glyphicon glyphicon-calendar mr10'
-      = 'Calendar'
+      div class='mt40 ml5 cp p5' id='menu-calendar'
+        span class='glyphicon glyphicon-calendar mr10'
+        = 'Calendar'
 
-    div class='fb-like mt40 ml10' data-href='#{request.original_url}' data-layout='button_count' data-action='like' data-show-faces='false' data-share='false'
+      div class='fb-like mt40 ml10' data-href='#{request.original_url}' data-layout='button_count' data-action='like' data-show-faces='false' data-share='false'
 
-    div class='fs12 ml10 mt20'
-      | Help Share your test to help others
-      form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class='mt10'
-        input type="hidden" name="cmd" value="_donations"
-        input type="hidden" name="business" value="donations@shareyourtest.com"
-        input type="hidden" name="lc" value="US"
-        input type="hidden" name="item_name" value="Share your Test"
-        input type="hidden" name="item_number" value="donations@shareyourtest.com"
-        input type="hidden" name="no_note" value="0"
-        input type="hidden" name="currency_code" value="USD"
-        input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest"
-        input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
-        img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+      div class='fs12 ml10 mt20'
+        | Help Share your test to help others
+        form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class='mt10'
+          input type="hidden" name="cmd" value="_donations"
+          input type="hidden" name="business" value="donations@shareyourtest.com"
+          input type="hidden" name="lc" value="US"
+          input type="hidden" name="item_name" value="Share your Test"
+          input type="hidden" name="item_number" value="donations@shareyourtest.com"
+          input type="hidden" name="no_note" value="0"
+          input type="hidden" name="currency_code" value="USD"
+          input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest"
+          input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+          img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
 

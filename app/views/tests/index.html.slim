@@ -4,19 +4,20 @@
 
 == render 'tests/index_menu'
 
-div class='ml108 greyboard'
+div class='fl' id='title-view'
+  div class='greyboard'
 
-  div class='card'
-    h1 class='mt0 fl' #{@category_name} (#{@number_of_tests})
-    div class='fr'
-      input id='search-input' type='text' class='join-now-input' placeholder="#{{t(:search)}}" onkeypress="Shareyourtest.TestIndexPage.goSearch(event)"
+    div class='card'
+      h1 class='mt0 fl' #{@category_name} (#{@number_of_tests})
+      div class='fr'
+        input id='search-input' type='text' class='join-now-input' placeholder="#{{t(:search)}}" onkeypress="Shareyourtest.TestIndexPage.goSearch(event)"
 
-  div class='fl ml-5 mt10 mr-5'
-    -@tests.each do |test|
-      = link_to test do
-        == render 'tests/snippet',	exam: test
-          div class='cb'
+    div class='fl ml-5 mt10 mr-5'
+      -@tests.each do |test|
+        = link_to test do
+          == render 'tests/snippet',	exam: test
+            div class='cb'
 
-  div class='cb'
-  div class='empty-space'    
+    div class='cb'
+    div class='empty-space'
     

@@ -2,9 +2,9 @@ div id='header'
   div id='logo'
     = link_to image_tag('logo.png', width:'40px', style: 'position:relative;top:-4px') + ' Share your Test', root_path, class:'cp'
   div class='fl mt20 ml100'
-    = link_to 'Tests', exams_path(), class:'cp'
+    = link_to 'Tests', exams_path(), class:'cp header-links'
   div class='fl mt20 ml100'
-    = link_to t(:share_your_test), new_exam_path(), class:'cp'
+    = link_to t(:share_your_test), new_exam_path(), class:'cp header-links'
   div class='fl mt20 ml100'
 
   div class='fr mr95 mt15'
@@ -21,6 +21,6 @@ div id='header'
             = link_to 'Sign out', signout_path, method: 'delete'
     - else
       li class='lsnone'
-        = link_to t(:sign_in), signin_path
+        = link_to t(:sign_in), signin_path, class: 'header-links'
 
 div id='underheader'

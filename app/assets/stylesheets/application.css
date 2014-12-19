@@ -101,7 +101,7 @@ a:hover{
 }
 
 .greyboard{
-  padding:20px 30px;
+  padding:2% 3%;
 }
 
 
@@ -109,7 +109,7 @@ a:hover{
   background:#FFFFFF;
   box-shadow: 0 0 5px #A6A6A6;
   float:left;
-  padding:20px;
+  padding:3%;
   width:100%;
 }
 
@@ -128,7 +128,7 @@ a:hover{
 }
 
 .test-card{
-  width:350px !important;
+  width:340px !important;
   padding:17px !important;
   color:#222;
   text-align:center;
@@ -157,4 +157,41 @@ html.turbolinks-progress-bar::before {
   height: 4px !important;
   z-index:2;
   box-shadow: 1px 1px 3px #FFF;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 960px) {
+  #logo{
+    font-size:70px !important;
+  }
+  #header {
+    height:120px;
+  }
+  .test-menu{
+    position:absolute !important;
+    left:-154px !important;
+  }
+  #underheader{
+    height: 100px !important;
+  }
+  .header-links{
+    display: none !important;
+  }
+  #title-view{
+    width:100% !important;
+  }
+  .card{
+    font-size:30px !important;
+  }
+  .fs20{
+    font-size:40px !important;
+  }
+  .fs12{
+    font-size:25px !important;
+  }
+  .flat-btn{
+    font-size:30px !important;
+    width: 230px !important;
+  }
 }
