@@ -162,36 +162,65 @@ html.turbolinks-progress-bar::before {
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 960px) {
-  #logo{
-    font-size:70px !important;
+  #logo {
+    font-size: 70px !important;
   }
+
   #header {
-    height:120px;
+    height: 120px;
   }
-  .test-menu{
-    position:absolute !important;
-    left:-154px !important;
+
+  .test-menu {
+    position: absolute !important;
+    left: -154px !important;
   }
-  #underheader{
+
+  #underheader {
     height: 100px !important;
   }
-  .header-links{
+
+  .header-links {
     display: none !important;
   }
-  #title-view{
-    width:100% !important;
+
+  #title-view {
+    width: 100% !important;
   }
-  .card{
-    font-size:30px !important;
+
+  .card {
+    font-size: 30px !important;
   }
-  .fs20{
-    font-size:40px !important;
+
+  .fs20 {
+    font-size: 40px !important;
   }
-  .fs12{
-    font-size:25px !important;
+
+  .fs12 {
+    font-size: 25px !important;
   }
-  .flat-btn{
-    font-size:30px !important;
+
+  .flat-btn {
+    font-size: 30px !important;
     width: 230px !important;
+  }
+
+  .hp-wrapper {
+    width: 100% !important;
+  }
+
+  .background-hp1 {
+    background-size: inherit !important;
+    width: 100%;
+  }
+
+  #hp-main-container {
+    width: 104% !important;
+  }
+
+  .background-hp3 {
+    height: 100% !important;
+  }
+  .mt100{
+    margin-top:20px !important;
   }
 }
