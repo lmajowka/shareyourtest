@@ -51,10 +51,10 @@ div class='cb'
 
       div class='cb'
 
-      div class='mt20'
+      div class='mt20 ml20'
 
-      - @exams.each do |exam|
-        == render 'tests/snippet', exam: exam
+        - @exams.each do |exam|
+          == render 'tests/snippet', exam: exam
 
   div class='cb'
   div class='empty-space'
@@ -67,10 +67,10 @@ div class='cb'
 
     div class='cb'
 
-    div class='mt20'
+    div class='mt20 ml20'
 
-    - @published_exams.each do |exam|
-      == render 'tests/snippet', exam: exam
+      - @published_exams.each do |exam|
+        == render 'tests/snippet', exam: exam
 
     div class='cb'
     div class='empty-space'
