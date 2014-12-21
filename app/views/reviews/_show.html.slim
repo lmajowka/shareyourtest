@@ -1,17 +1,20 @@
 div class='mt20'
-  div class='fl'
-    = link_to image_tag(review.user.picture.url(:thumb), class: 'round-profile fl mt20'), review.user
-  div class='fl ml40 mt20'
-    div
-      = link_to review.user.name, review.user
-    div class='mid-gray'
-      =review.content
-    div
-      div class='fl' id='test-rating#{{review.user.id}}'
-      -
-      div class='fl ml20 mid-gray fs12 mt3'
-        = distance_of_time_in_words(review.created_at, Time.now )
-        = ' ago'
+  table
+    tr
+      td valign="top"
+        = link_to image_tag(review.user.picture.url(:thumb), class: 'round-profile fl mt20'), review.user
+      td valign="top"
+        div class="ml40 mt20"
+          div
+            = link_to review.user.name, review.user
+          div class='mid-gray'
+            =review.content
+          div
+            div class='fl' id='test-rating#{{review.user.id}}'
+            -
+            div class='fl ml20 mid-gray fs12 mt3'
+              = distance_of_time_in_words(review.created_at, Time.now )
+              = ' ago'
 
 div class='cb'
 
