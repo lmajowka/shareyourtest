@@ -1,12 +1,12 @@
 div class='card mini-card' id='ranking-card'
-  h2 Ranking
+  h2 class='ml20' Ranking
   -if current_user && current_user.admin?
     div class='flat-btn flat-btn-green' onclick="self.location = location.href + '/populate'"
       = 'POPULATE'
-  div id='ranking-container'
+  div id='ranking-container' class='mt20'
     -@ranking.each do |rank|
       div
-        div class='fl ranking-name'
+        div class='fl ranking-name ml20'
           = link_to rank.user.name, rank.user
         div class='fl ml10 tr' style='width:34px;'
           =(rank.performance*100).to_i

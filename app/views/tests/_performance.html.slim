@@ -1,5 +1,5 @@
 div class='card ml20' id='performance-card'
-  h2 #{{@average}} Performance
+  h2 class='mt0' #{{@average}} Performance
   div class='performance-chart'
     - if @average
       = column_chart @average_performance.map { |k,v| [v , k*100] }, library: @chart_options
