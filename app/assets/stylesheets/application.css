@@ -74,7 +74,7 @@ body{
 }
 
 h1, h2{
-  font-size:33px !important;
+  font-size:33px;
   font-family: OpenSans;
   
 }
@@ -128,7 +128,7 @@ a:hover{
 }
 
 .test-card{
-  width:340px !important;
+  width:340px;
   padding:17px !important;
   color:#222;
   text-align:center;
@@ -243,7 +243,29 @@ and (max-device-width : 960px) {
   .arrow-next-question{
     display:none;
   }
-  /*#left-lateral-bar{*/
-    /*display:none;*/
-  /*}*/
+  .dropdown-menu{
+    font-size:40px !important;
+  }
+  #hp-main-container{
+    font-size:35px;
+  }
+  .background-hp2{
+    height:700px !important;
+  }
+  h2{
+    font-size:50px !important;
+    overflow: visible !important;
+    height:auto !important;
+  }
+  .test-card{
+    width:840px !important;
+  }
+  .background-hp4{
+    height:670px !important;
+    background-size: inherit !important;
+    width: 100%;
+  }
+    /*#left-lateral-bar{*/
+      /*display:none;*/
+    /*}*/
 }
