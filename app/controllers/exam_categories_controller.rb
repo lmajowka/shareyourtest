@@ -4,6 +4,7 @@ class ExamCategoriesController < ApplicationController
     @tests = Exam.where(exam_category_id: @exam_category.id).limit(3)
     @sample_question = @tests.first.questions.first if @tests.size > 0
     @embeddable = Embeddable.new
+    @facebook_pages = facebook_pages
   end
 
   def new
@@ -38,6 +39,13 @@ class ExamCategoriesController < ApplicationController
 
   def exam_category_params
     params.require(:exam_category).permit(:name,:description,:info,:calendar)
+  end
+
+  def facebook_pages
+    {
+      toefl: 'https://www.facebook.com/toeflsampletests',
+      anbima: 'https://www.facebook.com/cpa10gratis'
+    }
   end
 
 end
