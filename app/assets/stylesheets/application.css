@@ -123,8 +123,12 @@ a:hover{
 }
 
 .page-card{
-  width:469px !important;
+  width:429px !important;
   padding:37px !important;
+}
+
+.page-card h1{
+  font-size:30px;
 }
 
 .test-card{
