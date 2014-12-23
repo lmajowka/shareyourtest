@@ -44,7 +44,8 @@ class ExamCategoriesController < ApplicationController
   def facebook_pages
     {
       toefl: 'https://www.facebook.com/toeflsampletests',
-      anbima: 'https://www.facebook.com/cpa10gratis'
+      anbima: 'https://www.facebook.com/cpa10gratis',
+      ielts: 'https://www.facebook.com/ieltssamplequestions'
     }
   end
 
