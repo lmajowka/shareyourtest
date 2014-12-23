@@ -100,20 +100,46 @@ class TestsController < ApplicationController
     @badge = Badge.find_by exam_id: @test.id, user_id: current_user.id if current_user
     @show_review_form = show_review_form?
     @ranking = Ranking.for @test
-    @chart_options = {
+    set_chart_options
+  end
+
+  def set_chart_options
+    @chart_options =
+    {
       colors: ['#b6c7F6'],
-      yAxis: {title: {text:'Users'}},
-      xAxis: {title: {text:'Performance (max: 100%)'}},
-      tooltip: {
-        headerFormat: '<b>Performance:</b> {point.key}%<br>',
-        pointFormat: '<b>{point.y}</b> Users'
-      },
       plotOptions: {
         series: {
           marker: {
             enabled: false
           }
         }
+      }
+    }
+
+    if current_user
+      @chart_options.merge! logged_in_chart_options
+    else
+      @chart_options.merge! logged_out_chart_options
+    end
+  end
+
+  def logged_in_chart_options
+    {
+      yAxis: {title: {text:'Performance (max: 100%)'}},
+      xAxis: {title: {text:'Date'}},
+      tooltip: {
+        pointFormat: 'Performance: {point.y}%'
+      }
+    }
+  end
+
+  def logged_out_chart_options
+    {
+      yAxis: {title: {text:'Users'}},
+      xAxis: {title: {text:'Performance (max: 100%)'}},
+      tooltip: {
+        headerFormat: '<b>Performance:</b> {point.key}%<br>',
+        pointFormat: '<b>{point.y}</b> Users'
       }
     }
   end
