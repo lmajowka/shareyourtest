@@ -200,7 +200,7 @@ and (max-device-width : 960px) {
   }
 
   .fs12 {
-    font-size: 25px !important;
+    font-size: 35px !important;
   }
 
   .flat-btn {
@@ -213,7 +213,6 @@ and (max-device-width : 960px) {
   }
 
   .background-hp1 {
-    background-size: inherit !important;
     width: 100%;
   }
 
@@ -262,12 +261,23 @@ and (max-device-width : 960px) {
     height:auto !important;
   }
   .test-card{
-    width:840px !important;
+    width:100% !important;
+    margin:20px auto !important;
   }
   .background-hp4{
     height:670px !important;
-    background-size: inherit !important;
     width: 100%;
+  }
+  h1{
+    font-size:50px !important;
+  }
+  #footer{
+    font-size:30px;
+  }
+
+  .test-snippet-image img{
+    width:200px !important;
+    height:200px !important;
   }
     /*#left-lateral-bar{*/
       /*display:none;*/
