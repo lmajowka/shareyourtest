@@ -20,6 +20,8 @@
 //= require shareyourtest
 //= require jquery.cookie
 //= require jquery.raty
+//= require highcharts
+//= require chartkick
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

@@ -80,7 +80,7 @@ class TestsController < ApplicationController
     if current_user
       current_user.purchases.answered_for @test.id
     else
-      @average_performance  = @test.average_performance
+      @average_performance = Ranking.for(@test).reverse.group_by(&:performance).map{ |k,v| [(k*100).to_i,v.count] }
       @average = "Average"
       []
     end
@@ -101,8 +101,20 @@ class TestsController < ApplicationController
     @show_review_form = show_review_form?
     @ranking = Ranking.for @test
     @chart_options = {
-      title: "Max: 100%",
-      colors: ['#b6c7F6']
+      colors: ['#b6c7F6'],
+      yAxis: {title: {text:'Users'}},
+      xAxis: {title: {text:'Performance (max: 100%)'}},
+      tooltip: {
+        headerFormat: '<b>Performance:</b> {point.key}%<br>',
+        pointFormat: '<b>{point.y}</b> Users'
+      },
+      plotOptions: {
+        series: {
+          marker: {
+            enabled: false
+          }
+        }
+      }
     }
   end
 

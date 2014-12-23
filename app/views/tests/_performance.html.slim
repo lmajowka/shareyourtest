@@ -2,7 +2,7 @@ div class='card ml20' id='performance-card'
   h2 class='mt0' #{{@average}} Performance
   div class='performance-chart'
     - if @average
-      = column_chart @average_performance.map { |k,v| [v , k*100] }, library: @chart_options
+      = line_chart @average_performance, library: @chart_options, discrete: true
     - else
       = column_chart @answered_purchases.reverse.map { |p| [p.created_at.strftime("%d/%m/%Y %H:%M"), "#{p.performance*100}%"] }, library: @chart_options
 
