@@ -45,7 +45,7 @@ class ExamCategoriesController < ApplicationController
     {
       toefl: 'https://www.facebook.com/toeflsampletests',
       anbima: 'https://www.facebook.com/cpa10gratis',
-      ielts: 'https://www.facebook.com/ieltssamplequestions'
+      ielts: 'https://www.facebook.com/ieltsdailyquestions'
     }
   end
 
