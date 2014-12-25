@@ -11,6 +11,11 @@ class PurchasesController < ApplicationController
   	render json: @purchase.to_json
   end
 
+  def create
+    @test = Exam.find_by_permalink params[:id]
+    redirect_to @test.paypal_url(request.host,"/answers/#{params[:id]}")
+  end
+
   private
 
   def purchase_params

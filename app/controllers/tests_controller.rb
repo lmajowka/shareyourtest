@@ -145,7 +145,13 @@ class TestsController < ApplicationController
   end
 
   def purchase
-    render json: {status: "ok"}
+    return not_found unless params[:id]
+    @test = Exam.find params[:id]
+    if @test.price == 0 or current_user.exams.map(&:id).includes?(params[:id])
+      render json: {status: "ok"}
+    else
+      render json: {status: "purchase"}
+    end
   end  
 
   private

@@ -141,7 +141,8 @@ class TestPage extends Page
       ( return_msg ) ->  
         if return_msg.status is "ok"
           location.href = location.href.replace(/tests/,"answers")
-    )
+        else
+    )     location.href = location.href.replace(/tests/,"purchases")
 
 
 window.Shareyourtest.TestPage = TestPage

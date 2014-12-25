@@ -72,6 +72,22 @@ class Exam < ActiveRecord::Base
     Rails.cache.write(PUBLISHED_KEY, p, expires_in: 1.hour) && p
   end
 
+  def paypal_url(host,return_path)
+    values = {
+      business: "donations-facilitator@shareyourtest.com",
+      cmd: "_xclick",
+      upload: 1,
+      return: "#{host}#{return_path}",
+      invoice: id,
+      amount: price,
+      item_name: title,
+      item_number: id,
+      quantity: '1'
+    }
+    paypal_host = Rails.env.production? ? "https://www.paypal.com" : "https://www.sandbox.paypal.com"
+    "#{paypal_host}/cgi-bin/webscr?" + values.to_query
+  end
+
   private
 
   def assign_defaults

@@ -11,6 +11,7 @@ Shareyourtest::Application.routes.draw do
   match '/answers/:permalink/(:id)', to: 'answers#show', via: 'get'
   match '/tests-index/:permalink', to: 'tests#index', via: 'get'
   match '/tests-search/:permalink', to: 'tests#index', via: 'get'
+  match '/purchases/:id', to: 'purchases#create', via: 'get'
 
   resources :users do
     resources :purchases
