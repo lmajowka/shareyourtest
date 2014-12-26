@@ -20,7 +20,9 @@ class AnswersController < ApplicationController
       @commenters_name[c.user.id] = c.user.name
     end
 
-    @picture_urls[current_user.id] = current_user.picture.url
+    pic = current_user.picture.url
+    additional = (pic == "nopictureuser.jpg") ? "/assets/" : ""
+    @picture_urls[current_user.id] = additional + pic
     @commenters_name[current_user.id] = current_user.name
 
     @picture_urls = @picture_urls.to_json
