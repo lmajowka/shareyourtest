@@ -7,6 +7,7 @@ div class='mt20'
       td valign="top"
         = image_tag(current_user.picture.url(:thumb), class: 'round-profile fl mt20')
       td
+        div id='comment-error' class='red fs12 ml20'
         textarea class='mt20 ml20 comment-text-area' id='comment-text-area'
         div class='cb'
         div class='flat-btn flat-btn-green fr mt20' onclick="Shareyourtest.Controllers.Comments.create('question',Shareyourtest.AnswerPage.currentQuestion.id, Shareyourtest.AnswerPage.addNewComment)"
