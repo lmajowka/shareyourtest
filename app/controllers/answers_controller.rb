@@ -19,8 +19,13 @@ class AnswersController < ApplicationController
       @picture_urls[c.user.id] = additional + pic
       @commenters_name[c.user.id] = c.user.name
     end
+
+    @picture_urls[current_user.id] = current_user.picture.url
+    @commenters_name[current_user.id] = current_user.name
+
     @picture_urls = @picture_urls.to_json
     @commenters_name = @commenters_name.to_json
+
   end
 
   private
