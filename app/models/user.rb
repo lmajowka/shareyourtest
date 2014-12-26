@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
       thumb: '100x100>',
       square: '200x200#',
       medium: '300x300>'
-  } , default_url: 'nopictureuser.jpg'
+  } , default_url: '/assets/nopictureuser.jpg'
 
   has_permalink :name, true
 

@@ -14,15 +14,11 @@ class AnswersController < ApplicationController
     @commenters_name = Hash.new
 
     comments.each do |c|
-      pic = c.user.picture.url
-      additional = (pic == "nopictureuser.jpg") ? "/assets/" : ""
-      @picture_urls[c.user.id] = additional + pic
+      set_picture_for_user c.user
       @commenters_name[c.user.id] = c.user.name
     end
 
-    pic = current_user.picture.url
-    additional = (pic == "nopictureuser.jpg") ? "/assets/" : ""
-    @picture_urls[current_user.id] = additional + pic
+    set_picture_for_user current_user
     @commenters_name[current_user.id] = current_user.name
 
     @picture_urls = @picture_urls.to_json
@@ -31,6 +27,10 @@ class AnswersController < ApplicationController
   end
 
   private
+
+  def set_picture_for_user(user)
+    @picture_urls[user.id] = user.picture.url
+  end
 
   def comments
     @test.questions.reject{|q| q.comments.size == 0}.map{|q| q.comments}.flatten
