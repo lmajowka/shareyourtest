@@ -5,7 +5,8 @@ class AnswersController < ApplicationController
 
   def show
   	@test = Exam.find_by_permalink params[:permalink]
-    get_purchase	
+    get_purchase
+    return not_found if @purchase.nil?
   	@user_answers = UserAnswer.ordered_answers_for @purchase
     @rating = Rating.where(exam_id: @test.id, user_id: current_user.id).any?
 
@@ -30,7 +31,8 @@ class AnswersController < ApplicationController
 
   def get_purchase
   	if params[:id]
-  	  @purchase = Purchase.find params[:id]
+  	  @purchase = Purchase.find_by_id params[:id]
+      return if @purchase.nil?
   	  @purchase = nil unless belongs_to_me?(@purchase.user_id)
   	else
   	  @purchase = current_user.get_ready_purchase @test
