@@ -1,14 +1,20 @@
 <h1 class='ml40'>Congratulations!</h1>
 
-<div class='ml40 mt40'>
-  You got <b><%=@rightQuestions%></b> out of <b><%=@totalQuestions%></b> questions right. <b>Your performance is <b><%=@performance%>%</b>
+<div class='fl trofy'>
 </div>
 
-<div class='ml40 mt40' id='finish-screen-rating'>
-  How would you rate the quality of the questions presented in this test?
-  <div id="user_star"></div>
-</div>
+<div class='fl'>
+    <div class='ml40 mt40'>
+      You got <span class='fs14'><%=@rightQuestions%></span> out of <span class='fs14'><%=@totalQuestions%></span> questions right.
+       Your performance is <span class='fs22'><%=@performance%>%</span>
+    </div>
 
-<div class='ml40 mt40' style='display:none' id='view-answers'>
-  <a href="<%=@viewURL%>">View your answers!</a>
+    <div class='ml40 mt40' id='finish-screen-rating'>
+      How would you rate the quality of the questions presented in this test?
+      <div id="user_star"></div>
+    </div>
+
+    <div class='ml40 mt40' style='display:none' id='view-answers'>
+      <a href="<%=@viewURL%>">View your answers!</a>
+    </div>
 </div>
