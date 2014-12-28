@@ -14,7 +14,7 @@ div class='test-menu tc fs13'
 
       div class='mt10 ml5 cp p5'
         span class='mr10'
-        - all_tests_label = "All Tests"
+        - all_tests_label = "Top Tests"
         -if not request.original_url.match('/tests$')
           = link_to all_tests_label, '/tests'
         -else

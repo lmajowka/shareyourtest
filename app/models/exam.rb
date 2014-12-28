@@ -68,13 +68,13 @@ class Exam < ActiveRecord::Base
 
   def self.all_published
     return @cached_result if @cached_result = Rails.cache.read(PUBLISHED_KEY)
-    p = published.all
+    p = published.limit(9)
     Rails.cache.write(PUBLISHED_KEY, p, expires_in: 1.hour) && p
   end
 
   def paypal_url(host,return_path)
     values = {
-      business: "donations-facilitator@shareyourtest.com",
+      business: "purchase@shareyourtest.com",
       cmd: "_xclick",
       upload: 1,
       return: "#{host}#{return_path}",
