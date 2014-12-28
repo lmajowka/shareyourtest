@@ -21,6 +21,7 @@ class AnswerPage
     if purchase_status is "answered"
       $('#comment-form-container').show()
       $('#question-comments-container').html ""
+      if @currentQuestion.comments.length == 0 then $('#question-comments').hide() else $('#question-comments').show()
       for comment in @currentQuestion.comments
         commentModel = new Shareyourtest.Models.Comment comment
         commentView = new Shareyourtest.Views.Comments(model: commentModel)
