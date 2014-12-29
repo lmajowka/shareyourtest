@@ -24,3 +24,33 @@ class Shareyourtest.Utils
       return interval + " minutes"
 
     Math.floor(seconds) + " seconds"
+
+
+   @checkEvents: ->
+
+     if $.cookie("new-user") is "true"
+       ga('send', 'event', 'registration', 'user', 'registered')
+       $.removeCookie('new-user', { path: '/' })
+
+       #Facebook Conversion Code for registration
+       (->
+         _fbq = window._fbq || (window._fbq = [])
+         if not _fbq.loaded
+           fbds = document.createElement('script')
+           fbds.async = true
+           fbds.src = '//connect.facebook.net/en_US/fbds.js'
+           s = document.getElementsByTagName('script')[0]
+           s.parentNode.insertBefore(fbds, s)
+           _fbq.loaded = true
+       )()
+       window._fbq = window._fbq || []
+       window._fbq.push(['track', '6019982278768', {'value':'0.00','currency':'ILS'}])
+
+
+     if $.cookie("new-test") is "true"
+       ga('send', 'event', 'content_creation', 'test', 'created')
+       $.removeCookie('new-test', { path: '/' })
+
+     if $.cookie("new-question") is "true"
+       ga('send', 'event', 'content_creation', 'question', 'created')
+       $.removeCookie('new-question', { path: '/' })

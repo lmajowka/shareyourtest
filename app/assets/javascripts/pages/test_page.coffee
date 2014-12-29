@@ -53,6 +53,7 @@ class TestPage extends Page
     @menuTitle.push new Shareyourtest.MenuItem "#menu-settings", 'settings-view', 90, 'TestPage'
 
     $("#menu-publish").click =>
+      ga('send', 'event', 'finish', 'test', 'published')
       @toggleStatus "published"
 
     $("#menu-unpublish").click =>

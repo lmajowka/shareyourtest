@@ -45,6 +45,7 @@ class TestsController < ApplicationController
     @test = current_user.created_exams.new(test_params)
     if @test.save
       current_user.purchase_exam @test
+      cookies["new-test"] = "true"
       redirect_to @test
     else
       render 'new'

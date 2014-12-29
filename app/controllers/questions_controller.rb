@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.create!(question_params)
     create_answers if @question
+    cookies["new-question"] = "true"
     render json: @question.to_json
   end
 
