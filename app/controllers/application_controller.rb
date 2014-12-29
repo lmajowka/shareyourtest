@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
     @ga_id = 'UA-55397368-1'
     parsed_locale = request.host.split('.').last
     if parsed_locale == 'br'
-      return :'pt-BR'
       @ga_id = 'UA-58059688-1'
+      return :'pt-BR'
     end
     nil
   end
