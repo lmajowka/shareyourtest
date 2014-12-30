@@ -36,7 +36,7 @@
   <a href="https://www.facebook.com/shareyourtest" class="ml10 mt10 fl" title="Like us on facebook">
     <%=image_tag("flatfb.png", alt: "Like us on facebook")%>
   </a>
-  <div class="fr mt20 mr20">Users: <%= User.count %></div>
+  <div class="fr mt20 mr20">Users: <%= User.count.to_s.gsub(/(\d)(?=(\d\d\d)+(?!\d))/, "\\1#{','}") %></div>
 </div>
 <% end %>
 
