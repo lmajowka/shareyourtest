@@ -31,6 +31,9 @@ GEM
       tzinfo (~> 0.3.37)
     acts_as_list (0.5.0)
       activerecord (>= 3.0)
+    airbrake (4.1.0)
+      builder
+      multi_json
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
     arel (4.0.2)
@@ -98,8 +101,6 @@ GEM
       faraday
       multi_json
     erubis (2.7.0)
-    exception_notification (2.6.1)
-      actionmailer (>= 3.0.4)
     execjs (2.2.2)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
@@ -262,6 +263,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list
+  airbrake
   ancestry
   aws-sdk
   backbone-on-rails
@@ -272,7 +274,6 @@ DEPENDENCIES
   chartkick
   coffee-rails (~> 4.0.0)
   dalli
-  exception_notification
   factory_girl_rails (= 4.2.0)
   has_permalink
   jasmine-rails
