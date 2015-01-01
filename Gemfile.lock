@@ -31,9 +31,6 @@ GEM
       tzinfo (~> 0.3.37)
     acts_as_list (0.5.0)
       activerecord (>= 3.0)
-    airbrake (4.1.0)
-      builder
-      multi_json
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
     arel (4.0.2)
@@ -263,7 +260,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list
-  airbrake
   ancestry
   aws-sdk
   backbone-on-rails

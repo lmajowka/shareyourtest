@@ -31,7 +31,6 @@ gem 'pg'
 gem 'dalli'
 gem 'rack-zippy'
 gem 'postmark-rails'
-gem 'airbrake'
 
 group :test, :development do
   #gem 'byebug'
