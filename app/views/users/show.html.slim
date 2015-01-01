@@ -2,10 +2,10 @@
 - content_for :description, @user.bio
 
 -if @my_profile
-  h1 class='mt40' Welcome to Shareyourtest. Good luck!
+  h1 class='mt40 ml40' Welcome to Shareyourtest. Good luck!
 
-div class='mt40 card profile-card'
-  h1 class='fl'
+div class='mt40 card profile-card' style='min-height:330px'
+  h1 class='fl mt0'
     = @user.name
 
   div class='cb'
@@ -26,15 +26,17 @@ div class='mt40 card profile-card'
       -if @my_profile
         = 'About you'
         = form_for @user, html: {id: 'form-bio'}, method: :patch do |f|
-          = f.text_area :bio, class: 'bio-input'
-      -else
-        div class='bio-input'
+          = f.text_area :bio, class: 'bio-input', id: 'bio-input'
+
+
+        div class='bio-input' id='bio-input-text'
           = @user.bio
+          div class='glyphicon glyphicon-pencil cp ml20' onclick= 'Shareyourtest.Pages.UserPage.editBio()'
 
         div class='cb'
 
       -if @my_profile
-        div class='flat-btn mt15 flat-btn-green fr' onclick='$("#form-bio").submit()'
+        div class='flat-btn mt15 flat-btn-green fr' style='display:none' id='save-button' onclick='$("#form-bio").submit()'
           = 'SAVE'
 
 div class='cb'

@@ -4,6 +4,7 @@ window.Shareyourtest =
   Controllers : {}
   Views: {}
   Routers: {}
+  Pages: {}
   initialize: {}
 
 $(document).ready ->
