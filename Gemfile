@@ -30,6 +30,8 @@ gem 'sitemap_generator'
 gem 'pg'
 gem 'dalli'
 gem 'rack-zippy'
+gem 'postmark-rails'
+gem 'exception_notification'
 
 group :test, :development do
   #gem 'byebug'

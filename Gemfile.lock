@@ -98,6 +98,8 @@ GEM
       faraday
       multi_json
     erubis (2.7.0)
+    exception_notification (2.6.1)
+      actionmailer (>= 3.0.4)
     execjs (2.2.2)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
@@ -145,6 +147,12 @@ GEM
     pg (0.17.1)
     phantomjs (1.9.7.1)
     polyglot (0.3.5)
+    postmark (1.4.3)
+      json
+      rake
+    postmark-rails (0.9.0)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.4.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -264,6 +272,7 @@ DEPENDENCIES
   chartkick
   coffee-rails (~> 4.0.0)
   dalli
+  exception_notification
   factory_girl_rails (= 4.2.0)
   has_permalink
   jasmine-rails
@@ -272,6 +281,7 @@ DEPENDENCIES
   newrelic_rpm
   paperclip
   pg
+  postmark-rails
   rack-zippy
   rails (= 4.0.4)
   rails_12factor

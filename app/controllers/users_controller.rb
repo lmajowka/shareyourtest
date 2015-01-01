@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
         cookies["new-user"] = "true"
+        UserMailer.welcome(@user).deliver
         sign_in_and_redirect(@user)
       else
         render 'new'
