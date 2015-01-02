@@ -8,7 +8,6 @@ gem 'acts_as_list'
 gem 'backbone-on-rails'
 
 gem 'rails', '4.0.4'
-gem 'rails_12factor'
 
 gem 'bcrypt-ruby', '3.1.2'
 gem 'bootstrap-sass', '~> 3.2.0'
@@ -37,6 +36,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'jasmine-rails'
+  gem 'thin'
 end
 
 group :test do
@@ -51,4 +51,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+  gem 'rails_12factor'
+end
 
