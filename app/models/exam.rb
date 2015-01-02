@@ -38,14 +38,10 @@ class Exam < ActiveRecord::Base
   }
 
   def average_rating
-    return 0 if ratings.size == 0
+    return 0
     return @cached_result if @cached_result = Rails.cache.read(AVERAGE_RATING_KEY % permalink)
-    ar = ratings.sum(:score) / ratings.size
+    ar = ratings.size == 0 ? 0 : ratings.sum(:score) / ratings.size
     Rails.cache.write(AVERAGE_RATING_KEY % permalink, ar, expires_in: 1.day) && ar
-  end
-
-  def number_of_ratings
-    Rating.where(exam_id:id).size
   end
 
   def pluralize_number_of_ratings
@@ -68,7 +64,7 @@ class Exam < ActiveRecord::Base
 
   def self.all_published
     return @cached_result if @cached_result = Rails.cache.read(PUBLISHED_KEY)
-    p = published.limit(9)
+    p = includes(:exam_category).published.limit(9)
     Rails.cache.write(PUBLISHED_KEY, p, expires_in: 1.hour) && p
   end
 

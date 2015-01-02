@@ -20,12 +20,12 @@ div class='test-menu tc fs13'
         -else
           = all_tests_label
 
-      -ExamCategory.all.ordered_by_size.each do |category|
+      -ExamCategory.select('count(exams.id) as size, exam_categories.permalink',:name).ordered_by_size.each do |category|
 
         div class='mt5 ml5 cp p5'
           span class='mr10'
           - category_path = "/tests-index/#{category.permalink}"
-          - category_label = "#{category.name} (#{category.exams.size})"
+          - category_label = "#{category.name} (#{category.size})"
           -if not request.original_url.match(category_path)
             = link_to category_label, category_path
           -else
