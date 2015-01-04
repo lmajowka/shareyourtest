@@ -10,7 +10,7 @@
     </div>
 
     <div class='ml40 mt40' id='finish-screen-rating'>
-      How would you rate the quality of the questions presented in this test?
+      How would you rate this test?
       <div id="user_star"></div>
     </div>
 
