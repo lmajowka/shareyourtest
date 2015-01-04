@@ -19,7 +19,7 @@ class Shareyourtest.Models.Question extends Backbone.Model
       return false
 
     if @get('answers').length < 2
-      @validationError = 'You need to write at least 2 answers and choose one before you submit your questions'
+      @validationError = 'You need to write at least 2 answers and choose one before you submit your questions. <a href="#" onclick="Shareyourtest.TestPage.questionHelp()">Help</a> '
       return false
 
     if not @get('answer')

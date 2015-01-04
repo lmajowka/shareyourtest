@@ -146,4 +146,7 @@ class TestPage extends Page
     )     location.href = location.href.replace(/tests/,"purchases")
 
 
+  @questionHelp: ->
+    alert "Separate your questions using letters and parentesis, Example:\n a) Answer 1 \n b) Answer 2 \n c) Answer 3"
+
 window.Shareyourtest.TestPage = TestPage
