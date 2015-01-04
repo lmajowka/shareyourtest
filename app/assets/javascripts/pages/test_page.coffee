@@ -13,6 +13,7 @@ class TestPage extends Page
     $('#new-question-title').html "New question"
     $('#create-question-button').html "CREATE"
     $('#create-question-button')[0].onclick = Shareyourtest.Controllers.Questions.create
+    $('html, body').animate({ scrollTop: $('.question-view-div').last().offset().top }, 800 )
 
   @displayRating:(id,rating) ->
     $(id).raty(
