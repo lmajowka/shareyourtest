@@ -30,6 +30,7 @@ Shareyourtest::Application.routes.draw do
     resources :embeddables
   end
 
+  match '/hook', to: 'purchases#hook', via: 'post'
 
   resources :sessions, only: [:new, :create, :destroy]
 

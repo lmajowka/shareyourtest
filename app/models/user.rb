@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :ratings
   has_many :reviews
   has_many :comments
+  has_many :invoices
 
   before_create :create_remember_token
   before_save {

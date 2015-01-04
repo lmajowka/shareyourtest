@@ -1,5 +1,7 @@
 class PurchasesController < ApplicationController
 
+  protect_from_forgery except: [:hook]
+
   def show
   	render text: "ok"
   end	
@@ -13,7 +15,17 @@ class PurchasesController < ApplicationController
 
   def create
     @test = Exam.find_by_permalink params[:id]
-    redirect_to @test.paypal_url(request.host,"/answers/#{params[:id]}")
+    redirect_to @test.paypal_url(request.host,"/answers/#{params[:id]}",current_user)
+  end
+
+  def hook
+    params.permit! # Permit all Paypal input params
+    status = params[:payment_status]
+    if status == "Completed"
+      invoice = Invoice.find params[:invoice]
+      invoice.user.purchase_exam invoice.exam
+    end
+    render nothing: true
   end
 
   private

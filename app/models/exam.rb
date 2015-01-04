@@ -15,6 +15,7 @@ class Exam < ActiveRecord::Base
   has_many :comments, through: :questions
   has_many :ratings
   has_many :reviews
+  has_many :invoices
   has_permalink :title, true
   has_attached_file :picture, styles: {
     thumb: '100x100>',
@@ -67,20 +68,21 @@ class Exam < ActiveRecord::Base
     Rails.cache.write(PUBLISHED_KEY, p, expires_in: 1.hour) && p
   end
 
-  def paypal_url(host,return_path)
+  def paypal_url(host,return_path,current_user)
 
-    invoice = Invoice.create(amount: price, item_number: id)
+    invoice = Invoice.create(amount: price, item_number: id, user_id: current_user.id)
 
     values = {
-      business: "purchase@shareyourtest.com",
+      business: "donations@shareyourtest.com",
       cmd: "_xclick",
       upload: 1,
       return: "#{host}#{return_path}",
-      invoice: invoice.id,
+      invoice: "xy #{invoice.id}",
       amount: price,
       item_name: title,
       item_number: id,
-      quantity: '1'
+      quantity: '1',
+      notify_url: "#{host}/hook"
     }
     paypal_host = Rails.env.production? ? "https://www.paypal.com" : "https://www.sandbox.paypal.com"
     "#{paypal_host}/cgi-bin/webscr?" + values.to_query
