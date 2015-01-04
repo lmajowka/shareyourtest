@@ -68,12 +68,15 @@ class Exam < ActiveRecord::Base
   end
 
   def paypal_url(host,return_path)
+
+    invoice = Invoice.create(amount: price, item_number: id)
+
     values = {
       business: "purchase@shareyourtest.com",
       cmd: "_xclick",
       upload: 1,
       return: "#{host}#{return_path}",
-      invoice: id,
+      invoice: invoice.id,
       amount: price,
       item_name: title,
       item_number: id,
