@@ -23,7 +23,7 @@ class PurchasesController < ApplicationController
     status = params[:payment_status]
     if status == "Completed"
       invoice = Invoice.find params[:invoice].match(/[0-9]+/)[0]
-      invoice.user.purchase_exam invoice.exam
+      invoice.user.purchase_exam Exam.find(invoice.item_number)
     end
     render nothing: true
   end
