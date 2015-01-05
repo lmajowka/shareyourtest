@@ -76,13 +76,13 @@ class Exam < ActiveRecord::Base
       business: "donations@shareyourtest.com",
       cmd: "_xclick",
       upload: 1,
-      return: "#{host}#{return_path}",
+      return: "http://#{host}#{return_path}",
       invoice: "xy #{invoice.id}",
       amount: price,
       item_name: title,
       item_number: id,
       quantity: '1',
-      notify_url: "#{host}/hook"
+      notify_url: "http://#{host}/hook"
     }
     paypal_host = Rails.env.production? ? "https://www.paypal.com" : "https://www.sandbox.paypal.com"
     "#{paypal_host}/cgi-bin/webscr?" + values.to_query
