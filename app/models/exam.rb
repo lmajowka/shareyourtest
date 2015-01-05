@@ -73,7 +73,7 @@ class Exam < ActiveRecord::Base
     invoice = Invoice.create(amount: price, item_number: id, user_id: current_user.id)
 
     values = {
-      business: "donations@shareyourtest.com",
+      business: "purchases@shareyourtest.com",
       cmd: "_xclick",
       upload: 1,
       return: "http://#{host}#{return_path}",
