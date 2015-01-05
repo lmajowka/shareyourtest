@@ -11,6 +11,10 @@ div class='fl' id='title-view'
       h1 class='mt0 fl' #{@category_name} (#{@number_of_tests})
       div class='fr'
         input id='search-input' type='text' class='join-now-input' placeholder="#{{t(:search)}}" onkeypress="Shareyourtest.TestIndexPage.goSearch(event)"
+      div class='cb'
+      - if @category
+        a href="/exams/#{@category.permalink}"
+          = "About #{@category_name}"
 
     div class='fl ml-5 mt10 mr-5'
       -@tests.each do |test|

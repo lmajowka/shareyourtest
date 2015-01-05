@@ -7,6 +7,8 @@ div class='fl' id='title-view'
   div class='greyboard'
 
     div class='card' id='title-section-view'
+      a href="/tests-index/#{@exam_category.permalink}" class='fr'
+        = "View all tests about #{@exam_category.name}"
       h1 class='mt0 fl' =@exam_category.name
       div class='cb'
       div class='mt10 fl'
