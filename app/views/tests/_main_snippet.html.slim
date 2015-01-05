@@ -4,6 +4,9 @@ div class='test-snippet-container-main'
   div class='fl test-snippet-info-main'
     h1 class='fs20'
       = exam.title
+      | &nbsp;
+      span class='price'
+        = @price
     div
       div class='fl mt2'
         = link_to "By #{exam.owner.name}", exam.owner

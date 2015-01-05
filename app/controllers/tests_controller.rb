@@ -101,6 +101,7 @@ class TestsController < ApplicationController
     @badge = Badge.find_by exam_id: @test.id, user_id: current_user.id if current_user
     @show_review_form = show_review_form?
     @ranking = Ranking.for @test
+    @price = @test.price == 0 ? "Free" : "$#{@test.price.to_i}"
     set_chart_options
   end
 
