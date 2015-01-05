@@ -9,4 +9,14 @@ class UserMailer < ActionMailer::Base
     )
   end
 
+  def purchase_thankyou(user,test)
+    @test = test
+    mail(
+      :subject => 'Thankyou for your purchase',
+      :to      => user.email,
+      :from    => 'contact@shareyourtest.com',
+      :tag     => 'my-tag'
+    )
+  end
+
 end
