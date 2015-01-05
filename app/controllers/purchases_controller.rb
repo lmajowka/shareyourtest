@@ -22,7 +22,7 @@ class PurchasesController < ApplicationController
     params.permit! # Permit all Paypal input params
     status = params[:payment_status]
     if status == "Completed"
-      invoice = Invoice.find params[:invoice]
+      invoice = Invoice.find params[:invoice].match(/[0-9]+/)[0]
       invoice.user.purchase_exam invoice.exam
     end
     render nothing: true
