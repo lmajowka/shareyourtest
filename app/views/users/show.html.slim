@@ -28,10 +28,9 @@ div class='mt40 card profile-card' style='min-height:330px'
         = form_for @user, html: {id: 'form-bio'}, method: :patch do |f|
           = f.text_area :bio, class: 'bio-input', id: 'bio-input'
 
-
-        div class='bio-input' id='bio-input-text'
-          = @user.bio
-          div class='glyphicon glyphicon-pencil cp ml20' onclick= 'Shareyourtest.Pages.UserPage.editBio()'
+        div class='glyphicon glyphicon-pencil cp ml20' id='pencil-bio' onclick= 'Shareyourtest.Pages.UserPage.editBio()'
+      div class='bio-input' id='bio-input-text'
+        = @user.bio
 
         div class='cb'
 

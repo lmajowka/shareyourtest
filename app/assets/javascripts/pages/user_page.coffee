@@ -3,3 +3,4 @@ class Shareyourtest.Pages.UserPage extends Page
     $("#bio-input").show()
     $("#save-button").show()
     $("#bio-input-text").hide()
+    $("#pencil-bio").hide()
