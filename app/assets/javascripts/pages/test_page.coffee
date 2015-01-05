@@ -136,7 +136,7 @@ class TestPage extends Page
   @purchase: ->
     $.ajax(
       type: "GET"
-      url: "purchase"
+      url: "purchase?#{parseInt(Math.random()*1000000)}"
       data: { id: @test.get('id') }
     )
     .done( 
