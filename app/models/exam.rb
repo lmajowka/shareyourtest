@@ -88,6 +88,10 @@ class Exam < ActiveRecord::Base
     "#{paypal_host}/cgi-bin/webscr?" + values.to_query
   end
 
+  def price_in_money
+    price == 0 ? "Free" : "$#{price.to_i}"
+  end
+
   private
 
   def assign_defaults

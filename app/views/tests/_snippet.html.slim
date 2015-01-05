@@ -1,5 +1,7 @@
 = link_to exam do 
   div class='mr5 ml5 mt25 mb25 card test-card'
+    div class='small-price'
+      = exam.price_in_money
     -if exam.status == 'draft'
       div class='redtag'
         = 'Draft'
