@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
             uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 6 }, on: :create
   validates :name, presence: true, length: { minimum: 6 }
+  validates_format_of :name, :with => /\A[^0-9`!@:.\/#\$%\^&*+_=]+\z/
 
   has_attached_file :picture, styles: {
       thumb: '100x100>',
