@@ -6,6 +6,7 @@ class Exam < ActiveRecord::Base
   PUBLISHED_KEY = "tests/published"
 
   scope :published, -> { where(status: "published") }
+  scope :located_for,  ->(country) { where(country: country) }
 
   belongs_to :owner, class_name: "User", foreign_key: :user_id
   belongs_to :exam_category

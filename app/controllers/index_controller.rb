@@ -5,9 +5,9 @@ class IndexController < ApplicationController
       redirect_to current_user
     end
     @user = User.new
-    @tests = Exam.published.limit 3
+    @tests = Exam.located_for(@country).published.limit 3
     @homepage = true
-    @number_of_tests = Exam.published.count
+    @number_of_tests = Exam.located_for(@country).published.count
   end
 
 end

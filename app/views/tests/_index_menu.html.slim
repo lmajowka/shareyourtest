@@ -20,7 +20,7 @@ div class='test-menu tc fs13'
         -else
           = all_tests_label
 
-      -ExamCategory.select('count(exams.id) as size, exam_categories.permalink',:name).ordered_by_size.each do |category|
+      -ExamCategory.select('count(exams.id) as size, exam_categories.permalink',:name).located_for(@country).ordered_by_size.each do |category|
 
         div class='mt5 ml5 cp p5'
           span class='mr10'

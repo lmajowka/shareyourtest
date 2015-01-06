@@ -7,7 +7,7 @@ class TestsController < ApplicationController
     if params[:permalink]
       get_tests
     else
-      @tests = Exam.all_published
+      @tests = Exam.located_for(@country).all_published
       @category_name = "Tests"
     end
     @number_of_tests = @tests.size
@@ -23,7 +23,7 @@ class TestsController < ApplicationController
 
     @category = ExamCategory.find_by_permalink params[:permalink]
     if @category
-      @tests = @category.exams.published
+      @tests = @category.exams.located_for(@country).published
       @category_name = @category.name
       return
     end
@@ -69,6 +69,7 @@ class TestsController < ApplicationController
   end
 
   def show
+    redirect_to "http://www.shareyourtest.com.#{@test.country}/tests/#{params[:id]}" and return unless @test.country == @country
     instantiate_variables
     respond_to do |format|
       format.html
