@@ -1,10 +1,16 @@
 class ExamCategoriesController < ApplicationController
   def show
     @exam_category = ExamCategory.find_by_permalink params[:id]
+    redirect_to get_located_link and return unless @exam_category.country == @country
     @tests = Exam.where(exam_category_id: @exam_category.id).limit(3)
     @sample_question = @tests.first.questions.first if @tests.size > 0
     @embeddable = Embeddable.new
     @facebook_pages = facebook_pages
+  end
+
+  def get_located_link
+    tld = @exam_category.country == "us" ? "" : ".#{@exam_category.country}"
+    "http://www.shareyourtest.com#{tld}/exams/#{params[:id]}"
   end
 
   def new
