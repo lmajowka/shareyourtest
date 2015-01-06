@@ -69,13 +69,18 @@ class TestsController < ApplicationController
   end
 
   def show
-    redirect_to "http://www.shareyourtest.com.#{@test.country}/tests/#{params[:id]}" and return unless @test.country == @country
+    redirect_to get_located_link and return unless @test.country == @country
     instantiate_variables
     respond_to do |format|
       format.html
       format.xml  { render :xml => @test }
       format.json { render :json => @test }
     end
+  end
+
+  def get_located_link
+    tld = @test.country == "us" ? "" : ".#{@test.country}"
+    "http://www.shareyourtest.com#{tld}/tests/#{params[:id]}"
   end
 
   def get_performance
