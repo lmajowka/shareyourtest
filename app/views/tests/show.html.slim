@@ -1,5 +1,6 @@
 - content_for :title, "★ #{@test.title} | Share your Test ★"
 - content_for :description, @test.description
+- content_for :og_image, image_url(@test.picture.url(:thumb))
 
 == render 'tests/menu'
 
