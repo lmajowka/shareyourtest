@@ -1,14 +1,13 @@
 div class='card mini-card' id='ranking-card'
   h2 class='ml20'
-    |Ranking
-    span class='fs12 ml20'
-      |(
-      =@ranking.size
-      |)
+    span class='fs23 fl'
+      | Leader Board
+    div class='ranking-badge fl'
+  div class='cb'
   -if current_user && current_user.admin?
     div class='flat-btn flat-btn-green' onclick="self.location = location.href + '/populate'"
       = 'POPULATE'
-  div id='ranking-container' class='mt20'
+  div id='ranking-container'
     -@ranking.each do |rank|
       div
         div class='fl ranking-name ml20'

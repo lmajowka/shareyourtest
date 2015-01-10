@@ -22,16 +22,20 @@ div class='test-snippet-container-main'
       tr
         td valign="top" width="110px" class='fs12'
           div class='mid-gray mt10'
-            =exam.questions.size
-            ' &nbsp;
-            = t(:question).pluralize(exam.questions.size)
+            = @ranking.size
+            |&nbsp; users
           div class='mid-gray'
             =@number_of_ratings
             ' &nbsp;
+          div class='mid-gray'
+            =exam.questions.size
+            ' &nbsp;
+            = t(:question).pluralize(exam.questions.size)
           -if @number_of_comments>0
             div class='mid-gray'
               = @number_of_comments
-              |&nbsp; Comments
+              |&nbsp; comments
+
         td valign="top"
           div class='mt10 ml20 fl'
             = exam.description

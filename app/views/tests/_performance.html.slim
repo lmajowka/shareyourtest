@@ -1,5 +1,5 @@
 div class='card ml20' id='performance-card'
-  h2 class='mt0' #{{@average}} Performance
+  h2 class='mt0 fs23' #{{@average}} Performance
   div class='performance-chart mt20'
     - if @average
       = line_chart @average_performance, library: @chart_options, discrete: true
