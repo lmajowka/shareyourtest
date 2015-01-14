@@ -14,6 +14,7 @@ class Questions
 
     return if not @handleValidationErrors(question)
 
+    ga('send', 'event', 'content_creation', 'question', 'created')
     question.save()
     Shareyourtest.TestPage.questions.add question
     Shareyourtest.TestPage.resetQuestionContext()	

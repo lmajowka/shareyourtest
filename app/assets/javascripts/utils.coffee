@@ -50,7 +50,3 @@ class Shareyourtest.Utils
      if $.cookie("new-test") is "true"
        ga('send', 'event', 'content_creation', 'test', 'created')
        $.removeCookie('new-test', { path: '/' })
-
-     if $.cookie("new-question") is "true"
-       ga('send', 'event', 'content_creation', 'question', 'created')
-       $.removeCookie('new-question', { path: '/' })

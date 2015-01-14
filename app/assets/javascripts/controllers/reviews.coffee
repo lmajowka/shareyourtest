@@ -6,6 +6,7 @@ class Shareyourtest.Controllers.Reviews
       content: $('.review-text-area').val()
     )
 
+    ga('send', 'event', 'content_creation', 'review', 'created')
     review.save(null,{
       success: ->
         location.href = location.href

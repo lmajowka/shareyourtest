@@ -134,6 +134,7 @@ class TestPage extends Page
     location.href = location.href.replace(/tests/,"answers") + "/" + id
 
   @purchase: ->
+    ga('send', 'event', 'answer', 'test', 'click_answer')
     $.ajax(
       type: "GET"
       url: "purchase?#{parseInt(Math.random()*1000000)}"

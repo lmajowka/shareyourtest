@@ -6,6 +6,8 @@ class Shareyourtest.Controllers.Comments
       $('#comment-error').html "Please, write down your comment"
       return
 
+    ga('send', 'event', 'content_creation', 'comment', 'created')
+
     @callback = callback
     comment = new Shareyourtest.Models.Comment(
       commentable_id: commentable_id,
