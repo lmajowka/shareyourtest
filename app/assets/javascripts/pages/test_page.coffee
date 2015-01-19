@@ -142,13 +142,13 @@ class TestPage extends Page
     )
     .done( 
       ( return_msg ) ->  
-        if return_msg.status is "ok"
-          location.href = location.href.replace(/tests/,"answers")
-        else
-    )     location.href = location.href.replace(/tests/,"purchases")
+        #if return_msg.status is "ok"
+        location.href = location.href.replace(/tests/,"answers")
+        #else
+    )   #location.href = location.href.replace(/tests/,"purchases")
 
 
   @questionHelp: ->
-    alert "Separate your questions using letters and parentesis, Example:\n a) Answer 1 \n b) Answer 2 \n c) Answer 3"
+    alert "Separate your questions using letters and parenthesis, Example:\n a) Answer 1 \n b) Answer 2 \n c) Answer 3"
 
 window.Shareyourtest.TestPage = TestPage
