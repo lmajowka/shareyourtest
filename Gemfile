@@ -26,6 +26,7 @@ gem 'rack-zippy'
 gem 'postmark-rails'
 gem 'yaml_db'
 gem 'mysql2', '~> 0.3.18'
+gem 'figaro'
 
 group :test, :development do
   #gem 'byebug'

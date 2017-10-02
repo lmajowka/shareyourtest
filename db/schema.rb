@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150106065816) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "answers", force: true do |t|
     t.string   "content"
     t.integer  "question_id"
@@ -64,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150106065816) do
     t.text   "info"
     t.text   "calendar"
     t.text   "description"
-    t.text   "country",     default: "us"
+    t.string "country",     default: "us"
   end
 
   create_table "exams", force: true do |t|
@@ -83,7 +80,7 @@ ActiveRecord::Schema.define(version: 20150106065816) do
     t.integer  "exam_category_id"
     t.integer  "number_of_questions"
     t.integer  "number_of_ratings"
-    t.text     "country",              default: "us"
+    t.string   "country",              default: "us"
   end
 
   add_index "exams", ["exam_category_id"], name: "index_exams_on_exam_category_id", using: :btree
@@ -183,7 +180,6 @@ ActiveRecord::Schema.define(version: 20150106065816) do
     t.string   "permalink"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
