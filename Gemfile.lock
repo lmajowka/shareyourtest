@@ -485,9 +485,6 @@ GEM
     bcrypt-ruby (3.1.2)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
-    bootsy (2.4.0)
-      carrierwave (~> 1.0)
-      mini_magick (~> 4.6)
     builder (3.2.3)
     cap-ec2 (1.0.0)
       aws-sdk-v1
@@ -516,10 +513,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (1.2.0)
-      activemodel (>= 4.0.0)
-      activesupport (>= 4.0.0)
-      mime-types (>= 1.16)
     chartkick (2.2.4)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
@@ -592,7 +585,6 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mimemagic (0.3.0)
-    mini_magick (4.8.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
@@ -738,7 +730,6 @@ DEPENDENCIES
   backbone-on-rails
   bcrypt-ruby (= 3.1.2)
   bootstrap-sass (~> 3.2.0)
-  bootsy
   cap-ec2
   capistrano-bundler
   capistrano-passenger (>= 0.1.1)
