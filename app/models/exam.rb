@@ -41,7 +41,7 @@ class Exam < ActiveRecord::Base
 
   def average_rating
     return @cached_result if @cached_result = Rails.cache.read(AVERAGE_RATING_KEY % permalink)
-    ar = ratings.size == 0 ? 0 : ratings.sum(:score) / ratings.size
+    ar = number_of_ratings == 0 ? 0 : ratings.sum(:score) / number_of_ratings
     Rails.cache.write(AVERAGE_RATING_KEY % permalink, ar, expires_in: 1.day) && ar
   end
 
