@@ -15,7 +15,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'bootsy'
 gem "chartkick"
 gem 'searchkick'
 gem 'newrelic_rpm'
