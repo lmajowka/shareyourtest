@@ -11,7 +11,7 @@ module Shareyourtest
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
-    config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer)
+    # config.middleware.swap(ActionDispatch::Static, Rack::Zippy::AssetServer)
 
     config.action_mailer.delivery_method   = :postmark
     config.action_mailer.postmark_settings = { :api_key => ENV['POSTMARK_API_KEY'] }
