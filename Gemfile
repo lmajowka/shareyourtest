@@ -32,8 +32,11 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'jasmine-rails'
-  gem 'capistrano', '~> 3.6'
-  gem 'capistrano-rails', '~> 1.3'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger', '>= 0.1.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'cap-ec2'
 end
 
 group :test do
