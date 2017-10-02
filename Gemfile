@@ -29,11 +29,11 @@ gem 'mysql2', '~> 0.3.18'
 gem 'figaro'
 
 group :test, :development do
-  #gem 'byebug'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'jasmine-rails'
-  #gem 'thin'
+  gem 'capistrano', '~> 3.6'
+  gem 'capistrano-rails', '~> 1.3'
 end
 
 group :test do
