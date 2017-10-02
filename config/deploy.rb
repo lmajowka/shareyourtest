@@ -14,7 +14,7 @@ ec2_role :db,  user: 'deploy'
 ec2_role :app,  user: 'deploy'
 ec2_role :web,  user: 'deploy'
 
-set :linked_files, fetch(:linked_files, []).push('config/application.yml')
+set :linked_files, ['config/application.yml','config/database.yml']
 
 namespace :deploy do
 
