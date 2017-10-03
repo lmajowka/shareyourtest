@@ -16,7 +16,7 @@ div class='fl' id='title-view'
       div class='cb'
       -if current_user and current_user.admin?
         = form_for @exam_category do |f|
-          = f.bootsy_area :description, class: 'edit-textarea'
+          = f.text_area :description, class: 'edit-textarea'
           = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
 
     div class='fl ml0 mt0 ml-5 mr-5' id='tests-view'
@@ -60,7 +60,7 @@ div class='fl' id='title-view'
       br
       -if current_user and current_user.admin?
         = form_for @exam_category do |f|
-          = f.bootsy_area :info, class: 'edit-textarea'
+          = f.text_area :info, class: 'edit-textarea'
           = f.submit :SAVE, class: 'flat-btn flat-btn-green mt20'
     div class='cb'
 
