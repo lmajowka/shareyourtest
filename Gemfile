@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'has_permalink'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '1.67.0'
 gem 'acts_as_list'
 gem 'backbone-on-rails'
 gem 'rails', '4.2.0'
@@ -26,7 +26,6 @@ gem 'postmark-rails'
 gem 'yaml_db'
 gem 'mysql2', '~> 0.3.18'
 gem 'figaro'
-gem 'aws-sdk'
 gem 'aws-ses'
 
 group :test, :development do
