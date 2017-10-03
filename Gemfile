@@ -26,6 +26,7 @@ gem 'postmark-rails'
 gem 'yaml_db'
 gem 'mysql2', '~> 0.3.18'
 gem 'figaro'
+gem 'aws-sdk'
 gem 'aws-ses'
 
 group :test, :development do
